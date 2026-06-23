@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* WhiteMedia monochrome palette mapped to shadcn tokens */
+    --background: 0 0% 100%; /* --paper  #ffffff */
+    --foreground: 0 0% 4%; /* --ink    #0a0a0a */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+    --primary: 0 0% 4%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 60 7% 95%; /* --mist   #f4f4f2 */
+    --secondary-foreground: 0 0% 4%;
+    --muted: 60 7% 95%;
+    --muted-foreground: 60 4% 50%; /* --muted  #9b9b95 */
+    --accent: 60 7% 95%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 60 8% 89%; /* --line   #e4e4e0 */
+    --input: 60 8% 89%;
+    --ring: 0 0% 4%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
