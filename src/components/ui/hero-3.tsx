@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"; // Assuming you have a `cn` utility from shadc
 
 // Props interface for the component
 interface AnimatedMarqueeHeroProps {
-  tagline: string;
+  tagline?: string;
   title: React.ReactNode;
   description: string;
   ctaText: string;
@@ -56,14 +56,16 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
     >
       <div className="z-10 flex flex-col items-center">
         {/* Tagline */}
-        <motion.div
-          initial="hidden"
-          animate="show"
-          variants={FADE_IN_ANIMATION_VARIANTS}
-          className="mb-4 inline-block rounded-full border border-border bg-card/50 px-4 py-1.5 text-sm font-medium text-muted-foreground backdrop-blur-sm"
-        >
-          {tagline}
-        </motion.div>
+        {tagline && (
+          <motion.div
+            initial="hidden"
+            animate="show"
+            variants={FADE_IN_ANIMATION_VARIANTS}
+            className="mb-4 inline-block rounded-full border border-border bg-card/50 px-4 py-1.5 text-sm font-medium text-muted-foreground backdrop-blur-sm"
+          >
+            {tagline}
+          </motion.div>
+        )}
 
         {/* Main Title */}
         <motion.h1

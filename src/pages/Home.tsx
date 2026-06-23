@@ -46,7 +46,6 @@ export default function Home() {
   return (
     <main>
       <AnimatedMarqueeHero
-        tagline="240+ marka · İstanbul merkezli dijital ajans"
         title={
           <>
             <motion.span variants={TITLE_LINE} className="inline-block">
@@ -123,45 +122,6 @@ export default function Home() {
                 <span className="srv__desc">{s.desc}</span>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* STATS */}
-      <section className="section section--fill">
-        <div className="wrap">
-          <p className="kicker reveal">Rakamlarla</p>
-          <div className="stats reveal" style={{ marginTop: 30 }}>
-            <div className="stat">
-              <div className="stat__num">
-                <span data-count="240" data-suffix="+">
-                  0
-                </span>
-              </div>
-              <div className="stat__label">YÖNETİLEN MARKA</div>
-            </div>
-            <div className="stat">
-              <div className="stat__num">
-                <span data-count="84" data-suffix="M">
-                  0
-                </span>
-              </div>
-              <div className="stat__label">AYLIK GÖRÜNTÜLENME</div>
-            </div>
-            <div className="stat">
-              <div className="stat__num">
-                <span data-count="320" data-suffix="%">
-                  0
-                </span>
-              </div>
-              <div className="stat__label">ORT. BÜYÜME</div>
-            </div>
-            <div className="stat">
-              <div className="stat__num">
-                <span data-count="52">0</span>
-              </div>
-              <div className="stat__label">SEKTÖR ÖDÜLÜ</div>
-            </div>
           </div>
         </div>
       </section>
