@@ -10,7 +10,7 @@ interface AnimatedMarqueeHeroProps {
   title: React.ReactNode;
   description: string;
   ctaText: string;
-  images: string[];
+  videos: string[];
   className?: string;
 }
 
@@ -31,7 +31,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
   title,
   description,
   ctaText,
-  images,
+  videos,
   className,
 }) => {
   // Animation variants for the text content
@@ -44,8 +44,8 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
     },
   };
 
-  // Duplicate images for a seamless loop
-  const duplicatedImages = [...images, ...images];
+  // Duplicate clips for a seamless loop
+  const duplicatedVideos = [...videos, ...videos];
 
   return (
     <section
@@ -118,7 +118,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
         </motion.div>
       </div>
 
-      {/* Animated Image Marquee — sliding, sharp photos */}
+      {/* Animated Video Marquee — sliding showcase reels */}
       <div className="absolute bottom-0 left-0 w-full h-1/3 md:h-2/5 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]">
         <motion.div
           className="flex gap-4"
@@ -131,7 +131,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
             },
           }}
         >
-          {duplicatedImages.map((src, index) => (
+          {duplicatedVideos.map((src, index) => (
             <div
               key={index}
               className="relative aspect-[3/4] h-48 md:h-64 flex-shrink-0"
@@ -139,9 +139,13 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
                 rotate: `${index % 2 === 0 ? -2 : 5}deg`,
               }}
             >
-              <img
+              <video
                 src={src}
-                alt={`Showcase image ${index + 1}`}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
                 className="w-full h-full object-cover rounded-2xl shadow-md"
               />
             </div>

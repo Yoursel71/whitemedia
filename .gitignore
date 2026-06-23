@@ -4,6 +4,11 @@ node_modules
 # build output
 dist
 
+# raw source videos (originals are too large for git;
+# web-optimized clips live in public/videos and ARE committed)
+videos/*
+!videos/.gitkeep
+
 # typescript incremental build info
 *.tsbuildinfo
 
