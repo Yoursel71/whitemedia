@@ -59,6 +59,7 @@ export default function Home() {
         }
         description="Strateji, içerik ve reklamı tek ekipte topluyoruz. Markanı kalabalıkta fark edilen, hatırlanan ve satan bir sahneye çeviriyoruz."
         ctaText="Teklif Al"
+        ctaHref="/iletisim"
         videos={SHOWCASE_VIDEOS}
       />
 

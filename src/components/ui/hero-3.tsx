@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils"; // Assuming you have a `cn` utility from shadcn
 
 // Props interface for the component
@@ -10,19 +11,29 @@ interface AnimatedMarqueeHeroProps {
   title: React.ReactNode;
   description: string;
   ctaText: string;
+  ctaHref?: string;
   videos: string[];
   className?: string;
 }
 
 // Reusable Button — monochrome to match the WhiteMedia palette (--ink / --paper)
-const ActionButton = ({ children }: { children: React.ReactNode }) => (
-  <motion.button
+const MotionLink = motion(Link);
+
+const ActionButton = ({
+  children,
+  href = "/iletisim",
+}: {
+  children: React.ReactNode;
+  href?: string;
+}) => (
+  <MotionLink
+    to={href}
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
-    className="mt-8 px-8 py-3 rounded-full bg-foreground text-background font-semibold shadow-lg transition-colors hover:bg-foreground/85 focus:outline-none focus:ring-2 focus:ring-foreground/40 focus:ring-offset-2 focus:ring-offset-background"
+    className="mt-8 inline-block px-8 py-3 rounded-full bg-foreground text-background font-semibold shadow-lg transition-colors hover:bg-foreground/85 focus:outline-none focus:ring-2 focus:ring-foreground/40 focus:ring-offset-2 focus:ring-offset-background"
   >
     {children}
-  </motion.button>
+  </MotionLink>
 );
 
 // The main hero component
@@ -31,6 +42,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
   title,
   description,
   ctaText,
+  ctaHref,
   videos,
   className,
 }) => {
@@ -114,7 +126,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           variants={FADE_IN_ANIMATION_VARIANTS}
           transition={{ delay: 0.6 }}
         >
-          <ActionButton>{ctaText}</ActionButton>
+          <ActionButton href={ctaHref}>{ctaText}</ActionButton>
         </motion.div>
       </div>
 
