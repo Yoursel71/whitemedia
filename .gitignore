@@ -9,6 +9,9 @@ dist
 videos/*
 !videos/.gitkeep
 
+# raw logo source assets (originals; production logos are inline SVG in src/components/Logos.tsx)
+Logos/
+
 # typescript incremental build info
 *.tsbuildinfo
 

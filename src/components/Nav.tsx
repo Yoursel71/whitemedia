@@ -64,6 +64,7 @@ export default function Nav() {
             </button>
           </div>
         </div>
+        <span className="nav__progress" />
       </nav>
 
       <div

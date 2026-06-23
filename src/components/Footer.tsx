@@ -14,8 +14,7 @@ export default function Footer() {
                 marginTop: 22,
               }}
             >
-              Beyaz tuval, dolu sahne. İstanbul merkezli dijital ajans —
-              Büyükdere Cad. No:195, Levent.
+              Beyaz tuval, dolu sahne. Dijital ajans.
             </p>
           </div>
           <div className="foot__col">
@@ -51,7 +50,7 @@ export default function Footer() {
         </div>
         <div className="foot__bottom">
           <span>© {new Date().getFullYear()} WhiteMedia Dijital Ajans</span>
-          <span>İstanbul · Türkiye</span>
+          <span>Türkiye</span>
         </div>
       </div>
     </footer>

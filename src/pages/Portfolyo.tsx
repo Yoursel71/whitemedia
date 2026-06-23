@@ -1,4 +1,23 @@
 import { Link } from "react-router-dom";
+import {
+  MedicalparkLogo,
+  YamanlarLogo,
+  TrabzonLogo,
+  BayburtLogo,
+  GursoyLogo,
+  PesentLogo,
+  DepaulLogo,
+  TheVeraCafeLogo,
+  DKGayrimenkulLogo,
+  ModatepeResortLogo,
+  KardeslerOtoLastikLogo,
+  SancakTurizmLogo,
+  Kayi1461Logo,
+  FlowersDugunSalonuLogo,
+  MackaBungalovLogo,
+  TTFestLogo,
+  KozalaklarAtolyeLogo,
+} from "@/components/Logos";
 
 export default function Portfolyo() {
   return (
@@ -21,25 +40,11 @@ export default function Portfolyo() {
       <section className="section" style={{ paddingTop: 60 }}>
         <div className="wrap">
           <div className="work">
-            {/* Medicalpark — sağlık: medikal artı + EKG nabız */}
+            {/* Medicalpark — sağlık */}
             <Link className="exhibit exhibit--wide reveal" to="/iletisim">
               <span className="exhibit__no">EX. 01</span>
-              <div className="exhibit__media">
-                <svg viewBox="0 0 1200 360" preserveAspectRatio="xMidYMid slice">
-                  <rect width="1200" height="360" fill="#0a0a0a" />
-                  <g fill="#fff">
-                    <rect x="150" y="110" width="60" height="140" rx="8" />
-                    <rect x="110" y="150" width="140" height="60" rx="8" />
-                  </g>
-                  <path
-                    d="M300,190 H520 l30,-80 l40,150 l35,-120 l25,50 H900 l40,-60 l40,110 l30,-50 H1200"
-                    fill="none"
-                    stroke="#fff"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <MedicalparkLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#ffffff" }} />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Medicalpark</span>
@@ -47,21 +52,11 @@ export default function Portfolyo() {
               </div>
             </Link>
 
-            {/* Yamanlar Oto Ekspertiz — diagnostik gösterge saati */}
+            {/* Yamanlar Oto Ekspertiz */}
             <Link className="exhibit reveal" to="/iletisim">
               <span className="exhibit__no">EX. 02</span>
-              <div className="exhibit__media">
-                <svg viewBox="0 0 400 300">
-                  <rect width="400" height="300" fill="#f4f4f2" />
-                  <g fill="none" stroke="#0a0a0a" strokeWidth="2" strokeLinecap="round">
-                    <path d="M110,205 A95,95 0 0 1 290,205" />
-                    <line x1="122" y1="196" x2="138" y2="188" />
-                    <line x1="200" y1="110" x2="200" y2="128" />
-                    <line x1="278" y1="196" x2="262" y2="188" />
-                  </g>
-                  <line x1="200" y1="205" x2="248" y2="158" stroke="#0a0a0a" strokeWidth="4" strokeLinecap="round" />
-                  <circle cx="200" cy="205" r="9" fill="#0a0a0a" />
-                </svg>
+              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <YamanlarLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#0a0a0a" }} />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Yamanlar Oto Ekspertiz</span>
@@ -69,22 +64,11 @@ export default function Portfolyo() {
               </div>
             </Link>
 
-            {/* Trabzon Üniversitesi — mezuniyet kepi */}
+            {/* Trabzon Üniversitesi */}
             <Link className="exhibit reveal" data-d="1" to="/iletisim">
               <span className="exhibit__no">EX. 03</span>
-              <div className="exhibit__media">
-                <svg viewBox="0 0 400 300">
-                  <rect width="400" height="300" fill="#0a0a0a" />
-                  <path d="M200,108 L322,158 L200,208 L78,158 Z" fill="#fff" />
-                  <path
-                    d="M128,178 V214 a72,26 0 0 0 144,0 V178"
-                    fill="none"
-                    stroke="#fff"
-                    strokeWidth="2"
-                  />
-                  <line x1="322" y1="158" x2="322" y2="206" stroke="#fff" strokeWidth="2" />
-                  <circle cx="322" cy="210" r="7" fill="#fff" />
-                </svg>
+              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <TrabzonLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#ffffff" }} />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Trabzon Üniversitesi</span>
@@ -92,19 +76,11 @@ export default function Portfolyo() {
               </div>
             </Link>
 
-            {/* Bayburt Puruthana — kemerli bina / hane amblemi */}
+            {/* Bayburt Puruthana */}
             <Link className="exhibit reveal" to="/iletisim">
               <span className="exhibit__no">EX. 04</span>
-              <div className="exhibit__media">
-                <svg viewBox="0 0 400 300">
-                  <rect width="400" height="300" fill="#f4f4f2" />
-                  <g fill="none" stroke="#0a0a0a" strokeWidth="2" strokeLinejoin="round">
-                    <path d="M104,120 L200,64 L296,120" />
-                    <rect x="124" y="120" width="152" height="120" />
-                    <path d="M170,240 V178 a30,30 0 0 1 60,0 V240" />
-                    <line x1="116" y1="240" x2="284" y2="240" />
-                  </g>
-                </svg>
+              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <BayburtLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#0a0a0a" }} />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Bayburt Puruthana</span>
@@ -112,22 +88,11 @@ export default function Portfolyo() {
               </div>
             </Link>
 
-            {/* Gürsoy İnşaat — kule vinç */}
+            {/* Gürsoy İnşaat */}
             <Link className="exhibit reveal" data-d="1" to="/iletisim">
               <span className="exhibit__no">EX. 05</span>
-              <div className="exhibit__media">
-                <svg viewBox="0 0 400 300">
-                  <rect width="400" height="300" fill="#0a0a0a" />
-                  <g fill="none" stroke="#fff" strokeWidth="2" strokeLinejoin="round">
-                    <line x1="150" y1="70" x2="150" y2="244" />
-                    <path d="M110,244 H190" />
-                    <line x1="108" y1="70" x2="300" y2="70" />
-                    <line x1="108" y1="70" x2="150" y2="112" />
-                    <line x1="150" y1="92" x2="270" y2="70" />
-                    <line x1="262" y1="70" x2="262" y2="118" />
-                    <rect x="247" y="118" width="30" height="20" />
-                  </g>
-                </svg>
+              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <GursoyLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#ffffff" }} />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Gürsoy İnşaat</span>
@@ -135,34 +100,179 @@ export default function Portfolyo() {
               </div>
             </Link>
 
-            {/* Pessent Restorant — çatal, tabak, bıçak */}
+            {/* Pesent Restaurant */}
             <Link className="exhibit exhibit--wide reveal" to="/iletisim">
               <span className="exhibit__no">EX. 06</span>
-              <div className="exhibit__media">
-                <svg viewBox="0 0 1200 360" preserveAspectRatio="xMidYMid slice">
-                  <rect width="1200" height="360" fill="#f4f4f2" />
-                  <g fill="none" stroke="#0a0a0a" strokeWidth="3">
-                    <circle cx="600" cy="180" r="92" />
-                    <circle cx="600" cy="180" r="60" />
-                  </g>
-                  <g stroke="#0a0a0a" strokeWidth="3" fill="none" strokeLinecap="round">
-                    <line x1="430" y1="252" x2="430" y2="150" />
-                    <line x1="414" y1="108" x2="414" y2="150" />
-                    <line x1="430" y1="108" x2="430" y2="150" />
-                    <line x1="446" y1="108" x2="446" y2="150" />
-                    <path d="M414,150 H446" />
-                  </g>
-                  <g stroke="#0a0a0a" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="770" y1="252" x2="770" y2="176" />
-                    <path d="M762,176 L762,122 C762,112 778,112 778,122 L778,176 Z" />
-                  </g>
-                </svg>
+              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <PesentLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#0a0a0a" }} />
               </div>
               <div className="exhibit__bar">
-                <span className="exhibit__name">Pessent Restorant</span>
+                <span className="exhibit__name">Pesent Restaurant</span>
                 <span className="exhibit__tag">Restoran · Prodüksiyon</span>
               </div>
             </Link>
+
+            {/* Depaul Cafe&Restaurant */}
+            <Link className="exhibit reveal" to="/iletisim">
+              <span className="exhibit__no">EX. 07</span>
+              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <DepaulLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#ffffff" }} />
+              </div>
+              <div className="exhibit__bar">
+                <span className="exhibit__name">Depaul Cafe&Restaurant</span>
+                <span className="exhibit__tag">Kafe · Restoran</span>
+              </div>
+            </Link>
+
+            {/* The Vera Cafe & Restaurant */}
+            <Link className="exhibit reveal" data-d="1" to="/iletisim">
+              <span className="exhibit__no">EX. 08</span>
+              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <TheVeraCafeLogo style={{ width: "auto", height: "auto", maxWidth: "65%", maxHeight: "60%", color: "#0a0a0a" }} />
+              </div>
+              <div className="exhibit__bar">
+                <span className="exhibit__name">The Vera Cafe & Restaurant</span>
+                <span className="exhibit__tag">Kafe · Restoran</span>
+              </div>
+            </Link>
+
+            {/* DK gayrimenkul */}
+            <Link className="exhibit exhibit--wide reveal" to="/iletisim">
+              <span className="exhibit__no">EX. 09</span>
+              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <DKGayrimenkulLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#ffffff" }} />
+              </div>
+              <div className="exhibit__bar">
+                <span className="exhibit__name">DK Gayrimenkul</span>
+                <span className="exhibit__tag">Gayrimenkul · Danışmanlık</span>
+              </div>
+            </Link>
+
+            {/* Modatepe Resort */}
+            <Link className="exhibit reveal" to="/iletisim">
+              <span className="exhibit__no">EX. 10</span>
+              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <ModatepeResortLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#0a0a0a" }} />
+              </div>
+              <div className="exhibit__bar">
+                <span className="exhibit__name">Modatepe Resort</span>
+                <span className="exhibit__tag">Otel · Turizm</span>
+              </div>
+            </Link>
+
+            {/* Kardeşler oto lastik */}
+            <Link className="exhibit reveal" data-d="1" to="/iletisim">
+              <span className="exhibit__no">EX. 11</span>
+              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <KardeslerOtoLastikLogo style={{ width: "auto", height: "auto", maxWidth: "70%", maxHeight: "60%", color: "#ffffff" }} />
+              </div>
+              <div className="exhibit__bar">
+                <span className="exhibit__name">Kardeşler Oto Lastik</span>
+                <span className="exhibit__tag">Otomotiv · Hizmet</span>
+              </div>
+            </Link>
+
+            {/* Sancak Turizm */}
+            <Link className="exhibit exhibit--wide reveal" to="/iletisim">
+              <span className="exhibit__no">EX. 12</span>
+              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <SancakTurizmLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#0a0a0a" }} />
+              </div>
+              <div className="exhibit__bar">
+                <span className="exhibit__name">Sancak Turizm</span>
+                <span className="exhibit__tag">Turizm · Seyahat</span>
+              </div>
+            </Link>
+
+            {/* Kayı 1461 Turizm */}
+            <Link className="exhibit reveal" to="/iletisim">
+              <span className="exhibit__no">EX. 13</span>
+              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <Kayi1461Logo style={{ width: "auto", height: "auto", maxWidth: "65%", maxHeight: "60%", color: "#ffffff" }} />
+              </div>
+              <div className="exhibit__bar">
+                <span className="exhibit__name">Kayı 1461 Turizm</span>
+                <span className="exhibit__tag">Turizm · Acente</span>
+              </div>
+            </Link>
+
+            {/* Flowers düğün salonu */}
+            <Link className="exhibit reveal" data-d="1" to="/iletisim">
+              <span className="exhibit__no">EX. 14</span>
+              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <FlowersDugunSalonuLogo style={{ width: "auto", height: "auto", maxWidth: "70%", maxHeight: "60%", color: "#0a0a0a" }} />
+              </div>
+              <div className="exhibit__bar">
+                <span className="exhibit__name">Flowers Düğün Salonu</span>
+                <span className="exhibit__tag">Organizasyon · Etkinlik</span>
+              </div>
+            </Link>
+
+            {/* Maçka bungalov */}
+            <Link className="exhibit exhibit--wide reveal" to="/iletisim">
+              <span className="exhibit__no">EX. 15</span>
+              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <MackaBungalovLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#ffffff" }} />
+              </div>
+              <div className="exhibit__bar">
+                <span className="exhibit__name">Maçka Bungalov</span>
+                <span className="exhibit__tag">Konaklama · Doğa Turizmi</span>
+              </div>
+            </Link>
+
+            {/* TT Fest */}
+            <Link className="exhibit reveal" to="/iletisim">
+              <span className="exhibit__no">EX. 16</span>
+              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <TTFestLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#0a0a0a" }} />
+              </div>
+              <div className="exhibit__bar">
+                <span className="exhibit__name">TT Fest</span>
+                <span className="exhibit__tag">Etkinlik · Festival</span>
+              </div>
+            </Link>
+
+            {/* Kozalaklar ormanda oyun atölyesi */}
+            <Link className="exhibit reveal" data-d="1" to="/iletisim">
+              <span className="exhibit__no">EX. 17</span>
+              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <KozalaklarAtolyeLogo style={{ width: "auto", height: "auto", maxWidth: "75%", maxHeight: "65%", color: "#ffffff" }} />
+              </div>
+              <div className="exhibit__bar">
+                <span className="exhibit__name">Kozalaklar Oyun Atölyesi</span>
+                <span className="exhibit__tag">Eğitim · Çocuk Atölyesi</span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* İŞ BİRLİĞİ YAPTIĞIMIZ ÜNLÜ İSİMLER */}
+      <section className="section" style={{ paddingTop: 60, paddingBottom: 60, backgroundColor: "#f4f4f2", color: "#0a0a0a" }}>
+        <div className="wrap">
+          <p className="kicker reveal">Kollaborasyonlar</p>
+          <h2 className="display reveal" data-d="1" style={{ marginBottom: 40 }}>
+            İş birliği yaptığımız
+            <br />
+            ünlü isimler.
+          </h2>
+          
+          <div className="work" style={{ gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
+            <a href="https://instagram.com/erdemsanlii" target="_blank" rel="noreferrer" className="exhibit reveal" style={{ backgroundColor: "#0a0a0a", color: "#ffffff", padding: "40px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
+              <div style={{ width: 80, height: 80, borderRadius: "50%", backgroundColor: "#333", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
+                <span className="icon" style={{ fontSize: 40, color: "#fff" }}>person</span>
+              </div>
+              <h3 style={{ fontSize: "24px", fontWeight: "600", marginBottom: "8px" }}>Erdem Şanlı</h3>
+              <p style={{ fontSize: "16px", color: "#aaa" }}>@erdemsanlii</p>
+            </a>
+
+            <a href="https://instagram.com/kadmfutbol" target="_blank" rel="noreferrer" className="exhibit reveal" data-d="1" style={{ backgroundColor: "#0a0a0a", color: "#ffffff", padding: "40px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
+              <div style={{ width: 80, height: 80, borderRadius: "50%", backgroundColor: "#333", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
+                <span className="icon" style={{ fontSize: 40, color: "#fff" }}>sports_soccer</span>
+              </div>
+              <h3 style={{ fontSize: "24px", fontWeight: "600", marginBottom: "8px" }}>Kadim Futbol</h3>
+              <p style={{ fontSize: "16px", color: "#aaa" }}>@kadmfutbol</p>
+            </a>
           </div>
         </div>
       </section>

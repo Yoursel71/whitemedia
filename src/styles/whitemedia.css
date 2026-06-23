@@ -195,6 +195,19 @@ a {
   border-bottom-color: var(--line);
 }
 
+/* scroll-progress bar pinned to nav base */
+.nav__progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 100%;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  will-change: transform;
+}
+
 .nav__inner {
   display: flex;
   align-items: center;
@@ -318,26 +331,63 @@ a {
    ============================================================ */
 .reveal {
   opacity: 0;
-  transform: translateY(26px);
-  transition: opacity .7s var(--ease), transform .7s var(--ease);
+  transform: translateY(34px);
+  filter: blur(12px);
+  transition:
+    opacity .9s var(--ease),
+    transform 1.1s var(--ease),
+    filter .9s var(--ease);
+  will-change: opacity, transform, filter;
 }
 
 .reveal.in {
   opacity: 1;
   transform: none;
+  filter: blur(0);
 }
 
-.reveal[data-d="1"] {
-  transition-delay: .08s;
+/* directional / scale variants — opt-in via extra class */
+.reveal--left {
+  transform: translateX(-46px);
 }
 
-.reveal[data-d="2"] {
-  transition-delay: .16s;
+.reveal--right {
+  transform: translateX(46px);
 }
 
-.reveal[data-d="3"] {
-  transition-delay: .24s;
+.reveal--scale {
+  transform: scale(.92);
 }
+
+.reveal--blur {
+  /* blur-only fade, no travel */
+  transform: none;
+  filter: blur(16px);
+}
+
+.reveal--left.in,
+.reveal--right.in,
+.reveal--scale.in,
+.reveal--blur.in {
+  transform: none;
+  filter: blur(0);
+}
+
+.reveal[data-d="1"] { transition-delay: .08s; }
+.reveal[data-d="2"] { transition-delay: .16s; }
+.reveal[data-d="3"] { transition-delay: .24s; }
+.reveal[data-d="4"] { transition-delay: .32s; }
+.reveal[data-d="5"] { transition-delay: .40s; }
+.reveal[data-d="6"] { transition-delay: .48s; }
+
+/* auto-stagger grids: each reveal child trails the previous one
+   so cards cascade in without per-element data-d in the markup */
+.work > .reveal:nth-child(2) { transition-delay: .07s; }
+.work > .reveal:nth-child(3) { transition-delay: .14s; }
+.work > .reveal:nth-child(4) { transition-delay: .21s; }
+.work > .reveal:nth-child(5) { transition-delay: .28s; }
+.work > .reveal:nth-child(6) { transition-delay: .35s; }
+.work > .reveal:nth-child(7) { transition-delay: .42s; }
 
 .line-mask {
   overflow: hidden;
@@ -705,6 +755,17 @@ a {
   border: 1px solid var(--line);
   background: var(--mist);
   overflow: hidden;
+  transition:
+    transform .5s var(--ease),
+    box-shadow .5s var(--ease),
+    border-color .5s var(--ease);
+  will-change: transform;
+}
+
+.exhibit:hover {
+  transform: translateY(-6px);
+  border-color: var(--ink);
+  box-shadow: 0 24px 48px -20px rgba(10, 10, 10, .35);
 }
 
 .exhibit__media {
@@ -1123,6 +1184,11 @@ a {
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;
+  }
+
+  .exhibit:hover {
+    transform: none !important;
+    box-shadow: none !important;
   }
 
   .rotator__word {

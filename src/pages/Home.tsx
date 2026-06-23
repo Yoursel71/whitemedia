@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { AnimatedMarqueeHero } from "@/components/ui/hero-3";
+import { 
+  MedicalparkLogo, 
+  YamanlarLogo, 
+  TrabzonLogo,
+  ModatepeResortLogo
+} from "@/components/Logos";
 
 // Per-line slide-in for the hero title (staggered by the h1 in hero-3)
 const TITLE_LINE = {
@@ -134,25 +140,11 @@ export default function Home() {
           </div>
 
           <div className="work" style={{ marginTop: 52 }}>
-            {/* Medicalpark — sağlık: medikal artı + EKG nabız */}
+            {/* Medicalpark — sağlık */}
             <Link className="exhibit exhibit--wide reveal" to="/portfolyo">
               <span className="exhibit__no">EX. 01</span>
-              <div className="exhibit__media">
-                <svg viewBox="0 0 1200 360" preserveAspectRatio="xMidYMid slice">
-                  <rect width="1200" height="360" fill="#0a0a0a" />
-                  <g fill="#fff">
-                    <rect x="150" y="110" width="60" height="140" rx="8" />
-                    <rect x="110" y="150" width="140" height="60" rx="8" />
-                  </g>
-                  <path
-                    d="M300,190 H520 l30,-80 l40,150 l35,-120 l25,50 H900 l40,-60 l40,110 l30,-50 H1200"
-                    fill="none"
-                    stroke="#fff"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <MedicalparkLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#ffffff" }} />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Medicalpark</span>
@@ -160,21 +152,11 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Yamanlar Oto Ekspertiz — diagnostik gösterge saati */}
+            {/* Yamanlar Oto Ekspertiz */}
             <Link className="exhibit reveal" to="/portfolyo">
               <span className="exhibit__no">EX. 02</span>
-              <div className="exhibit__media">
-                <svg viewBox="0 0 400 300">
-                  <rect width="400" height="300" fill="#f4f4f2" />
-                  <g fill="none" stroke="#0a0a0a" strokeWidth="2" strokeLinecap="round">
-                    <path d="M110,205 A95,95 0 0 1 290,205" />
-                    <line x1="122" y1="196" x2="138" y2="188" />
-                    <line x1="200" y1="110" x2="200" y2="128" />
-                    <line x1="278" y1="196" x2="262" y2="188" />
-                  </g>
-                  <line x1="200" y1="205" x2="248" y2="158" stroke="#0a0a0a" strokeWidth="4" strokeLinecap="round" />
-                  <circle cx="200" cy="205" r="9" fill="#0a0a0a" />
-                </svg>
+              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <YamanlarLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#0a0a0a" }} />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Yamanlar Oto Ekspertiz</span>
@@ -182,26 +164,27 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Trabzon Üniversitesi — mezuniyet kepi */}
+            {/* Trabzon Üniversitesi */}
             <Link className="exhibit reveal" data-d="1" to="/portfolyo">
               <span className="exhibit__no">EX. 03</span>
-              <div className="exhibit__media">
-                <svg viewBox="0 0 400 300">
-                  <rect width="400" height="300" fill="#0a0a0a" />
-                  <path d="M200,108 L322,158 L200,208 L78,158 Z" fill="#fff" />
-                  <path
-                    d="M128,178 V214 a72,26 0 0 0 144,0 V178"
-                    fill="none"
-                    stroke="#fff"
-                    strokeWidth="2"
-                  />
-                  <line x1="322" y1="158" x2="322" y2="206" stroke="#fff" strokeWidth="2" />
-                  <circle cx="322" cy="210" r="7" fill="#fff" />
-                </svg>
+              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <TrabzonLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#ffffff" }} />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Trabzon Üniversitesi</span>
                 <span className="exhibit__tag">Eğitim · İçerik</span>
+              </div>
+            </Link>
+
+            {/* Modatepe Resort */}
+            <Link className="exhibit exhibit--wide reveal" to="/portfolyo">
+              <span className="exhibit__no">EX. 04</span>
+              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
+                <ModatepeResortLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#0a0a0a" }} />
+              </div>
+              <div className="exhibit__bar">
+                <span className="exhibit__name">Modatepe Resort</span>
+                <span className="exhibit__tag">Otel · Turizm</span>
               </div>
             </Link>
           </div>

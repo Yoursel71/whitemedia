@@ -15,12 +15,30 @@ export function usePageEffects() {
     requestAnimationFrame(() => document.body.classList.add("loaded"));
 
     const nav = document.querySelector(".nav");
-    const onScroll = () => {
+    const bar = document.querySelector<HTMLElement>(".nav__progress");
+    let ticking = false;
+    const update = () => {
+      ticking = false;
       if (nav) nav.classList.toggle("scrolled", window.scrollY > 8);
+      if (bar) {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const p = max > 0 ? window.scrollY / max : 0;
+        bar.style.transform = `scaleX(${Math.min(Math.max(p, 0), 1)})`;
+      }
     };
-    onScroll();
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   // reveal + counters + magnetic — re-run per route
