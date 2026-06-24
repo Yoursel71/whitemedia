@@ -34,17 +34,8 @@ export default function Footer() {
           </div>
           <div className="foot__col">
             <h4>Sosyal</h4>
-            <a className="ul" href="#">
+            <a className="ul" href="https://www.instagram.com/whitemedia_tr/" target="_blank" rel="noreferrer">
               Instagram
-            </a>
-            <a className="ul" href="#">
-              LinkedIn
-            </a>
-            <a className="ul" href="#">
-              TikTok
-            </a>
-            <a className="ul" href="#">
-              YouTube
             </a>
           </div>
         </div>
