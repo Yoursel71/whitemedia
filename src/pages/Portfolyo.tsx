@@ -66,7 +66,7 @@ export default function Portfolyo() {
             <Link className="exhibit reveal" to="/iletisim">
               <span className="exhibit__no">EX. 04</span>
               <div className="exhibit__media brand-panel brand-panel--light">
-                <img className="brand-logo brand-logo--square brand-logo--dark" src="/logos/maziden-atiye-puruthana.png" alt="Maziden Atiye Puruthana logosu" />
+                <img className="brand-logo brand-logo--square brand-logo--dark" src="/logos/maziden-atiye-puruthana-v2.png" alt="Maziden Atiye Puruthana logosu" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Maziden Atiye Puruthana</span>
@@ -162,7 +162,7 @@ export default function Portfolyo() {
             <Link className="exhibit exhibit--wide reveal" to="/iletisim">
               <span className="exhibit__no">EX. 12</span>
               <div className="exhibit__media brand-panel brand-panel--light">
-                <img className="brand-logo brand-logo--wide brand-logo--dark" src="/logos/sancak-turizm.png" alt="Sancak Turizm logosu" />
+                <img className="brand-logo brand-logo--wide brand-logo--dark" src="/logos/sancak-turizm-v2.png" alt="Sancak Turizm logosu" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Sancak Turizm</span>
