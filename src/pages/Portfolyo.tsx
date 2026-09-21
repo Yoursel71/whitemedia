@@ -1,17 +1,10 @@
 import { Link } from "react-router-dom";
 import {
-  MedicalparkLogo,
-  YamanlarLogo,
-  TrabzonLogo,
   BayburtLogo,
   GursoyLogo,
-  PesentLogo,
-  DepaulLogo,
   TheVeraCafeLogo,
   DKGayrimenkulLogo,
   ModatepeResortLogo,
-  KardeslerOtoLastikLogo,
-  SancakTurizmLogo,
   Kayi1461Logo,
   FlowersDugunSalonuLogo,
   MackaBungalovLogo,
@@ -43,8 +36,8 @@ export default function Portfolyo() {
             {/* Medicalpark — sağlık */}
             <Link className="exhibit exhibit--wide reveal" to="/iletisim">
               <span className="exhibit__no">EX. 01</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <MedicalparkLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#ffffff" }} />
+              <div className="exhibit__media brand-panel brand-panel--dark">
+                <img className="brand-logo brand-logo--wide brand-logo--light" src="/logos/medicalpark.webp" alt="Medical Park logosu" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Medicalpark</span>
@@ -55,8 +48,8 @@ export default function Portfolyo() {
             {/* Yamanlar Oto Ekspertiz */}
             <Link className="exhibit reveal" to="/iletisim">
               <span className="exhibit__no">EX. 02</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <YamanlarLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#0a0a0a" }} />
+              <div className="exhibit__media brand-panel brand-panel--light">
+                <img className="brand-logo brand-logo--wide brand-logo--dark" src="/logos/yamanlar-oto-ekspertiz.webp" alt="Yamanlar Bağımsız Oto Ekspertiz logosu" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Yamanlar Oto Ekspertiz</span>
@@ -67,8 +60,8 @@ export default function Portfolyo() {
             {/* Trabzon Üniversitesi */}
             <Link className="exhibit reveal" data-d="1" to="/iletisim">
               <span className="exhibit__no">EX. 03</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <TrabzonLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#ffffff" }} />
+              <div className="exhibit__media brand-panel brand-panel--dark">
+                <img className="brand-logo brand-logo--wide brand-logo--light" src="/logos/trabzon-universitesi.png" alt="Trabzon Üniversitesi logosu" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Trabzon Üniversitesi</span>
@@ -79,8 +72,8 @@ export default function Portfolyo() {
             {/* Bayburt Puruthana */}
             <Link className="exhibit reveal" to="/iletisim">
               <span className="exhibit__no">EX. 04</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <BayburtLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#0a0a0a" }} />
+              <div className="exhibit__media brand-panel brand-panel--light">
+                <BayburtLogo className="brand-logo brand-logo--square" aria-label="Bayburt Puruthana logosu" role="img" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Bayburt Puruthana</span>
@@ -91,8 +84,8 @@ export default function Portfolyo() {
             {/* Gürsoy İnşaat */}
             <Link className="exhibit reveal" data-d="1" to="/iletisim">
               <span className="exhibit__no">EX. 05</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <GursoyLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#ffffff" }} />
+              <div className="exhibit__media brand-panel brand-panel--dark">
+                <GursoyLogo className="brand-logo brand-logo--square" aria-label="Gürsoy İnşaat logosu" role="img" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Gürsoy İnşaat</span>
@@ -103,8 +96,8 @@ export default function Portfolyo() {
             {/* Pesent Restaurant */}
             <Link className="exhibit exhibit--wide reveal" to="/iletisim">
               <span className="exhibit__no">EX. 06</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <PesentLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#0a0a0a" }} />
+              <div className="exhibit__media brand-panel brand-panel--light">
+                <img className="brand-logo brand-logo--wide brand-logo--dark" src="/logos/pesent-restaurant.png" alt="Pesent Restaurant logosu" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Pesent Restaurant</span>
@@ -115,8 +108,8 @@ export default function Portfolyo() {
             {/* Depaul Cafe&Restaurant */}
             <Link className="exhibit reveal" to="/iletisim">
               <span className="exhibit__no">EX. 07</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <DepaulLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#ffffff" }} />
+              <div className="exhibit__media brand-panel brand-panel--dark">
+                <img className="brand-logo brand-logo--wide brand-logo--light" src="/logos/depaul.svg" alt="Depaul Cafe & Restaurant logosu" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Depaul Cafe&Restaurant</span>
@@ -127,8 +120,8 @@ export default function Portfolyo() {
             {/* The Vera Cafe & Restaurant */}
             <Link className="exhibit reveal" data-d="1" to="/iletisim">
               <span className="exhibit__no">EX. 08</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <TheVeraCafeLogo style={{ width: "auto", height: "auto", maxWidth: "65%", maxHeight: "60%", color: "#0a0a0a" }} />
+              <div className="exhibit__media brand-panel brand-panel--light">
+                <TheVeraCafeLogo className="brand-logo brand-logo--square" aria-label="The Vera Cafe & Restaurant logosu" role="img" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">The Vera Cafe & Restaurant</span>
@@ -139,8 +132,8 @@ export default function Portfolyo() {
             {/* DK gayrimenkul */}
             <Link className="exhibit exhibit--wide reveal" to="/iletisim">
               <span className="exhibit__no">EX. 09</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <DKGayrimenkulLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#ffffff" }} />
+              <div className="exhibit__media brand-panel brand-panel--dark">
+                <DKGayrimenkulLogo className="brand-logo brand-logo--square" aria-label="DK Gayrimenkul logosu" role="img" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">DK Gayrimenkul</span>
@@ -151,8 +144,8 @@ export default function Portfolyo() {
             {/* Modatepe Resort */}
             <Link className="exhibit reveal" to="/iletisim">
               <span className="exhibit__no">EX. 10</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <ModatepeResortLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#0a0a0a" }} />
+              <div className="exhibit__media brand-panel brand-panel--light">
+                <ModatepeResortLogo className="brand-logo brand-logo--square" aria-label="Modatepe Resort logosu" role="img" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Modatepe Resort</span>
@@ -163,8 +156,8 @@ export default function Portfolyo() {
             {/* Kardeşler oto lastik */}
             <Link className="exhibit reveal" data-d="1" to="/iletisim">
               <span className="exhibit__no">EX. 11</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <KardeslerOtoLastikLogo style={{ width: "auto", height: "auto", maxWidth: "70%", maxHeight: "60%", color: "#ffffff" }} />
+              <div className="exhibit__media brand-panel brand-panel--dark">
+                <img className="brand-logo brand-logo--square brand-logo--light" src="/logos/kardesler-oto-lastik.png" alt="Kardeşler Oto Lastik logosu" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Kardeşler Oto Lastik</span>
@@ -175,8 +168,8 @@ export default function Portfolyo() {
             {/* Sancak Turizm */}
             <Link className="exhibit exhibit--wide reveal" to="/iletisim">
               <span className="exhibit__no">EX. 12</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <SancakTurizmLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#0a0a0a" }} />
+              <div className="exhibit__media brand-panel brand-panel--light">
+                <img className="brand-logo brand-logo--wide brand-logo--dark" src="/logos/sancak-turizm.png" alt="Sancak Turizm logosu" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Sancak Turizm</span>
@@ -187,8 +180,8 @@ export default function Portfolyo() {
             {/* Kayı 1461 Turizm */}
             <Link className="exhibit reveal" to="/iletisim">
               <span className="exhibit__no">EX. 13</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <Kayi1461Logo style={{ width: "auto", height: "auto", maxWidth: "65%", maxHeight: "60%", color: "#ffffff" }} />
+              <div className="exhibit__media brand-panel brand-panel--dark">
+                <Kayi1461Logo className="brand-logo brand-logo--wide" aria-label="Kayı 1461 Turizm logosu" role="img" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Kayı 1461 Turizm</span>
@@ -199,8 +192,8 @@ export default function Portfolyo() {
             {/* Flowers düğün salonu */}
             <Link className="exhibit reveal" data-d="1" to="/iletisim">
               <span className="exhibit__no">EX. 14</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <FlowersDugunSalonuLogo style={{ width: "auto", height: "auto", maxWidth: "70%", maxHeight: "60%", color: "#0a0a0a" }} />
+              <div className="exhibit__media brand-panel brand-panel--light">
+                <FlowersDugunSalonuLogo className="brand-logo brand-logo--wide" aria-label="Flowers Düğün Salonu logosu" role="img" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Flowers Düğün Salonu</span>
@@ -211,8 +204,8 @@ export default function Portfolyo() {
             {/* Maçka bungalov */}
             <Link className="exhibit exhibit--wide reveal" to="/iletisim">
               <span className="exhibit__no">EX. 15</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <MackaBungalovLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#ffffff" }} />
+              <div className="exhibit__media brand-panel brand-panel--dark">
+                <MackaBungalovLogo className="brand-logo brand-logo--square" aria-label="Maçka Bungalov logosu" role="img" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Maçka Bungalov</span>
@@ -223,8 +216,8 @@ export default function Portfolyo() {
             {/* TT Fest */}
             <Link className="exhibit reveal" to="/iletisim">
               <span className="exhibit__no">EX. 16</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <TTFestLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#0a0a0a" }} />
+              <div className="exhibit__media brand-panel brand-panel--light">
+                <TTFestLogo className="brand-logo brand-logo--square" aria-label="TT Fest logosu" role="img" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">TT Fest</span>
@@ -235,8 +228,8 @@ export default function Portfolyo() {
             {/* Kozalaklar ormanda oyun atölyesi */}
             <Link className="exhibit reveal" data-d="1" to="/iletisim">
               <span className="exhibit__no">EX. 17</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <KozalaklarAtolyeLogo style={{ width: "auto", height: "auto", maxWidth: "75%", maxHeight: "65%", color: "#ffffff" }} />
+              <div className="exhibit__media brand-panel brand-panel--dark">
+                <KozalaklarAtolyeLogo className="brand-logo brand-logo--wide" aria-label="Kozalaklar Oyun Atölyesi logosu" role="img" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Kozalaklar Oyun Atölyesi</span>
