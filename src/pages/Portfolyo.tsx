@@ -1,14 +1,7 @@
 import { Link } from "react-router-dom";
 import {
-  BayburtLogo,
-  GursoyLogo,
-  TheVeraCafeLogo,
-  DKGayrimenkulLogo,
-  ModatepeResortLogo,
   Kayi1461Logo,
   FlowersDugunSalonuLogo,
-  MackaBungalovLogo,
-  TTFestLogo,
   KozalaklarAtolyeLogo,
 } from "@/components/Logos";
 
@@ -69,14 +62,14 @@ export default function Portfolyo() {
               </div>
             </Link>
 
-            {/* Bayburt Puruthana */}
+            {/* Maziden Atiye Puruthana */}
             <Link className="exhibit reveal" to="/iletisim">
               <span className="exhibit__no">EX. 04</span>
               <div className="exhibit__media brand-panel brand-panel--light">
-                <BayburtLogo className="brand-logo brand-logo--square" aria-label="Bayburt Puruthana logosu" role="img" />
+                <img className="brand-logo brand-logo--square brand-logo--dark" src="/logos/maziden-atiye-puruthana.png" alt="Maziden Atiye Puruthana logosu" />
               </div>
               <div className="exhibit__bar">
-                <span className="exhibit__name">Bayburt Puruthana</span>
+                <span className="exhibit__name">Maziden Atiye Puruthana</span>
                 <span className="exhibit__tag">Marka · Sosyal Medya</span>
               </div>
             </Link>
@@ -85,7 +78,7 @@ export default function Portfolyo() {
             <Link className="exhibit reveal" data-d="1" to="/iletisim">
               <span className="exhibit__no">EX. 05</span>
               <div className="exhibit__media brand-panel brand-panel--dark">
-                <GursoyLogo className="brand-logo brand-logo--square" aria-label="Gürsoy İnşaat logosu" role="img" />
+                <img className="brand-logo brand-logo--wide brand-logo--light" src="/logos/gursoy-insaat.png" alt="Gürsoy İnşaat logosu" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Gürsoy İnşaat</span>
@@ -121,7 +114,7 @@ export default function Portfolyo() {
             <Link className="exhibit reveal" data-d="1" to="/iletisim">
               <span className="exhibit__no">EX. 08</span>
               <div className="exhibit__media brand-panel brand-panel--light">
-                <TheVeraCafeLogo className="brand-logo brand-logo--square" aria-label="The Vera Cafe & Restaurant logosu" role="img" />
+                <img className="brand-logo brand-logo--square brand-logo--dark" src="/logos/the-vera.png" alt="The Vera Cafe & Restaurant logosu" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">The Vera Cafe & Restaurant</span>
@@ -133,7 +126,7 @@ export default function Portfolyo() {
             <Link className="exhibit exhibit--wide reveal" to="/iletisim">
               <span className="exhibit__no">EX. 09</span>
               <div className="exhibit__media brand-panel brand-panel--dark">
-                <DKGayrimenkulLogo className="brand-logo brand-logo--square" aria-label="DK Gayrimenkul logosu" role="img" />
+                <img className="brand-logo brand-logo--square brand-logo--light" src="/logos/dk-gayrimenkul.png" alt="DK Gayrimenkul logosu" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">DK Gayrimenkul</span>
@@ -145,7 +138,7 @@ export default function Portfolyo() {
             <Link className="exhibit reveal" to="/iletisim">
               <span className="exhibit__no">EX. 10</span>
               <div className="exhibit__media brand-panel brand-panel--light">
-                <ModatepeResortLogo className="brand-logo brand-logo--square" aria-label="Modatepe Resort logosu" role="img" />
+                <img className="brand-logo brand-logo--square brand-logo--dark" src="/logos/modatepe-resort.png" alt="Modatepe Resort logosu" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Modatepe Resort</span>
@@ -205,7 +198,7 @@ export default function Portfolyo() {
             <Link className="exhibit exhibit--wide reveal" to="/iletisim">
               <span className="exhibit__no">EX. 15</span>
               <div className="exhibit__media brand-panel brand-panel--dark">
-                <MackaBungalovLogo className="brand-logo brand-logo--square" aria-label="Maçka Bungalov logosu" role="img" />
+                <img className="brand-logo brand-logo--square brand-logo--light" src="/logos/macka-bungalov.png" alt="Maçka Bungalov logosu" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">Maçka Bungalov</span>
@@ -217,7 +210,7 @@ export default function Portfolyo() {
             <Link className="exhibit reveal" to="/iletisim">
               <span className="exhibit__no">EX. 16</span>
               <div className="exhibit__media brand-panel brand-panel--light">
-                <TTFestLogo className="brand-logo brand-logo--square" aria-label="TT Fest logosu" role="img" />
+                <img className="brand-logo brand-logo--square brand-logo--dark" src="/logos/tt-fest.png" alt="TT Fest logosu" />
               </div>
               <div className="exhibit__bar">
                 <span className="exhibit__name">TT Fest</span>
@@ -250,21 +243,17 @@ export default function Portfolyo() {
             ünlü isimler.
           </h2>
           
-          <div className="work" style={{ gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
-            <a href="https://instagram.com/erdemsanlii" target="_blank" rel="noreferrer" className="exhibit reveal" style={{ backgroundColor: "#0a0a0a", color: "#ffffff", padding: "40px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
-              <div style={{ width: 80, height: 80, borderRadius: "50%", backgroundColor: "#333", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
-                <span className="icon" style={{ fontSize: 40, color: "#fff" }}>person</span>
-              </div>
-              <h3 style={{ fontSize: "24px", fontWeight: "600", marginBottom: "8px" }}>Erdem Şanlı</h3>
-              <p style={{ fontSize: "16px", color: "#aaa" }}>@erdemsanlii</p>
+          <div className="work collab-grid">
+            <a href="https://instagram.com/erdemsanlii" target="_blank" rel="noreferrer" className="exhibit reveal collab-card">
+              <img className="collab-card__image" src="/logos/erdem-sanli.jpg" alt="Erdem Şanlı" />
+              <h3 className="collab-card__title">Erdem Şanlı</h3>
+              <p className="collab-card__handle">@erdemsanlii</p>
             </a>
 
-            <a href="https://instagram.com/kadmfutbol" target="_blank" rel="noreferrer" className="exhibit reveal" data-d="1" style={{ backgroundColor: "#0a0a0a", color: "#ffffff", padding: "40px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
-              <div style={{ width: 80, height: 80, borderRadius: "50%", backgroundColor: "#333", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
-                <span className="icon" style={{ fontSize: 40, color: "#fff" }}>sports_soccer</span>
-              </div>
-              <h3 style={{ fontSize: "24px", fontWeight: "600", marginBottom: "8px" }}>Kadim Futbol</h3>
-              <p style={{ fontSize: "16px", color: "#aaa" }}>@kadmfutbol</p>
+            <a href="https://instagram.com/kadmfutbol" target="_blank" rel="noreferrer" className="exhibit reveal collab-card" data-d="1">
+              <img className="collab-card__image" src="/logos/kadim-futbol.jpg" alt="Kadim Futbol logosu" />
+              <h3 className="collab-card__title">Kadim Futbol</h3>
+              <p className="collab-card__handle">@kadmfutbol</p>
             </a>
           </div>
         </div>
