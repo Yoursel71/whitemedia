@@ -828,6 +828,10 @@ a {
   filter: grayscale(1) brightness(0) invert(1) contrast(1.15);
 }
 
+.brand-logo--grayscale {
+  filter: grayscale(1) contrast(1.08);
+}
+
 .exhibit:hover .exhibit__media .brand-logo {
   transform: scale(1.04);
 }
