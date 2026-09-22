@@ -252,7 +252,43 @@ export const portfolioProjects: PortfolioProject[] = [
     logoShape: "square",
     logoTreatment: "dark",
     panel: "light",
-    media: [],
+    media: [
+      {
+        src: "/work/modatepe-resort/modatepe-11.mp4",
+        poster: "/work/modatepe-resort/modatepe-11.webp",
+        title: "Doğayla iç içe resort deneyimi",
+      },
+      {
+        src: "/work/modatepe-resort/modatepe-5.mp4",
+        poster: "/work/modatepe-resort/modatepe-5.webp",
+        title: "Konaklamada %20 indirim kampanyası",
+      },
+      {
+        src: "/work/modatepe-resort/modatepe-7.mp4",
+        poster: "/work/modatepe-resort/modatepe-7.webp",
+        title: "Panoramik manzaralı bungalov",
+      },
+      {
+        src: "/work/modatepe-resort/modatepe-9.mp4",
+        poster: "/work/modatepe-resort/modatepe-9.webp",
+        title: "Bungalovda manzaralı konaklama",
+      },
+      {
+        src: "/work/modatepe-resort/modatepe-3.mp4",
+        poster: "/work/modatepe-resort/modatepe-3.webp",
+        title: "Manzaraya karşı serpme kahvaltı",
+      },
+      {
+        src: "/work/modatepe-resort/modatepe-2.mp4",
+        poster: "/work/modatepe-resort/modatepe-2.webp",
+        title: "Izgara et hazırlığı ve sunumu",
+      },
+      {
+        src: "/work/modatepe-resort/modatepe-12.mp4",
+        poster: "/work/modatepe-resort/modatepe-12.webp",
+        title: "Gün batımında drone turu",
+      },
+    ],
   },
   {
     index: "11",
