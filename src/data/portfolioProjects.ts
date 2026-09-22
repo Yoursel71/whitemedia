@@ -419,7 +419,13 @@ export const portfolioProjects: PortfolioProject[] = [
     logoShape: "square",
     logoTreatment: "dark",
     panel: "light",
-    media: [],
+    media: [
+      {
+        src: "/work/tt-fest/tt-fest-etkinlik-filmi.mp4",
+        poster: "/work/tt-fest/tt-fest-etkinlik-filmi.webp",
+        title: "TT Fest etkinlik ve festival filmi",
+      },
+    ],
   },
   {
     index: "17",
