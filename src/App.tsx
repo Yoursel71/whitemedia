@@ -5,6 +5,7 @@ import { usePageEffects } from "@/hooks/usePageEffects";
 import Home from "@/pages/Home";
 import Hizmetler from "@/pages/Hizmetler";
 import Portfolyo from "@/pages/Portfolyo";
+import ProjeDetay from "@/pages/ProjeDetay";
 import Iletisim from "@/pages/Iletisim";
 
 function Layout() {
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/hizmetler" element={<Hizmetler />} />
         <Route path="/portfolyo" element={<Portfolyo />} />
+        <Route path="/portfolyo/:slug" element={<ProjeDetay />} />
         <Route path="/iletisim" element={<Iletisim />} />
       </Route>
     </Routes>

@@ -27,7 +27,7 @@ export default function Portfolyo() {
         <div className="wrap">
           <div className="work">
             {/* Medicalpark — sağlık */}
-            <Link className="exhibit exhibit--wide reveal" to="/iletisim">
+            <Link className="exhibit exhibit--wide reveal" to="/portfolyo/medicalpark">
               <span className="exhibit__no">EX. 01</span>
               <div className="exhibit__media brand-panel brand-panel--dark">
                 <img className="brand-logo brand-logo--wide brand-logo--light" src="/logos/medicalpark.webp" alt="Medical Park logosu" />
@@ -39,7 +39,7 @@ export default function Portfolyo() {
             </Link>
 
             {/* Yamanlar Oto Ekspertiz */}
-            <Link className="exhibit reveal" to="/iletisim">
+            <Link className="exhibit reveal" to="/portfolyo/yamanlar-oto-ekspertiz">
               <span className="exhibit__no">EX. 02</span>
               <div className="exhibit__media brand-panel brand-panel--light">
                 <img className="brand-logo brand-logo--wide brand-logo--dark" src="/logos/yamanlar-oto-ekspertiz.webp" alt="Yamanlar Bağımsız Oto Ekspertiz logosu" />
@@ -51,7 +51,7 @@ export default function Portfolyo() {
             </Link>
 
             {/* Trabzon Üniversitesi */}
-            <Link className="exhibit reveal" data-d="1" to="/iletisim">
+            <Link className="exhibit reveal" data-d="1" to="/portfolyo/trabzon-universitesi">
               <span className="exhibit__no">EX. 03</span>
               <div className="exhibit__media brand-panel brand-panel--dark">
                 <img className="brand-logo brand-logo--wide brand-logo--light" src="/logos/trabzon-universitesi.png" alt="Trabzon Üniversitesi logosu" />
@@ -63,7 +63,7 @@ export default function Portfolyo() {
             </Link>
 
             {/* Maziden Atiye Puruthana */}
-            <Link className="exhibit reveal" to="/iletisim">
+            <Link className="exhibit reveal" to="/portfolyo/maziden-atiye-puruthana">
               <span className="exhibit__no">EX. 04</span>
               <div className="exhibit__media brand-panel brand-panel--dark">
                 <img className="brand-logo brand-logo--square brand-logo--on-dark" src="/logos/maziden-atiye-puruthana.png" alt="Maziden Atiye Puruthana logosu" />
@@ -75,7 +75,7 @@ export default function Portfolyo() {
             </Link>
 
             {/* Gürsoy İnşaat */}
-            <Link className="exhibit reveal" data-d="1" to="/iletisim">
+            <Link className="exhibit reveal" data-d="1" to="/portfolyo/gursoy-insaat">
               <span className="exhibit__no">EX. 05</span>
               <div className="exhibit__media brand-panel brand-panel--dark">
                 <img className="brand-logo brand-logo--wide brand-logo--light" src="/logos/gursoy-insaat.png" alt="Gürsoy İnşaat logosu" />
@@ -87,7 +87,7 @@ export default function Portfolyo() {
             </Link>
 
             {/* Pesent Restaurant */}
-            <Link className="exhibit exhibit--wide reveal" to="/iletisim">
+            <Link className="exhibit exhibit--wide reveal" to="/portfolyo/pesent-restaurant">
               <span className="exhibit__no">EX. 06</span>
               <div className="exhibit__media brand-panel brand-panel--light">
                 <img className="brand-logo brand-logo--wide brand-logo--dark" src="/logos/pesent-restaurant.png" alt="Pesent Restaurant logosu" />
@@ -99,7 +99,7 @@ export default function Portfolyo() {
             </Link>
 
             {/* Depaul Cafe&Restaurant */}
-            <Link className="exhibit reveal" to="/iletisim">
+            <Link className="exhibit reveal" to="/portfolyo/depaul-cafe-restaurant">
               <span className="exhibit__no">EX. 07</span>
               <div className="exhibit__media brand-panel brand-panel--dark">
                 <img className="brand-logo brand-logo--wide brand-logo--light" src="/logos/depaul.svg" alt="Depaul Cafe & Restaurant logosu" />
@@ -111,7 +111,7 @@ export default function Portfolyo() {
             </Link>
 
             {/* The Vera Cafe & Restaurant */}
-            <Link className="exhibit reveal" data-d="1" to="/iletisim">
+            <Link className="exhibit reveal" data-d="1" to="/portfolyo/the-vera-cafe-restaurant">
               <span className="exhibit__no">EX. 08</span>
               <div className="exhibit__media brand-panel brand-panel--light">
                 <img className="brand-logo brand-logo--square brand-logo--dark" src="/logos/the-vera.png" alt="The Vera Cafe & Restaurant logosu" />
@@ -123,7 +123,7 @@ export default function Portfolyo() {
             </Link>
 
             {/* DK gayrimenkul */}
-            <Link className="exhibit exhibit--wide reveal" to="/iletisim">
+            <Link className="exhibit exhibit--wide reveal" to="/portfolyo/dk-gayrimenkul">
               <span className="exhibit__no">EX. 09</span>
               <div className="exhibit__media brand-panel brand-panel--dark">
                 <img className="brand-logo brand-logo--square brand-logo--light" src="/logos/dk-gayrimenkul.png" alt="DK Gayrimenkul logosu" />
@@ -135,7 +135,7 @@ export default function Portfolyo() {
             </Link>
 
             {/* Modatepe Resort */}
-            <Link className="exhibit reveal" to="/iletisim">
+            <Link className="exhibit reveal" to="/portfolyo/modatepe-resort">
               <span className="exhibit__no">EX. 10</span>
               <div className="exhibit__media brand-panel brand-panel--light">
                 <img className="brand-logo brand-logo--square brand-logo--dark" src="/logos/modatepe-resort.png" alt="Modatepe Resort logosu" />
@@ -147,7 +147,7 @@ export default function Portfolyo() {
             </Link>
 
             {/* Kardeşler oto lastik */}
-            <Link className="exhibit reveal" data-d="1" to="/iletisim">
+            <Link className="exhibit reveal" data-d="1" to="/portfolyo/kardesler-oto-lastik">
               <span className="exhibit__no">EX. 11</span>
               <div className="exhibit__media brand-panel brand-panel--dark">
                 <img className="brand-logo brand-logo--square brand-logo--light" src="/logos/kardesler-oto-lastik.png" alt="Kardeşler Oto Lastik logosu" />
@@ -159,7 +159,7 @@ export default function Portfolyo() {
             </Link>
 
             {/* Sancak Turizm */}
-            <Link className="exhibit exhibit--wide reveal" to="/iletisim">
+            <Link className="exhibit exhibit--wide reveal" to="/portfolyo/sancak-turizm">
               <span className="exhibit__no">EX. 12</span>
               <div className="exhibit__media brand-panel brand-panel--light">
                 <img className="brand-logo brand-logo--wide brand-logo--dark" src="/logos/sancak-turizm-v2.png" alt="Sancak Turizm logosu" />
@@ -171,7 +171,7 @@ export default function Portfolyo() {
             </Link>
 
             {/* Kayı 1461 Turizm */}
-            <Link className="exhibit reveal" to="/iletisim">
+            <Link className="exhibit reveal" to="/portfolyo/kayi-1461-turizm">
               <span className="exhibit__no">EX. 13</span>
               <div className="exhibit__media brand-panel brand-panel--dark">
                 <Kayi1461Logo className="brand-logo brand-logo--wide" aria-label="Kayı 1461 Turizm logosu" role="img" />
@@ -183,7 +183,7 @@ export default function Portfolyo() {
             </Link>
 
             {/* Flowers düğün salonu */}
-            <Link className="exhibit reveal" data-d="1" to="/iletisim">
+            <Link className="exhibit reveal" data-d="1" to="/portfolyo/flowers-dugun-salonu">
               <span className="exhibit__no">EX. 14</span>
               <div className="exhibit__media brand-panel brand-panel--light">
                 <FlowersDugunSalonuLogo className="brand-logo brand-logo--wide" aria-label="Flowers Düğün Salonu logosu" role="img" />
@@ -195,7 +195,7 @@ export default function Portfolyo() {
             </Link>
 
             {/* Maçka bungalov */}
-            <Link className="exhibit exhibit--wide reveal" to="/iletisim">
+            <Link className="exhibit exhibit--wide reveal" to="/portfolyo/macka-bungalov">
               <span className="exhibit__no">EX. 15</span>
               <div className="exhibit__media brand-panel brand-panel--dark">
                 <img className="brand-logo brand-logo--square brand-logo--light" src="/logos/macka-bungalov.png" alt="Maçka Bungalov logosu" />
@@ -207,7 +207,7 @@ export default function Portfolyo() {
             </Link>
 
             {/* TT Fest */}
-            <Link className="exhibit reveal" to="/iletisim">
+            <Link className="exhibit reveal" to="/portfolyo/tt-fest">
               <span className="exhibit__no">EX. 16</span>
               <div className="exhibit__media brand-panel brand-panel--light">
                 <img className="brand-logo brand-logo--square brand-logo--dark" src="/logos/tt-fest.png" alt="TT Fest logosu" />
@@ -219,7 +219,7 @@ export default function Portfolyo() {
             </Link>
 
             {/* Kozalaklar ormanda oyun atölyesi */}
-            <Link className="exhibit reveal" data-d="1" to="/iletisim">
+            <Link className="exhibit reveal" data-d="1" to="/portfolyo/kozalaklar-oyun-atolyesi">
               <span className="exhibit__no">EX. 17</span>
               <div className="exhibit__media brand-panel brand-panel--dark">
                 <KozalaklarAtolyeLogo className="brand-logo brand-logo--wide" aria-label="Kozalaklar Oyun Atölyesi logosu" role="img" />

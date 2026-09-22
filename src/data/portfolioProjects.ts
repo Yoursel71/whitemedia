@@ -1,0 +1,291 @@
+export type ProjectMedia = {
+  src: string;
+  poster: string;
+  title: string;
+};
+
+export type PortfolioProject = {
+  index: string;
+  slug: string;
+  name: string;
+  category: string;
+  summary: string;
+  services: string[];
+  logo?: string;
+  logoAlt: string;
+  logoShape: "wide" | "square";
+  logoTreatment: "dark" | "light" | "on-dark";
+  panel: "dark" | "light";
+  media: ProjectMedia[];
+};
+
+const video = (clip: number, title: string): ProjectMedia => ({
+  src: `/videos/clip-${clip}.mp4`,
+  poster: `/work/posters/clip-${clip}.webp`,
+  title,
+});
+
+export const portfolioProjects: PortfolioProject[] = [
+  {
+    index: "01",
+    slug: "medicalpark",
+    name: "Medicalpark",
+    category: "Sağlık · Sosyal Medya",
+    summary:
+      "Uzman görüşlerini ve sağlık iletişimini, sosyal medya için anlaşılır ve güven veren kısa video içeriklerine dönüştürdük.",
+    services: ["Reels prodüksiyonu", "Sosyal medya içeriği", "Kurgu & post prodüksiyon"],
+    logo: "/logos/medicalpark.webp",
+    logoAlt: "Medical Park logosu",
+    logoShape: "wide",
+    logoTreatment: "light",
+    panel: "dark",
+    media: [video(1, "Uzman bilgilendirme içeriği"), video(15, "Sağlık hizmetleri prodüksiyonu")],
+  },
+  {
+    index: "02",
+    slug: "yamanlar-oto-ekspertiz",
+    name: "Yamanlar Oto Ekspertiz",
+    category: "Oto Ekspertiz · Reklam",
+    summary:
+      "Ekspertiz hizmetlerini açık, güvenilir ve satış odaklı bir dille anlatan dijital içerik çalışmaları hazırladık.",
+    services: ["Reklam kreatifleri", "Sosyal medya yönetimi", "İçerik prodüksiyonu"],
+    logo: "/logos/yamanlar-oto-ekspertiz.webp",
+    logoAlt: "Yamanlar Bağımsız Oto Ekspertiz logosu",
+    logoShape: "wide",
+    logoTreatment: "dark",
+    panel: "light",
+    media: [],
+  },
+  {
+    index: "03",
+    slug: "trabzon-universitesi",
+    name: "Trabzon Üniversitesi",
+    category: "Eğitim · İçerik",
+    summary:
+      "Üniversitenin iletişim ihtiyaçlarına uygun, kurumsal çizgiyi koruyan dijital içerik ve prodüksiyon çalışmaları ürettik.",
+    services: ["Kurumsal içerik", "Video prodüksiyon", "Sosyal medya iletişimi"],
+    logo: "/logos/trabzon-universitesi.png",
+    logoAlt: "Trabzon Üniversitesi logosu",
+    logoShape: "wide",
+    logoTreatment: "light",
+    panel: "dark",
+    media: [],
+  },
+  {
+    index: "04",
+    slug: "maziden-atiye-puruthana",
+    name: "Maziden Atiye Puruthana",
+    category: "Marka · Sosyal Medya",
+    summary:
+      "Geleneksel üretim hikâyesini yakın plan detaylar ve anlatı odaklı dikey videolarla sosyal medyaya taşıdık.",
+    services: ["Reels prodüksiyonu", "Hikâye anlatımı", "Kurgu & altyazı"],
+    logo: "/logos/maziden-atiye-puruthana.png",
+    logoAlt: "Maziden Atiye Puruthana logosu",
+    logoShape: "square",
+    logoTreatment: "on-dark",
+    panel: "dark",
+    media: [video(2, "Üretim hikâyesi"), video(3, "Ustalık ve süreç anlatımı")],
+  },
+  {
+    index: "05",
+    slug: "gursoy-insaat",
+    name: "Gürsoy İnşaat",
+    category: "İnşaat · Web & Reklam",
+    summary:
+      "Markanın projelerini dijitalde daha güçlü sunmak için web ve reklam iletişimini ortak bir görsel dilde buluşturduk.",
+    services: ["Web tasarım", "Reklam kreatifleri", "Dijital marka iletişimi"],
+    logo: "/logos/gursoy-insaat.png",
+    logoAlt: "Gürsoy İnşaat logosu",
+    logoShape: "wide",
+    logoTreatment: "light",
+    panel: "dark",
+    media: [],
+  },
+  {
+    index: "06",
+    slug: "pesent-restaurant",
+    name: "Pesent Restaurant",
+    category: "Restoran · Prodüksiyon",
+    summary:
+      "Mekânın sofrasını, mutfağını ve ürün çeşitliliğini iştah açıcı yakın planlarla satış odaklı içeriklere dönüştürdük.",
+    services: ["Yemek çekimi", "Reels prodüksiyonu", "Sosyal medya içeriği"],
+    logo: "/logos/pesent-restaurant.png",
+    logoAlt: "Pesent Restaurant logosu",
+    logoShape: "wide",
+    logoTreatment: "dark",
+    panel: "light",
+    media: [
+      video(5, "Kahvaltı sunumu"),
+      video(10, "Pide prodüksiyonu"),
+      video(11, "Yöresel lezzet içeriği"),
+      video(12, "Tatlı sunumu"),
+      video(13, "Pizza prodüksiyonu"),
+    ],
+  },
+  {
+    index: "07",
+    slug: "depaul-cafe-restaurant",
+    name: "Depaul Cafe&Restaurant",
+    category: "Kafe · Restoran",
+    summary:
+      "Mekân deneyimini, menü ürünlerini ve servis atmosferini sosyal medyada öne çıkaran içerikler hazırladık.",
+    services: ["Mekân çekimi", "Ürün prodüksiyonu", "Sosyal medya içeriği"],
+    logo: "/logos/depaul.svg",
+    logoAlt: "Depaul Cafe & Restaurant logosu",
+    logoShape: "wide",
+    logoTreatment: "light",
+    panel: "dark",
+    media: [video(4, "Mutfak ve ürün prodüksiyonu")],
+  },
+  {
+    index: "08",
+    slug: "the-vera-cafe-restaurant",
+    name: "The Vera Cafe & Restaurant",
+    category: "Kafe · Restoran",
+    summary:
+      "The Vera'nın ürünlerini ve mekân atmosferini modern, ritmik ve marka diline uygun dikey içeriklerle anlattık.",
+    services: ["Reels prodüksiyonu", "Ürün çekimi", "Kurgu & renk"],
+    logo: "/logos/the-vera.png",
+    logoAlt: "The Vera Cafe & Restaurant logosu",
+    logoShape: "square",
+    logoTreatment: "dark",
+    panel: "light",
+    media: [video(7, "İçecek prodüksiyonu"), video(14, "Mekân ve ürün içeriği")],
+  },
+  {
+    index: "09",
+    slug: "dk-gayrimenkul",
+    name: "DK Gayrimenkul",
+    category: "Gayrimenkul · Danışmanlık",
+    summary:
+      "Portföyleri konum, kullanım avantajı ve yatırım değerini öne çıkaran drone destekli kısa videolarla sunduk.",
+    services: ["Drone çekimi", "Portföy videosu", "Reklam içeriği"],
+    logo: "/logos/dk-gayrimenkul.png",
+    logoAlt: "DK Gayrimenkul logosu",
+    logoShape: "square",
+    logoTreatment: "light",
+    panel: "dark",
+    media: [video(8, "Gayrimenkul portföy tanıtımı")],
+  },
+  {
+    index: "10",
+    slug: "modatepe-resort",
+    name: "Modatepe Resort",
+    category: "Otel · Turizm",
+    summary:
+      "Konaklama deneyimini, doğayı ve tesisin öne çıkan alanlarını turizm iletişimine uygun içeriklerle anlattık.",
+    services: ["Tesis çekimi", "Drone prodüksiyonu", "Sosyal medya içeriği"],
+    logo: "/logos/modatepe-resort.png",
+    logoAlt: "Modatepe Resort logosu",
+    logoShape: "square",
+    logoTreatment: "dark",
+    panel: "light",
+    media: [],
+  },
+  {
+    index: "11",
+    slug: "kardesler-oto-lastik",
+    name: "Kardeşler Oto Lastik",
+    category: "Otomotiv · Hizmet",
+    summary:
+      "Ürün ve hizmet detaylarını, sürücünün ihtiyacına doğrudan cevap veren dinamik otomotiv içerikleriyle anlattık.",
+    services: ["Ürün videosu", "Hizmet anlatımı", "Reels prodüksiyonu"],
+    logo: "/logos/kardesler-oto-lastik.png",
+    logoAlt: "Kardeşler Oto Lastik logosu",
+    logoShape: "square",
+    logoTreatment: "light",
+    panel: "dark",
+    media: [video(9, "Lastik ürün tanıtımı")],
+  },
+  {
+    index: "12",
+    slug: "sancak-turizm",
+    name: "Sancak Turizm",
+    category: "Turizm · Seyahat",
+    summary:
+      "Rota ve destinasyonları, seyahat isteği uyandıran manzara ve drone görüntüleriyle dijital vitrine taşıdık.",
+    services: ["Drone çekimi", "Destinasyon içeriği", "Reels prodüksiyonu"],
+    logo: "/logos/sancak-turizm-v2.png",
+    logoAlt: "Sancak Turizm logosu",
+    logoShape: "wide",
+    logoTreatment: "dark",
+    panel: "light",
+    media: [video(6, "Destinasyon tanıtımı")],
+  },
+  {
+    index: "13",
+    slug: "kayi-1461-turizm",
+    name: "Kayı 1461 Turizm",
+    category: "Turizm · Acente",
+    summary:
+      "Tur planlarını, dijital görünürlüğü ve reklam iletişimini aynı marka çizgisinde bir araya getirdik.",
+    services: ["Sosyal medya düzeni", "Reklam optimizasyonu", "Tur içerikleri"],
+    logoAlt: "Kayı 1461 Turizm logosu",
+    logoShape: "wide",
+    logoTreatment: "light",
+    panel: "dark",
+    media: [],
+  },
+  {
+    index: "14",
+    slug: "flowers-dugun-salonu",
+    name: "Flowers Düğün Salonu",
+    category: "Organizasyon · Etkinlik",
+    summary:
+      "Mekânın atmosferini ve etkinlik deneyimini duyguya odaklanan fotoğraf ve video içerikleriyle anlattık.",
+    services: ["Etkinlik çekimi", "Mekân tanıtımı", "Sosyal medya içeriği"],
+    logoAlt: "Flowers Düğün Salonu logosu",
+    logoShape: "wide",
+    logoTreatment: "dark",
+    panel: "light",
+    media: [],
+  },
+  {
+    index: "15",
+    slug: "macka-bungalov",
+    name: "Maçka Bungalov",
+    category: "Konaklama · Doğa Turizmi",
+    summary:
+      "Doğa içindeki konaklama deneyimini, tesisin karakterini ve çevresini öne çıkaran içeriklerle sunduk.",
+    services: ["Drone çekimi", "Konaklama tanıtımı", "Reels prodüksiyonu"],
+    logo: "/logos/macka-bungalov.png",
+    logoAlt: "Maçka Bungalov logosu",
+    logoShape: "square",
+    logoTreatment: "light",
+    panel: "dark",
+    media: [],
+  },
+  {
+    index: "16",
+    slug: "tt-fest",
+    name: "TT Fest",
+    category: "Etkinlik · Festival",
+    summary:
+      "Festival enerjisini, kalabalığı ve sahne atmosferini hızlı tempolu etkinlik içerikleriyle görünür kıldık.",
+    services: ["Etkinlik prodüksiyonu", "Reels içeriği", "Kurgu & post prodüksiyon"],
+    logo: "/logos/tt-fest.png",
+    logoAlt: "TT Fest logosu",
+    logoShape: "square",
+    logoTreatment: "dark",
+    panel: "light",
+    media: [],
+  },
+  {
+    index: "17",
+    slug: "kozalaklar-oyun-atolyesi",
+    name: "Kozalaklar Oyun Atölyesi",
+    category: "Eğitim · Çocuk Atölyesi",
+    summary:
+      "Çocukların doğayla kurduğu bağı ve atölye deneyimini sıcak, samimi ve hareketli içeriklerle anlattık.",
+    services: ["Atölye çekimi", "Sosyal medya içeriği", "Fotoğraf & video"],
+    logoAlt: "Kozalaklar Oyun Atölyesi logosu",
+    logoShape: "wide",
+    logoTreatment: "light",
+    panel: "dark",
+    media: [],
+  },
+];
+
+export const portfolioProjectBySlug = Object.fromEntries(
+  portfolioProjects.map((project) => [project.slug, project])
+) as Record<string, PortfolioProject>;
