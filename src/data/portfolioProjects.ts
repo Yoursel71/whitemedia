@@ -29,17 +29,34 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     index: "01",
     slug: "medicalpark",
-    name: "Medicalpark",
-    category: "Sağlık · Sosyal Medya",
+    name: "Medical Park Yıldızlı",
+    category: "Sağlık · Kurumsal İçerik",
     summary:
-      "Uzman görüşlerini ve sağlık iletişimini, sosyal medya için anlaşılır ve güven veren kısa video içeriklerine dönüştürdük.",
+      "Medical Park Yıldızlı'nın kurumsal tanıtımını ve uzman görüşlerini, güven veren sağlık iletişimi içeriklerine dönüştürdük.",
     services: ["Reels prodüksiyonu", "Sosyal medya içeriği", "Kurgu & post prodüksiyon"],
     logo: "/logos/medicalpark.webp",
-    logoAlt: "Medical Park logosu",
+    logoAlt: "Medical Park Yıldızlı Hastanesi logosu",
     logoShape: "wide",
     logoTreatment: "light",
     panel: "dark",
-    media: [video(1, "Uzman bilgilendirme içeriği"), video(15, "Sağlık hizmetleri prodüksiyonu")],
+    media: [
+      {
+        src: "/work/medicalpark-yildizli/hastane-tanitim-filmi.mp4",
+        poster: "/work/medicalpark-yildizli/hastane-tanitim-filmi.webp",
+        title: "Medical Park Yıldızlı Hastanesi tanıtım filmi",
+      },
+      {
+        src: "/work/medicalpark-yildizli/can-kece-cerrahi-onkoloji.mp4",
+        poster: "/work/medicalpark-yildizli/can-kece-cerrahi-onkoloji.webp",
+        title: "Prof. Dr. Can Keçe — Cerrahi onkolojinin önemi",
+      },
+      {
+        src: "/work/medicalpark-yildizli/tugce-turkcan-goz-kapagi.mp4",
+        poster: "/work/medicalpark-yildizli/tugce-turkcan-goz-kapagi.webp",
+        title: "Op. Dr. Tuğçe Türkcan Soğuksulu — Göz kapağı sarkması",
+      },
+      video(15, "Cerrahi ekip prodüksiyonu"),
+    ],
   },
   {
     index: "02",
