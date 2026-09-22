@@ -155,11 +155,7 @@ export const portfolioProjects: PortfolioProject[] = [
         poster: "/work/pesent/pesent-17.webp",
         title: "Lahmacun ve kebap sunumu",
       },
-      video(5, "Kahvaltı sunumu"),
       video(10, "Pide prodüksiyonu"),
-      video(11, "Yöresel lezzet içeriği"),
-      video(12, "Tatlı sunumu"),
-      video(13, "Pizza prodüksiyonu"),
     ],
   },
   {
