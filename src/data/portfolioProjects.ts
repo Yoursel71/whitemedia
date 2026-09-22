@@ -361,7 +361,23 @@ export const portfolioProjects: PortfolioProject[] = [
     logoShape: "wide",
     logoTreatment: "dark",
     panel: "light",
-    media: [video(6, "Destinasyon tanıtımı")],
+    media: [
+      {
+        src: "/work/sancak-turizm/uzungol-destinasyon.mp4",
+        poster: "/work/sancak-turizm/uzungol-destinasyon.webp",
+        title: "Uzungöl destinasyon tanıtımı",
+      },
+      {
+        src: "/work/sancak-turizm/bungalov-konaklama.mp4",
+        poster: "/work/sancak-turizm/bungalov-konaklama.webp",
+        title: "Bungalov konaklama tanıtımı",
+      },
+      {
+        src: "/work/sancak-turizm/turizm-hizmetleri.mp4",
+        poster: "/work/sancak-turizm/turizm-hizmetleri.webp",
+        title: "Sancak Turizm hizmet tanıtımı",
+      },
+    ],
   },
   {
     index: "13",
