@@ -833,7 +833,8 @@ a {
 }
 
 .brand-logo--on-dark {
-  filter: grayscale(1) brightness(1.35) contrast(1.08);
+  /* Preserve internal cutouts while making the dark logo artwork white. */
+  filter: grayscale(1) invert(1) contrast(6);
 }
 
 .exhibit:hover .exhibit__media .brand-logo {
