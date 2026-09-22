@@ -55,7 +55,6 @@ export const portfolioProjects: PortfolioProject[] = [
         poster: "/work/medicalpark-yildizli/tugce-turkcan-goz-kapagi.webp",
         title: "Op. Dr. Tuğçe Türkcan Soğuksulu — Göz kapağı sarkması",
       },
-      video(15, "Cerrahi ekip prodüksiyonu"),
     ],
   },
   {
