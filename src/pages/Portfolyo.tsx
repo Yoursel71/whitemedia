@@ -146,15 +146,15 @@ export default function Portfolyo() {
               </div>
             </Link>
 
-            {/* Kardeşler oto lastik */}
+            {/* Kardeşler & Beyazlı Oto Lastik */}
             <Link className="exhibit reveal" data-d="1" to="/portfolyo/kardesler-oto-lastik">
               <span className="exhibit__no">EX. 11</span>
               <div className="exhibit__media brand-panel brand-panel--dark">
-                <img className="brand-logo brand-logo--square brand-logo--light" src="/logos/kardesler-oto-lastik.png" alt="Kardeşler Oto Lastik logosu" />
+                <img className="brand-logo brand-logo--square brand-logo--light" src="/logos/kardesler-oto-lastik.png" alt="Kardeşler & Beyazlı Oto Lastik logosu" />
               </div>
               <div className="exhibit__bar">
-                <span className="exhibit__name">Kardeşler Oto Lastik</span>
-                <span className="exhibit__tag">Otomotiv · Hizmet</span>
+                <span className="exhibit__name">Kardeşler & Beyazlı Oto Lastik</span>
+                <span className="exhibit__tag">Otomotiv · Jant & Lastik</span>
               </div>
             </Link>
 

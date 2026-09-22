@@ -185,17 +185,44 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     index: "11",
     slug: "kardesler-oto-lastik",
-    name: "Kardeşler Oto Lastik",
-    category: "Otomotiv · Hizmet",
+    name: "Kardeşler & Beyazlı Oto Lastik",
+    category: "Otomotiv · Jant & Lastik",
     summary:
-      "Ürün ve hizmet detaylarını, sürücünün ihtiyacına doğrudan cevap veren dinamik otomotiv içerikleriyle anlattık.",
-    services: ["Ürün videosu", "Hizmet anlatımı", "Reels prodüksiyonu"],
+      "Jant ve lastik hizmetlerini; süreç, ustalık ve ürün detaylarını öne çıkaran dinamik otomotiv içerikleriyle anlattık.",
+    services: ["Jant & lastik prodüksiyonu", "Hizmet anlatımı", "Reels prodüksiyonu"],
     logo: "/logos/kardesler-oto-lastik.png",
-    logoAlt: "Kardeşler Oto Lastik logosu",
+    logoAlt: "Kardeşler & Beyazlı Oto Lastik logosu",
     logoShape: "square",
     logoTreatment: "light",
     panel: "dark",
-    media: [video(9, "Lastik ürün tanıtımı")],
+    media: [
+      {
+        src: "/work/kardesler-beyazli/kardesler-beyazli-12.mp4",
+        poster: "/work/kardesler-beyazli/kardesler-beyazli-12.webp",
+        title: "Profesyonel jant düzeltme",
+      },
+      {
+        src: "/work/kardesler-beyazli/kardesler-beyazli-18.mp4",
+        poster: "/work/kardesler-beyazli/kardesler-beyazli-18.webp",
+        title: "Hasarlı jant yenileme",
+      },
+      {
+        src: "/work/kardesler-beyazli/kardesler-beyazli-19.mp4",
+        poster: "/work/kardesler-beyazli/kardesler-beyazli-19.webp",
+        title: "Kardeşler & Beyazlı Oto Lastik tanıtımı",
+      },
+      {
+        src: "/work/kardesler-beyazli/kardesler-beyazli-33.mp4",
+        poster: "/work/kardesler-beyazli/kardesler-beyazli-33.webp",
+        title: "Mercedes AMG jant tanıtımı",
+      },
+      {
+        src: "/work/kardesler-beyazli/kardesler-beyazli-34.mp4",
+        poster: "/work/kardesler-beyazli/kardesler-beyazli-34.webp",
+        title: "Citroën Berlingo jant tanıtımı",
+      },
+      video(9, "Lastik ürün tanıtımı"),
+    ],
   },
   {
     index: "12",
