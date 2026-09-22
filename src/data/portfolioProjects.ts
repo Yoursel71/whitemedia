@@ -201,7 +201,43 @@ export const portfolioProjects: PortfolioProject[] = [
     logoShape: "square",
     logoTreatment: "light",
     panel: "dark",
-    media: [video(8, "Gayrimenkul portföy tanıtımı")],
+    media: [
+      {
+        src: "/work/dk-gayrimenkul/dk-26.mp4",
+        poster: "/work/dk-gayrimenkul/dk-26.webp",
+        title: "Modern müstakil villa tanıtımı",
+      },
+      {
+        src: "/work/dk-gayrimenkul/dk-28.mp4",
+        poster: "/work/dk-gayrimenkul/dk-28.webp",
+        title: "470 m² kiralık iş yeri",
+      },
+      {
+        src: "/work/dk-gayrimenkul/dk-25.mp4",
+        poster: "/work/dk-gayrimenkul/dk-25.webp",
+        title: "Mersin Mahallesi 300 m² arsa",
+      },
+      {
+        src: "/work/dk-gayrimenkul/dk-20.mp4",
+        poster: "/work/dk-gayrimenkul/dk-20.webp",
+        title: "Deniz manzaralı yatırım mülkü",
+      },
+      {
+        src: "/work/dk-gayrimenkul/dk-12.mp4",
+        poster: "/work/dk-gayrimenkul/dk-12.webp",
+        title: "Sıfır daire ve site yaşamı",
+      },
+      {
+        src: "/work/dk-gayrimenkul/dk-8.mp4",
+        poster: "/work/dk-gayrimenkul/dk-8.webp",
+        title: "Ana yola yakın müstakil konut",
+      },
+      {
+        src: "/work/dk-gayrimenkul/dk-5.mp4",
+        poster: "/work/dk-gayrimenkul/dk-5.webp",
+        title: "Gayrimenkul satış danışmanlığı",
+      },
+    ],
   },
   {
     index: "10",
