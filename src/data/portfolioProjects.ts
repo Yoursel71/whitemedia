@@ -115,6 +115,46 @@ export const portfolioProjects: PortfolioProject[] = [
     logoTreatment: "dark",
     panel: "light",
     media: [
+      {
+        src: "/work/pesent/pesent-3.mp4",
+        poster: "/work/pesent/pesent-3.webp",
+        title: "Deniz manzaralı lezzet deneyimi",
+      },
+      {
+        src: "/work/pesent/pesent-6.mp4",
+        poster: "/work/pesent/pesent-6.webp",
+        title: "Usta dokunuşuyla Adana kebap",
+      },
+      {
+        src: "/work/pesent/pesent-8.mp4",
+        poster: "/work/pesent/pesent-8.webp",
+        title: "Sahil restoranı drone tanıtımı",
+      },
+      {
+        src: "/work/pesent/pesent-13.mp4",
+        poster: "/work/pesent/pesent-13.webp",
+        title: "Pide hazırlık süreci",
+      },
+      {
+        src: "/work/pesent/pesent-14.mp4",
+        poster: "/work/pesent/pesent-14.webp",
+        title: "Deniz manzaralı serpme kahvaltı",
+      },
+      {
+        src: "/work/pesent/pesent-19.mp4",
+        poster: "/work/pesent/pesent-19.webp",
+        title: "Mutfaktan masaya servis deneyimi",
+      },
+      {
+        src: "/work/pesent/pesent-20.mp4",
+        poster: "/work/pesent/pesent-20.webp",
+        title: "Ocakbaşı lezzet hazırlığı",
+      },
+      {
+        src: "/work/pesent/pesent-17.mp4",
+        poster: "/work/pesent/pesent-17.webp",
+        title: "Lahmacun ve kebap sunumu",
+      },
       video(5, "Kahvaltı sunumu"),
       video(10, "Pide prodüksiyonu"),
       video(11, "Yöresel lezzet içeriği"),
