@@ -416,7 +416,18 @@ export const portfolioProjects: PortfolioProject[] = [
     logoShape: "wide",
     logoTreatment: "dark",
     panel: "light",
-    media: [],
+    media: [
+      {
+        src: "/work/flowers-dugun-salonu/dugun-gecesi-tanitim.mp4",
+        poster: "/work/flowers-dugun-salonu/dugun-gecesi-tanitim.webp",
+        title: "Düğün gecesi tanıtım filmi",
+      },
+      {
+        src: "/work/flowers-dugun-salonu/salon-organizasyon-tanitim.mp4",
+        poster: "/work/flowers-dugun-salonu/salon-organizasyon-tanitim.webp",
+        title: "Salon ve organizasyon tanıtımı",
+      },
+    ],
   },
   {
     index: "15",
