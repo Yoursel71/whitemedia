@@ -107,17 +107,38 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     index: "04",
     slug: "maziden-atiye-puruthana",
-    name: "Maziden Atiye Puruthana",
+    name: "Bayburt Puruthana",
     category: "Marka · Sosyal Medya",
     summary:
       "Geleneksel üretim hikâyesini yakın plan detaylar ve anlatı odaklı dikey videolarla sosyal medyaya taşıdık.",
     services: ["Reels prodüksiyonu", "Hikâye anlatımı", "Kurgu & altyazı"],
     logo: "/logos/maziden-atiye-puruthana.png",
-    logoAlt: "Maziden Atiye Puruthana logosu",
+    logoAlt: "Bayburt Puruthana logosu",
     logoShape: "square",
     logoTreatment: "on-dark",
     panel: "dark",
-    media: [video(2, "Üretim hikâyesi"), video(3, "Ustalık ve süreç anlatımı")],
+    media: [
+      {
+        src: "/work/bayburt-puruthana/ustalik-kultur-hikayesi.mp4",
+        poster: "/work/bayburt-puruthana/ustalik-kultur-hikayesi.webp",
+        title: "Ustalık ve kültür hikâyesi",
+      },
+      {
+        src: "/work/bayburt-puruthana/tandir-guclendirme-sevkiyat.mp4",
+        poster: "/work/bayburt-puruthana/tandir-guclendirme-sevkiyat.webp",
+        title: "Tandırın güçlendirme ve sevkiyat süreci",
+      },
+      {
+        src: "/work/bayburt-puruthana/loloz-geleneksel-ustalik.mp4",
+        poster: "/work/bayburt-puruthana/loloz-geleneksel-ustalik.webp",
+        title: "Loloz tekniği ve geleneksel ustalık",
+      },
+      {
+        src: "/work/bayburt-puruthana/geleneksel-tandir-yapimi-belgesel.mp4",
+        poster: "/work/bayburt-puruthana/geleneksel-tandir-yapimi-belgesel.webp",
+        title: "Geleneksel tandır yapımı — uzun anlatım",
+      },
+    ],
   },
   {
     index: "05",
