@@ -70,7 +70,18 @@ export const portfolioProjects: PortfolioProject[] = [
     logoShape: "wide",
     logoTreatment: "dark",
     panel: "light",
-    media: [],
+    media: [
+      {
+        src: "/work/yamanlar-oto-ekspertiz/salihli-sube-acilisi.mp4",
+        poster: "/work/yamanlar-oto-ekspertiz/salihli-sube-acilisi.webp",
+        title: "Salihli şubesi açılış filmi",
+      },
+      {
+        src: "/work/yamanlar-oto-ekspertiz/izmir-subeler-lokasyon.mp4",
+        poster: "/work/yamanlar-oto-ekspertiz/izmir-subeler-lokasyon.webp",
+        title: "İzmir şubeleri drone lokasyon tanıtımı",
+      },
+    ],
   },
   {
     index: "03",
