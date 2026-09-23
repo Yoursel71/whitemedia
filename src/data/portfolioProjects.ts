@@ -520,6 +520,11 @@ export const portfolioProjects: PortfolioProject[] = [
         poster: "/work/kozalaklar-ormanda/yeni-yil-kar-etkinligi.webp",
         title: "Yeni yıl kar etkinliği",
       },
+      {
+        src: "/work/kozalaklar-ormanda/atolye-ekibi-roportaji.mp4",
+        poster: "/work/kozalaklar-ormanda/atolye-ekibi-roportaji.webp",
+        title: "Atölye ekibiyle eğlenceli röportaj",
+      },
     ],
   },
 ];
