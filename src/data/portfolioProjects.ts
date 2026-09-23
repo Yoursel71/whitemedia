@@ -96,7 +96,13 @@ export const portfolioProjects: PortfolioProject[] = [
     logoShape: "wide",
     logoTreatment: "light",
     panel: "dark",
-    media: [],
+    media: [
+      {
+        src: "/work/trabzon-universitesi/iletisim-fakultesi-tanitim.mp4",
+        poster: "/work/trabzon-universitesi/iletisim-fakultesi-tanitim.webp",
+        title: "İletişim Fakültesi tanıtım filmi",
+      },
+    ],
   },
   {
     index: "04",
