@@ -495,16 +495,32 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     index: "17",
     slug: "kozalaklar-oyun-atolyesi",
-    name: "Kozalaklar Oyun Atölyesi",
+    name: "Kozalaklar Ormanda",
     category: "Eğitim · Çocuk Atölyesi",
     summary:
-      "Çocukların doğayla kurduğu bağı ve atölye deneyimini sıcak, samimi ve hareketli içeriklerle anlattık.",
+      "Çocukların keşfetme, hareket etme ve birlikte öğrenme deneyimini sıcak, samimi ve hareketli içeriklerle anlattık.",
     services: ["Atölye çekimi", "Sosyal medya içeriği", "Fotoğraf & video"],
-    logoAlt: "Kozalaklar Oyun Atölyesi logosu",
+    logoAlt: "Kozalaklar Ormanda Oyun Atölyesi logosu",
     logoShape: "wide",
     logoTreatment: "light",
     panel: "dark",
-    media: [],
+    media: [
+      {
+        src: "/work/kozalaklar-ormanda/tirmanis-atolyesi.mp4",
+        poster: "/work/kozalaklar-ormanda/tirmanis-atolyesi.webp",
+        title: "Tırmanış atölyesi",
+      },
+      {
+        src: "/work/kozalaklar-ormanda/yeni-yil-duyusal-oyun.mp4",
+        poster: "/work/kozalaklar-ormanda/yeni-yil-duyusal-oyun.webp",
+        title: "Yeni yıl duyusal oyun etkinliği",
+      },
+      {
+        src: "/work/kozalaklar-ormanda/yeni-yil-kar-etkinligi.mp4",
+        poster: "/work/kozalaklar-ormanda/yeni-yil-kar-etkinligi.webp",
+        title: "Yeni yıl kar etkinliği",
+      },
+    ],
   },
 ];
 

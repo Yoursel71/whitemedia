@@ -218,14 +218,14 @@ export default function Portfolyo() {
               </div>
             </Link>
 
-            {/* Kozalaklar ormanda oyun atölyesi */}
+            {/* Kozalaklar Ormanda Oyun Atölyesi */}
             <Link className="exhibit reveal" data-d="1" to="/portfolyo/kozalaklar-oyun-atolyesi">
               <span className="exhibit__no">EX. 17</span>
               <div className="exhibit__media brand-panel brand-panel--dark">
-                <KozalaklarAtolyeLogo className="brand-logo brand-logo--wide" aria-label="Kozalaklar Oyun Atölyesi logosu" role="img" />
+                <KozalaklarAtolyeLogo className="brand-logo brand-logo--wide" aria-label="Kozalaklar Ormanda Oyun Atölyesi logosu" role="img" />
               </div>
               <div className="exhibit__bar">
-                <span className="exhibit__name">Kozalaklar Oyun Atölyesi</span>
+                <span className="exhibit__name">Kozalaklar Ormanda</span>
                 <span className="exhibit__tag">Eğitim · Çocuk Atölyesi</span>
               </div>
             </Link>
