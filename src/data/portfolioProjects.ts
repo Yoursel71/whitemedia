@@ -144,16 +144,42 @@ export const portfolioProjects: PortfolioProject[] = [
     index: "05",
     slug: "gursoy-insaat",
     name: "Gürsoy İnşaat",
-    category: "İnşaat · Web & Reklam",
+    category: "İnşaat · Sosyal Medya & Reklam",
     summary:
-      "Markanın projelerini dijitalde daha güçlü sunmak için web ve reklam iletişimini ortak bir görsel dilde buluşturduk.",
-    services: ["Web tasarım", "Reklam kreatifleri", "Dijital marka iletişimi"],
+      "Markanın projelerini, yaşam alanlarını ve yaşam tarzı temasını güçlü görsel anlatımlarla sosyal medya içeriklerine dönüştürdük.",
+    services: ["Sosyal medya içeriği", "Reels prodüksiyonu", "Dijital marka iletişimi"],
     logo: "/logos/gursoy-insaat.png",
     logoAlt: "Gürsoy İnşaat logosu",
     logoShape: "wide",
     logoTreatment: "light",
     panel: "dark",
-    media: [],
+    media: [
+      {
+        src: "/work/gursoy-insaat/hafta-sonu-aktivitesi.mp4",
+        poster: "/work/gursoy-insaat/hafta-sonu-aktivitesi.webp",
+        title: "Hangi hafta sonu aktivitesi ruhunu yansıtıyor?",
+      },
+      {
+        src: "/work/gursoy-insaat/evinizi-renklendirmenin-5-yolu-1.mp4",
+        poster: "/work/gursoy-insaat/evinizi-renklendirmenin-5-yolu-1.webp",
+        title: "Evinizi renklendirmenin 5 kolay yolu — I",
+      },
+      {
+        src: "/work/gursoy-insaat/yasamin-renkleri-burada.mp4",
+        poster: "/work/gursoy-insaat/yasamin-renkleri-burada.webp",
+        title: "Yaşamın renkleri burada",
+      },
+      {
+        src: "/work/gursoy-insaat/evinizi-renklendirmenin-5-yolu-2.mp4",
+        poster: "/work/gursoy-insaat/evinizi-renklendirmenin-5-yolu-2.webp",
+        title: "Evinizi renklendirmenin 5 kolay yolu — II",
+      },
+      {
+        src: "/work/gursoy-insaat/yesilin-huzuru-gece-gunduz.mp4",
+        poster: "/work/gursoy-insaat/yesilin-huzuru-gece-gunduz.webp",
+        title: "Yeşilin huzurunu gece gündüz yaşayın",
+      },
+    ],
   },
   {
     index: "06",
