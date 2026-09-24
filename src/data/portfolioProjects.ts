@@ -251,7 +251,33 @@ export const portfolioProjects: PortfolioProject[] = [
     logoShape: "wide",
     logoTreatment: "light",
     panel: "dark",
-    media: [video(4, "Mutfak ve ürün prodüksiyonu")],
+    media: [
+      {
+        src: "/work/depaul/mini-burger-paul-special-pizza.mp4",
+        poster: "/work/depaul/mini-burger-paul-special-pizza.webp",
+        title: "Üçlü mini burger ve Paul Special pizza",
+      },
+      {
+        src: "/work/depaul/depaul-konum-tanitimi.mp4",
+        poster: "/work/depaul/depaul-konum-tanitimi.webp",
+        title: "Depaul Cafe konum tanıtımı",
+      },
+      {
+        src: "/work/depaul/cikolatali-tatli-sunumu.mp4",
+        poster: "/work/depaul/cikolatali-tatli-sunumu.webp",
+        title: "Çikolatalı tatlı hazırlığı ve sunumu",
+      },
+      {
+        src: "/work/depaul/paul-special-pizza-hazirligi.mp4",
+        poster: "/work/depaul/paul-special-pizza-hazirligi.webp",
+        title: "Paul Special pizza hazırlığı",
+      },
+      {
+        src: "/work/depaul/ramazan-iftar-menusu.mp4",
+        poster: "/work/depaul/ramazan-iftar-menusu.webp",
+        title: "Ramazan iftar menüsü tanıtımı",
+      },
+    ],
   },
   {
     index: "08",
