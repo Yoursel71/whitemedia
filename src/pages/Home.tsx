@@ -1,12 +1,8 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { AnimatedMarqueeHero } from "@/components/ui/hero-3";
-import { 
-  MedicalparkLogo, 
-  YamanlarLogo, 
-  TrabzonLogo,
-  ModatepeResortLogo
-} from "@/components/Logos";
+import BrandMark from "@/components/BrandMark";
+import { portfolioProjectBySlug } from "@/data/portfolioProjects";
 
 // Per-line slide-in for the hero title (staggered by the h1 in hero-3)
 const TITLE_LINE = {
@@ -41,6 +37,13 @@ const SERVICES = [
   { n: "05", name: "Meta Business Reklam Yönetimi", desc: "Instagram & Facebook performans reklamları." },
   { n: "06", name: "Web Sitesi Hizmetleri", desc: "Tasarım, geliştirme, bakım ve hız optimizasyonu." },
 ];
+
+const FEATURED_PROJECTS = [
+  "pesent-restaurant",
+  "depaul-cafe-restaurant",
+  "the-vera-cafe-restaurant",
+  "dk-gayrimenkul",
+].map((slug) => portfolioProjectBySlug[slug]);
 
 export default function Home() {
   return (
@@ -141,53 +144,30 @@ export default function Home() {
           </div>
 
           <div className="work" style={{ marginTop: 52 }}>
-            {/* Medicalpark — sağlık */}
-            <Link className="exhibit exhibit--wide reveal" to="/portfolyo">
-              <span className="exhibit__no">EX. 01</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <MedicalparkLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#ffffff" }} />
-              </div>
-              <div className="exhibit__bar">
-                <span className="exhibit__name">Medicalpark</span>
-                <span className="exhibit__tag">Sağlık · Sosyal Medya</span>
-              </div>
-            </Link>
+            {FEATURED_PROJECTS.map((project, position) => {
+              const isWide = position === 0 || position === FEATURED_PROJECTS.length - 1;
 
-            {/* Yamanlar Oto Ekspertiz */}
-            <Link className="exhibit reveal" to="/portfolyo">
-              <span className="exhibit__no">EX. 02</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <YamanlarLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#0a0a0a" }} />
-              </div>
-              <div className="exhibit__bar">
-                <span className="exhibit__name">Yamanlar Oto Ekspertiz</span>
-                <span className="exhibit__tag">Oto Ekspertiz · Reklam</span>
-              </div>
-            </Link>
-
-            {/* Trabzon Üniversitesi */}
-            <Link className="exhibit reveal" data-d="1" to="/portfolyo">
-              <span className="exhibit__no">EX. 03</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <TrabzonLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#ffffff" }} />
-              </div>
-              <div className="exhibit__bar">
-                <span className="exhibit__name">Trabzon Üniversitesi</span>
-                <span className="exhibit__tag">Eğitim · İçerik</span>
-              </div>
-            </Link>
-
-            {/* Modatepe Resort */}
-            <Link className="exhibit exhibit--wide reveal" to="/portfolyo">
-              <span className="exhibit__no">EX. 04</span>
-              <div className="exhibit__media" style={{ backgroundColor: "#f4f4f2", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px" }}>
-                <ModatepeResortLogo style={{ width: "auto", height: "auto", maxWidth: "60%", maxHeight: "55%", color: "#0a0a0a" }} />
-              </div>
-              <div className="exhibit__bar">
-                <span className="exhibit__name">Modatepe Resort</span>
-                <span className="exhibit__tag">Otel · Turizm</span>
-              </div>
-            </Link>
+              return (
+                <Link
+                  className={`exhibit${isWide ? " exhibit--wide" : ""} reveal`}
+                  data-d={position === 2 ? "1" : undefined}
+                  key={project.slug}
+                  to={`/portfolyo/${project.slug}`}
+                >
+                  <span className="exhibit__no">EX. {project.index}</span>
+                  <div className={`exhibit__media brand-panel brand-panel--${project.panel}`}>
+                    <BrandMark
+                      project={project}
+                      className={`brand-logo brand-logo--${project.logoShape}`}
+                    />
+                  </div>
+                  <div className="exhibit__bar">
+                    <span className="exhibit__name">{project.name}</span>
+                    <span className="exhibit__tag">{project.category}</span>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
