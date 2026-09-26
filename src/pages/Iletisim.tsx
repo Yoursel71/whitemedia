@@ -1,4 +1,7 @@
 import { FormEvent, useState } from "react";
+import { ArrowUpRight, Mail, MapPin, MessageCircle } from "lucide-react";
+import PageMeta from "@/components/PageMeta";
+import { SERVICE_CATALOG } from "@/data/services";
 import {
   getWhatsAppUrl,
   WHATSAPP_DISPLAY_NUMBER,
@@ -14,15 +17,7 @@ const EMPTY = {
   website: "", // honeypot
 };
 
-const SERVICES = [
-  "Sosyal Medya Yönetimi",
-  "Fotoğraf & Video Prodüksiyon",
-  "Drone Çekimi",
-  "Google Ads Yönetimi",
-  "Meta Business Reklam Yönetimi",
-  "Web Sitesi Hizmetleri",
-  "Diğer",
-];
+const SERVICES = [...SERVICE_CATALOG.map((service) => service.name), "Diğer"];
 
 const BUDGETS = [
   "₺10.000 altı",
@@ -88,6 +83,11 @@ export default function Iletisim() {
 
   return (
     <main>
+      <PageMeta
+        title="İletişim | White Media"
+        description="Markanızın sosyal medya, prodüksiyon, reklam veya web projesini White Media ekibine anlatın. Trabzon'dan Türkiye'nin her yerine hizmet."
+        path="/iletisim"
+      />
       <header className="page-hero">
         <div className="wrap">
           <p className="eyebrow reveal in">İletişim</p>
@@ -120,18 +120,14 @@ export default function Iletisim() {
             <div className="reveal">
               <div className="info-card">
                 <div className="info-card__icon">
-                  <span className="icon" style={{ fontSize: 22 }}>
-                    location_on
-                  </span>
+                  <MapPin size={22} aria-hidden="true" />
                 </div>
                 <h3>Konum</h3>
                 <p className="info-card__k">Trabzon, Türkiye</p>
               </div>
               <div className="info-card">
                 <div className="info-card__icon">
-                  <span className="icon" style={{ fontSize: 22 }}>
-                    mail
-                  </span>
+                  <Mail size={22} aria-hidden="true" />
                 </div>
                 <h3>E-posta</h3>
                 <p className="info-card__k">
@@ -146,9 +142,7 @@ export default function Iletisim() {
               </div>
               <div className="info-card">
                 <div className="info-card__icon">
-                  <span className="icon" style={{ fontSize: 22 }}>
-                    chat
-                  </span>
+                  <MessageCircle size={22} aria-hidden="true" />
                 </div>
                 <h3>WhatsApp</h3>
                 <p className="info-card__k">
@@ -179,11 +173,12 @@ export default function Iletisim() {
                       placeholder="Örn: Ayşe Yılmaz"
                       value={form.name}
                       onChange={set("name")}
+                      autoComplete="name"
                       required
                     />
                   </div>
                   <div className="field">
-                    <label htmlFor="email">Kurumsal E-posta</label>
+                    <label htmlFor="email">E-posta</label>
                     <input
                       id="email"
                       name="email"
@@ -191,6 +186,7 @@ export default function Iletisim() {
                       placeholder="ayse@sirketiniz.com"
                       value={form.email}
                       onChange={set("email")}
+                      autoComplete="email"
                       required
                     />
                   </div>
@@ -204,6 +200,7 @@ export default function Iletisim() {
                     placeholder="Örn: Nova Kozmetik"
                     value={form.brand}
                     onChange={set("brand")}
+                    autoComplete="organization"
                   />
                 </div>
                 <div className="field-row">
@@ -279,9 +276,7 @@ export default function Iletisim() {
                 <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 10 }}>
                   <button className="btn" type="submit" data-magnetic disabled={sending}>
                     <span>Mesajı gönder</span>
-                    <span className="icon" style={{ fontSize: 18 }}>
-                      arrow_outward
-                    </span>
+                    <ArrowUpRight className="button-icon" aria-hidden="true" />
                   </button>
                 </div>
                 <p

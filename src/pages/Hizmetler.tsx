@@ -1,13 +1,7 @@
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const SERVICES = [
-  { n: "01", name: "Sosyal Medya Yönetimi", desc: "Strateji, içerik takvimi, yayın, raporlama." },
-  { n: "02", name: "İçerik Üretimi", desc: "Reels, fotoğraf, motion grafik, metin." },
-  { n: "03", name: "Performans Reklamcılığı", desc: "Meta, Google, TikTok — ölçülebilir dönüşüm." },
-  { n: "04", name: "Marka Stratejisi", desc: "Konumlandırma, ton, görsel kimlik." },
-  { n: "05", name: "Influencer Pazarlama", desc: "Doğru isim, gerçek etkileşim, net sözleşme." },
-  { n: "06", name: "Topluluk Yönetimi", desc: "7/24 yanıt, kriz yönetimi, sadık kitle." },
-];
+import PageMeta from "@/components/PageMeta";
+import { SERVICE_CATALOG } from "@/data/services";
 
 const PROCESS = [
   { n: "01", title: "Dinleme", text: "Markanı, kitleni ve hedefini anlıyoruz. Veriyle başlıyoruz, varsayımla değil." },
@@ -19,6 +13,11 @@ const PROCESS = [
 export default function Hizmetler() {
   return (
     <main>
+      <PageMeta
+        title="Hizmetler | White Media Dijital Ajans"
+        description="Sosyal medya yönetimi, fotoğraf ve video prodüksiyon, drone çekimi, Google Ads, Meta reklamları ve web sitesi hizmetleri."
+        path="/hizmetler"
+      />
       <header className="page-hero">
         <div className="wrap">
           <p className="eyebrow reveal in">Hizmetler</p>
@@ -37,11 +36,11 @@ export default function Hizmetler() {
       <section className="section" style={{ paddingTop: 60 }}>
         <div className="wrap">
           <div className="srv" style={{ borderTop: 0 }}>
-            {SERVICES.map((s) => (
-              <div className="srv__row reveal" key={s.n}>
-                <span className="srv__num">{s.n}</span>
+            {SERVICE_CATALOG.map((s) => (
+              <div className="srv__row reveal" key={s.number}>
+                <span className="srv__num">{s.number}</span>
                 <span className="srv__name">{s.name}</span>
-                <span className="srv__desc">{s.desc}</span>
+                <span className="srv__desc">{s.description}</span>
               </div>
             ))}
           </div>
@@ -108,9 +107,7 @@ export default function Hizmetler() {
           <div className="reveal" data-d="2" style={{ marginTop: 42 }}>
             <Link className="btn" to="/iletisim#form" data-magnetic>
               <span>Teklif al</span>
-              <span className="icon" style={{ fontSize: 18 }}>
-                arrow_outward
-              </span>
+              <ArrowUpRight className="button-icon" aria-hidden="true" />
             </Link>
           </div>
         </div>

@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import { AnimatedMarqueeHero } from "@/components/ui/hero-3";
 import BrandMark from "@/components/BrandMark";
+import PageMeta from "@/components/PageMeta";
 import {
   portfolioProjectBySlug,
   portfolioProjects,
 } from "@/data/portfolioProjects";
+import { SERVICE_CATALOG } from "@/data/services";
 
 // Per-line slide-in for the hero title (staggered by the h1 in hero-3)
 const TITLE_LINE = {
@@ -25,20 +28,29 @@ const SHOWCASE_VIDEOS = Array.from(
 
 const TICKER = [
   { t: "Sosyal Medya", o: false },
-  { t: "İçerik", o: true },
-  { t: "Performans", o: false },
-  { t: "Strateji", o: true },
-  { t: "Influencer", o: false },
-  { t: "Topluluk", o: true },
+  { t: "Prodüksiyon", o: true },
+  { t: "Drone", o: false },
+  { t: "Google Ads", o: true },
+  { t: "Meta Ads", o: false },
+  { t: "Web Sitesi", o: true },
 ];
 
-const SERVICES = [
-  { n: "01", name: "Sosyal Medya Yönetimi", desc: "Strateji, içerik takvimi, yayın, topluluk." },
-  { n: "02", name: "Fotoğraf & Video Prodüksiyon", desc: "Reels, tanıtım filmi, ürün çekimi, kurgu." },
-  { n: "03", name: "Drone Çekimi", desc: "Havadan görüntü, mekan ve etkinlik çekimleri." },
-  { n: "04", name: "Google Ads Yönetimi", desc: "Arama, görüntülü ve YouTube kampanyaları." },
-  { n: "05", name: "Meta Business Reklam Yönetimi", desc: "Instagram & Facebook performans reklamları." },
-  { n: "06", name: "Web Sitesi Hizmetleri", desc: "Tasarım, geliştirme, bakım ve hız optimizasyonu." },
+const APPROACH = [
+  {
+    number: "01",
+    title: "Markaya özel yön",
+    text: "Her markayı aynı kalıba sokmadan sektörünü, hedefini ve kitlesini merkeze alırız.",
+  },
+  {
+    number: "02",
+    title: "Tek ekip, tek akış",
+    text: "Strateji, çekim, kurgu ve reklam birbirinden kopmadan aynı yönde ilerler.",
+  },
+  {
+    number: "03",
+    title: "Yayından sonra da devam",
+    text: "İçeriği yalnızca paylaşmayız; veriye bakar, sonraki üretimi geliştiririz.",
+  },
 ];
 
 const FEATURED_SLUGS = [
@@ -59,6 +71,11 @@ const OTHER_PROJECTS = portfolioProjects.filter(
 export default function Home() {
   return (
     <main>
+      <PageMeta
+        title="White Media | Sosyal Medya, Prodüksiyon ve Dijital Reklam"
+        description="White Media; sosyal medya yönetimi, fotoğraf ve video prodüksiyon, drone çekimi, dijital reklam ve web hizmetleri sunan Trabzon merkezli dijital ajans."
+        path="/"
+      />
       <AnimatedMarqueeHero
         title={
           <>
@@ -130,12 +147,46 @@ export default function Home() {
           </div>
 
           <div className="srv" style={{ marginTop: 52 }}>
-            {SERVICES.map((s) => (
-              <div className="srv__row reveal" key={s.n}>
-                <span className="srv__num">{s.n}</span>
+            {SERVICE_CATALOG.map((s) => (
+              <div className="srv__row reveal" key={s.number}>
+                <span className="srv__num">{s.number}</span>
                 <span className="srv__name">{s.name}</span>
-                <span className="srv__desc">{s.desc}</span>
+                <span className="srv__desc">{s.description}</span>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* APPROACH */}
+      <section className="section section--ink">
+        <div className="wrap">
+          <div className="approach-head">
+            <div className="reveal">
+              <p className="kicker">Çalışma yaklaşımımız</p>
+              <h2 className="display sec-title">
+                İyi iş,
+                <br />
+                iyi süreçle çıkar.
+              </h2>
+            </div>
+            <p className="approach-head__copy reveal" data-d="1">
+              İşin nasıl ilerlediğini baştan sona açık tutuyoruz: markayı
+              dinleyen, üretimi birleştiren ve sonucu takip eden bir süreç.
+            </p>
+          </div>
+
+          <div className="approach-grid">
+            {APPROACH.map((item, index) => (
+              <article
+                className="approach-card reveal"
+                data-d={String(index)}
+                key={item.number}
+              >
+                <span className="approach-card__number">{item.number}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
             ))}
           </div>
         </div>
@@ -235,9 +286,7 @@ export default function Home() {
           <div className="reveal" data-d="2" style={{ marginTop: 42 }}>
             <Link className="btn" to="/iletisim#form" data-magnetic>
               <span>Projeni anlat</span>
-              <span className="icon" style={{ fontSize: 18 }}>
-                arrow_outward
-              </span>
+              <ArrowUpRight className="button-icon" aria-hidden="true" />
             </Link>
           </div>
         </div>

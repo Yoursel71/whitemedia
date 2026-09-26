@@ -1,5 +1,7 @@
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import BrandMark from "@/components/BrandMark";
+import PageMeta from "@/components/PageMeta";
 import ProjectVideo from "@/components/ProjectVideo";
 import { portfolioProjectBySlug } from "@/data/portfolioProjects";
 
@@ -10,12 +12,18 @@ export default function ProjeDetay() {
   if (!project) {
     return (
       <main className="case-not-found">
+        <PageMeta
+          title="Proje Bulunamadı | White Media"
+          description="Aradığınız portfolyo projesi bulunamadı. White Media portfolyosundaki diğer işleri inceleyin."
+          path={`/portfolyo/${slug}`}
+          noIndex
+        />
         <div className="wrap">
           <p className="eyebrow">404</p>
           <h1 className="display">Proje bulunamadı.</h1>
           <Link className="btn" to="/portfolyo">
+            <ArrowLeft className="button-icon" aria-hidden="true" />
             <span>Portfolyoya dön</span>
-            <span className="icon">arrow_back</span>
           </Link>
         </div>
       </main>
@@ -24,6 +32,12 @@ export default function ProjeDetay() {
 
   return (
     <main>
+      <PageMeta
+        title={`${project.name} | White Media Portfolyo`}
+        description={project.summary}
+        path={`/portfolyo/${project.slug}`}
+        type="article"
+      />
       <header className="case-hero">
         <div className="wrap">
           <Link className="case-back ul" to="/portfolyo">
@@ -102,7 +116,7 @@ export default function ProjeDetay() {
           <div className="reveal" data-d="2" style={{ marginTop: 42 }}>
             <Link className="btn" to="/iletisim#form" data-magnetic>
               <span>Projeni anlat</span>
-              <span className="icon">arrow_outward</span>
+              <ArrowUpRight className="button-icon" aria-hidden="true" />
             </Link>
           </div>
         </div>
