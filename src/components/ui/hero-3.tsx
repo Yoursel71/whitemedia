@@ -21,7 +21,7 @@ const MotionLink = motion(Link);
 
 const ActionButton = ({
   children,
-  href = "/iletisim",
+  href = "/iletisim#form",
 }: {
   children: React.ReactNode;
   href?: string;
