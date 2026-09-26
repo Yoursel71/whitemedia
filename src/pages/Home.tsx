@@ -183,10 +183,8 @@ export default function Home() {
 
           <div className="brand-proof reveal">
             <div className="brand-proof__stat">
-              <span className="brand-proof__count">
-                {String(portfolioProjects.length).padStart(2, "0")}
-              </span>
-              <span className="brand-proof__label">marka ile ürettik.</span>
+              <span className="brand-proof__eyebrow">Vitrinin devamı</span>
+              <h3 className="brand-proof__title">Daha fazlası.</h3>
             </div>
             <p className="brand-proof__copy">
               Vitrindeki dört iş yalnızca seçki. Sağlıktan eğitime, otomotivden
@@ -197,7 +195,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="brand-rail reveal" data-d="1" aria-label="Diğer çalıştığımız markalar">
+          <div className="brand-rail reveal" data-d="1" aria-label="Birlikte çalıştığımız diğer markalar">
             <div className="brand-rail__track">
               {[0, 1].map((group) => (
                 <div
