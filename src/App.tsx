@@ -8,6 +8,7 @@ import Hizmetler from "@/pages/Hizmetler";
 import Portfolyo from "@/pages/Portfolyo";
 import ProjeDetay from "@/pages/ProjeDetay";
 import Iletisim from "@/pages/Iletisim";
+import NotFound from "@/pages/NotFound";
 
 function Layout() {
   usePageEffects();
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/portfolyo" element={<Portfolyo />} />
         <Route path="/portfolyo/:slug" element={<ProjeDetay />} />
         <Route path="/iletisim" element={<Iletisim />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );
