@@ -49,7 +49,7 @@ export default function Nav() {
             ))}
           </div>
           <div className="nav__right">
-            <Link className="btn nav__cta" to="/iletisim" data-magnetic>
+            <Link className="btn nav__cta" to="/iletisim#form" data-magnetic>
               <span>Teklif Al</span>
             </Link>
             <button

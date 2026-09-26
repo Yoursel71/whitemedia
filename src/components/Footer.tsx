@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function Footer() {
   return (
@@ -36,6 +37,9 @@ export default function Footer() {
             <h4>Sosyal</h4>
             <a className="ul" href="https://www.instagram.com/whitemedia_tr/" target="_blank" rel="noreferrer">
               Instagram
+            </a>
+            <a className="ul" href={getWhatsAppUrl()} target="_blank" rel="noreferrer">
+              WhatsApp
             </a>
           </div>
         </div>
