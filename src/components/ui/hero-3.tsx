@@ -1,11 +1,9 @@
-"use client";
-
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { cn } from "@/lib/utils"; // Assuming you have a `cn` utility from shadcn
+import { cn } from "@/lib/utils";
 
-// Props interface for the component
 interface AnimatedMarqueeHeroProps {
   tagline?: string;
   title: React.ReactNode;
@@ -16,7 +14,6 @@ interface AnimatedMarqueeHeroProps {
   className?: string;
 }
 
-// Reusable Button — monochrome to match the WhiteMedia palette (--ink / --paper)
 const MotionLink = motion(Link);
 
 const ActionButton = ({
@@ -28,15 +25,78 @@ const ActionButton = ({
 }) => (
   <MotionLink
     to={href}
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    className="mt-8 inline-block px-8 py-3 rounded-full bg-foreground text-background font-semibold shadow-lg transition-colors hover:bg-foreground/85 focus:outline-none focus:ring-2 focus:ring-foreground/40 focus:ring-offset-2 focus:ring-offset-background"
+    className="btn hero-marquee__cta"
+    data-magnetic
   >
-    {children}
+    <span>{children}</span>
+    <ArrowUpRight className="button-icon" aria-hidden="true" />
   </MotionLink>
 );
 
-// The main hero component
+function getPoster(src: string) {
+  const match = src.match(/\/videos\/clip-(\d+)\.mp4$/);
+  return match ? `/work/posters/clip-${match[1]}.webp` : undefined;
+}
+
+function MarqueeVideo({ src }: { src: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const loadedRef = useRef(false);
+  const visibleRef = useRef(false);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (!("IntersectionObserver" in window)) {
+      visibleRef.current = true;
+      loadedRef.current = true;
+      setLoaded(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        visibleRef.current = entry.isIntersecting;
+        if (entry.isIntersecting) {
+          if (!loadedRef.current) {
+            loadedRef.current = true;
+            setLoaded(true);
+          } else {
+            videoRef.current?.play().catch(() => undefined);
+          }
+        } else {
+          videoRef.current?.pause();
+        }
+      },
+      { rootMargin: "280px" }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (loaded && visibleRef.current) {
+      videoRef.current?.play().catch(() => undefined);
+    }
+  }, [loaded]);
+
+  return (
+    <video
+      ref={videoRef}
+      src={loaded ? src : undefined}
+      poster={getPoster(src)}
+      muted
+      loop
+      playsInline
+      preload="none"
+      aria-hidden="true"
+      className="w-full h-full object-cover rounded-2xl shadow-md"
+    />
+  );
+}
+
 export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
   tagline,
   title,
@@ -46,7 +106,6 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
   videos,
   className,
 }) => {
-  // Animation variants for the text content
   const FADE_IN_ANIMATION_VARIANTS = {
     hidden: { opacity: 0, y: 24 },
     show: {
@@ -56,7 +115,6 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
     },
   };
 
-  // Duplicate clips for a seamless loop
   const duplicatedVideos = [...videos, ...videos];
 
   return (
@@ -67,7 +125,6 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
       )}
     >
       <div className="z-10 flex flex-col items-center">
-        {/* Tagline */}
         {tagline && (
           <motion.div
             initial="hidden"
@@ -79,7 +136,6 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           </motion.div>
         )}
 
-        {/* Main Title */}
         <motion.h1
           initial="hidden"
           animate="show"
@@ -93,7 +149,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           }}
           className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground"
         >
-          {typeof title === 'string' ? (
+          {typeof title === "string" ? (
             title.split(" ").map((word, i) => (
               <motion.span
                 key={i}
@@ -108,7 +164,6 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           )}
         </motion.h1>
 
-        {/* Description */}
         <motion.p
           initial="hidden"
           animate="show"
@@ -119,7 +174,6 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           {description}
         </motion.p>
 
-        {/* Call to Action Button */}
         <motion.div
           initial="hidden"
           animate="show"
@@ -130,7 +184,6 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
         </motion.div>
       </div>
 
-      {/* Animated Video Marquee — sliding showcase reels */}
       <div className="absolute bottom-0 left-0 w-full h-1/3 md:h-2/5 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]">
         <motion.div
           className="flex gap-4"
@@ -151,15 +204,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
                 rotate: `${index % 2 === 0 ? -2 : 5}deg`,
               }}
             >
-              <video
-                src={src}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                className="w-full h-full object-cover rounded-2xl shadow-md"
-              />
+              <MarqueeVideo src={src} />
             </div>
           ))}
         </motion.div>
