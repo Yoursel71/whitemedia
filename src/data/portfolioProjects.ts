@@ -292,7 +292,49 @@ export const portfolioProjects: PortfolioProject[] = [
     logoShape: "square",
     logoTreatment: "dark",
     panel: "light",
-    media: [video(7, "İçecek prodüksiyonu"), video(14, "Mekân ve ürün içeriği")],
+    media: [
+      {
+        src: "/work/the-vera/ferahlatici-icecek-uclusu.mp4",
+        poster: "/work/the-vera/ferahlatici-icecek-uclusu.webp",
+        title: "Ferahlatıcı içecek üçlüsü",
+      },
+      video(14, "Mekân ve ürün içeriği"),
+      {
+        src: "/work/the-vera/orman-meyveli-icecek-sunumu.mp4",
+        poster: "/work/the-vera/orman-meyveli-icecek-sunumu.webp",
+        title: "Orman meyveli içecek sunumu",
+      },
+      {
+        src: "/work/the-vera/vera-special-bubble-cool-lime-smoothie.mp4",
+        poster: "/work/the-vera/vera-special-bubble-cool-lime-smoothie.webp",
+        title: "Vera Special Bubble, Cool Lime ve smoothie",
+      },
+      {
+        src: "/work/the-vera/mutfaktan-masaya-makarna.mp4",
+        poster: "/work/the-vera/mutfaktan-masaya-makarna.webp",
+        title: "Mutfaktan masaya makarna deneyimi",
+      },
+      {
+        src: "/work/the-vera/pizza-ve-icecek-sunumu.mp4",
+        poster: "/work/the-vera/pizza-ve-icecek-sunumu.webp",
+        title: "Pizza ve içecek sunumu",
+      },
+      {
+        src: "/work/the-vera/serpme-kahvalti-deneyimi.mp4",
+        poster: "/work/the-vera/serpme-kahvalti-deneyimi.webp",
+        title: "The Vera serpme kahvaltı deneyimi",
+      },
+      {
+        src: "/work/the-vera/meyveli-cikolatali-tatli-hazirligi.mp4",
+        poster: "/work/the-vera/meyveli-cikolatali-tatli-hazirligi.webp",
+        title: "Meyveli ve çikolatalı tatlı hazırlığı ve sunumu",
+      },
+      {
+        src: "/work/the-vera/lezzet-ve-mekan-tanitimi.mp4",
+        poster: "/work/the-vera/lezzet-ve-mekan-tanitimi.webp",
+        title: "The Vera lezzet ve mekân tanıtımı",
+      },
+    ],
   },
   {
     index: "09",
