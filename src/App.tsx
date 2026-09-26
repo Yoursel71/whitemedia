@@ -1,6 +1,7 @@
 import { Outlet, Route, Routes } from "react-router-dom";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { usePageEffects } from "@/hooks/usePageEffects";
 import Home from "@/pages/Home";
 import Hizmetler from "@/pages/Hizmetler";
@@ -15,6 +16,7 @@ function Layout() {
       <Nav />
       <Outlet />
       <Footer />
+      <WhatsAppFloat />
     </>
   );
 }
