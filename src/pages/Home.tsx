@@ -39,10 +39,10 @@ const SERVICES = [
 ];
 
 const FEATURED_PROJECTS = [
-  "pesent-restaurant",
-  "depaul-cafe-restaurant",
+  "medicalpark",
+  "trabzon-universitesi",
+  "yamanlar-oto-ekspertiz",
   "the-vera-cafe-restaurant",
-  "dk-gayrimenkul",
 ].map((slug) => portfolioProjectBySlug[slug]);
 
 export default function Home() {
