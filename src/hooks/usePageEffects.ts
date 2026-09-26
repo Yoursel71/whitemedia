@@ -44,7 +44,15 @@ export function usePageEffects() {
   // reveal + counters + magnetic — re-run per route
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.scrollTo(0, 0);
+    if (location.hash) {
+      requestAnimationFrame(() => {
+        document
+          .getElementById(decodeURIComponent(location.hash.slice(1)))
+          ?.scrollIntoView({ block: "start" });
+      });
+    } else {
+      window.scrollTo(0, 0);
+    }
 
     const cleanups: Array<() => void> = [];
 
@@ -128,5 +136,5 @@ export function usePageEffects() {
     }
 
     return () => cleanups.forEach((fn) => fn());
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 }
