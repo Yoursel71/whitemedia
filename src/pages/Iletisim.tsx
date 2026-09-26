@@ -28,6 +28,13 @@ const BUDGETS = [
   "₺100.000+",
 ];
 
+const WHATSAPP_MESSAGE =
+  "Merhaba White Media, web siteniz üzerinden ulaşıyorum. Markam için hizmetleriniz hakkında bilgi ve teklif almak istiyorum. Uygun olduğunuzda proje detaylarını paylaşabilir miyim?";
+
+const WHATSAPP_URL = `https://wa.me/905367864959?text=${encodeURIComponent(
+  WHATSAPP_MESSAGE
+)}`;
+
 export default function Iletisim() {
   const [form, setForm] = useState(EMPTY);
   const [note, setNote] = useState("");
@@ -142,17 +149,20 @@ export default function Iletisim() {
               <div className="info-card">
                 <div className="info-card__icon">
                   <span className="icon" style={{ fontSize: 22 }}>
-                    call
+                    chat
                   </span>
                 </div>
-                <h3>Telefon</h3>
+                <h3>WhatsApp</h3>
                 <p className="info-card__k">
                   <a
                     className="ul"
-                    href="tel:+905367864959"
-                    style={{ color: "var(--ink)", fontWeight: 500 }}
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="+90 536 786 49 59 numarasına WhatsApp'tan yaz"
+                    style={{ color: "inherit", fontWeight: 500 }}
                   >
-                    +90 536 786 49 59
+                    +90 536 786 49 59 ↗
                   </a>
                 </p>
               </div>
