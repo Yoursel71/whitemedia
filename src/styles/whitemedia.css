@@ -136,6 +136,16 @@ a {
   transform: scale(.98);
 }
 
+.button-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+}
+
+.hero-marquee__cta {
+  margin-top: 32px;
+}
+
 .btn-ghost {
   background: transparent;
   color: var(--ink);
@@ -392,11 +402,11 @@ a {
 .reveal {
   opacity: 0;
   transform: translateY(34px);
-  filter: blur(12px);
+  filter: blur(8px);
   transition:
-    opacity .9s var(--ease),
-    transform 1.1s var(--ease),
-    filter .9s var(--ease);
+    opacity .65s var(--ease),
+    transform .75s var(--ease),
+    filter .65s var(--ease);
   will-change: opacity, transform, filter;
 }
 
@@ -624,6 +634,20 @@ a {
   background: var(--mist);
 }
 
+.section--ink {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.section--ink .kicker {
+  color: rgba(255, 255, 255, .55);
+}
+
+.section--ink ::selection {
+  background: var(--paper);
+  color: var(--ink);
+}
+
 .sec-head {
   display: flex;
   flex-wrap: wrap;
@@ -749,6 +773,87 @@ a {
   color: var(--muted);
   max-width: 320px;
   text-align: right;
+}
+
+/* agency approach */
+.approach-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+  gap: clamp(40px, 9vw, 120px);
+  align-items: end;
+}
+
+.approach-head__copy {
+  max-width: 520px;
+  margin: 0 0 8px;
+  color: rgba(255, 255, 255, .66);
+  font-size: clamp(16px, 1.8vw, 20px);
+  line-height: 1.65;
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(52px, 7vw, 88px);
+  border-top: 1px solid rgba(255, 255, 255, .24);
+  border-bottom: 1px solid rgba(255, 255, 255, .24);
+}
+
+.approach-card {
+  min-height: 300px;
+  padding: clamp(28px, 4vw, 46px);
+  border-right: 1px solid rgba(255, 255, 255, .24);
+}
+
+.approach-card:last-child {
+  border-right: 0;
+}
+
+.approach-card__number {
+  color: rgba(255, 255, 255, .46);
+  font-size: 11px;
+  letter-spacing: .14em;
+}
+
+.approach-card h3 {
+  max-width: 10ch;
+  margin: 64px 0 16px;
+  font-size: clamp(24px, 2.5vw, 36px);
+  letter-spacing: -.035em;
+  line-height: 1.08;
+}
+
+.approach-card p {
+  max-width: 32ch;
+  margin: 0;
+  color: rgba(255, 255, 255, .62);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .approach-head {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .approach-card {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .24);
+  }
+
+  .approach-card:last-child {
+    border-bottom: 0;
+  }
+
+  .approach-card h3 {
+    margin-top: 34px;
+  }
 }
 
 @media (max-width: 720px) {
@@ -904,6 +1009,17 @@ a {
 .collab-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
+}
+
+.collaborations-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: var(--mist);
+  color: var(--ink);
+}
+
+.collaborations-title {
+  margin-bottom: 40px;
 }
 
 .collab-card {
@@ -1675,13 +1791,6 @@ a {
   }
 }
 
-.icon {
-  font-family: "Material Symbols Outlined";
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1;
-}
-
 /* ============================================================
    Small phones
    ============================================================ */
@@ -1720,6 +1829,20 @@ a {
     width: 100%;
     justify-content: center;
     padding: 16px 22px;
+  }
+
+  .hero-marquee__cta {
+    width: auto;
+  }
+
+  .exhibit__bar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .exhibit__tag {
+    line-height: 1.5;
   }
 
   .nav__cta {
