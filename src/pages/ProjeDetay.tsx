@@ -100,7 +100,7 @@ export default function ProjeDetay() {
             büyütelim.
           </h2>
           <div className="reveal" data-d="2" style={{ marginTop: 42 }}>
-            <Link className="btn" to="/iletisim" data-magnetic>
+            <Link className="btn" to="/iletisim#form" data-magnetic>
               <span>Projeni anlat</span>
               <span className="icon">arrow_outward</span>
             </Link>

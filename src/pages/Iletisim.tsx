@@ -1,4 +1,8 @@
 import { FormEvent, useState } from "react";
+import {
+  getWhatsAppUrl,
+  WHATSAPP_DISPLAY_NUMBER,
+} from "@/lib/whatsapp";
 
 const EMPTY = {
   name: "",
@@ -27,22 +31,6 @@ const BUDGETS = [
   "₺50.000 – ₺100.000",
   "₺100.000+",
 ];
-
-const WHATSAPP_MESSAGE =
-  "Merhaba White Media, web siteniz üzerinden ulaşıyorum. Markam için hizmetleriniz hakkında bilgi ve teklif almak istiyorum. Uygun olduğunuzda proje detaylarını paylaşabilir miyim?";
-
-const getWhatsAppUrl = () => {
-  const isMobile =
-    typeof navigator !== "undefined" &&
-    /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
-  const endpoint = isMobile
-    ? "https://api.whatsapp.com/send"
-    : "https://web.whatsapp.com/send";
-
-  return `${endpoint}?phone=905367864959&text=${encodeURIComponent(
-    WHATSAPP_MESSAGE
-  )}`;
-};
 
 export default function Iletisim() {
   const whatsappUrl = getWhatsAppUrl();
@@ -172,7 +160,7 @@ export default function Iletisim() {
                     aria-label="+90 536 786 49 59 numarasına WhatsApp'tan yaz"
                     style={{ color: "inherit", fontWeight: 500 }}
                   >
-                    +90 536 786 49 59 ↗
+                    {WHATSAPP_DISPLAY_NUMBER} ↗
                   </a>
                 </p>
               </div>

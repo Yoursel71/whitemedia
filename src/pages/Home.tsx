@@ -73,7 +73,7 @@ export default function Home() {
         }
         description="Strateji, içerik ve reklamı tek ekipte topluyoruz. Markanı kalabalıkta fark edilen, hatırlanan ve satan bir sahneye çeviriyoruz."
         ctaText="Teklif Al"
-        ctaHref="/iletisim"
+        ctaHref="/iletisim#form"
         videos={SHOWCASE_VIDEOS}
       />
 
@@ -233,7 +233,7 @@ export default function Home() {
             dolduralım.
           </h2>
           <div className="reveal" data-d="2" style={{ marginTop: 42 }}>
-            <Link className="btn" to="/iletisim" data-magnetic>
+            <Link className="btn" to="/iletisim#form" data-magnetic>
               <span>Projeni anlat</span>
               <span className="icon" style={{ fontSize: 18 }}>
                 arrow_outward

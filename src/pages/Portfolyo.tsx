@@ -268,7 +268,7 @@ export default function Portfolyo() {
             buraya koyalım.
           </h2>
           <div className="reveal" data-d="2" style={{ marginTop: 42 }}>
-            <Link className="btn" to="/iletisim" data-magnetic>
+            <Link className="btn" to="/iletisim#form" data-magnetic>
               <span>Projeni anlat</span>
               <span className="icon" style={{ fontSize: 18 }}>
                 arrow_outward

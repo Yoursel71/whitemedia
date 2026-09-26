@@ -106,7 +106,7 @@ export default function Hizmetler() {
             paketi kuralım.
           </h2>
           <div className="reveal" data-d="2" style={{ marginTop: 42 }}>
-            <Link className="btn" to="/iletisim" data-magnetic>
+            <Link className="btn" to="/iletisim#form" data-magnetic>
               <span>Teklif al</span>
               <span className="icon" style={{ fontSize: 18 }}>
                 arrow_outward
