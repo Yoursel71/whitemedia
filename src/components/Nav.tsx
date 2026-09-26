@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
 const LINKS = [
@@ -54,13 +55,16 @@ export default function Nav() {
             </Link>
             <button
               className="nav__burger"
-              aria-label="Menü"
+              aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
               aria-expanded={open}
+              aria-controls="mobile-menu"
               onClick={() => setOpen((v) => !v)}
             >
-              <span className="icon" style={{ fontSize: 30 }}>
-                {open ? "close" : "menu"}
-              </span>
+              {open ? (
+                <X size={30} aria-hidden="true" />
+              ) : (
+                <Menu size={30} aria-hidden="true" />
+              )}
             </button>
           </div>
         </div>
@@ -68,12 +72,15 @@ export default function Nav() {
       </nav>
 
       <div
+        id="mobile-menu"
         className={open ? "sheet open" : "sheet"}
         role="dialog"
         aria-label="Menü"
+        aria-hidden={!open}
+        aria-modal={open || undefined}
       >
         {LINKS.map((l) => (
-          <Link key={l.to} to={l.to}>
+          <Link key={l.to} to={l.to} tabIndex={open ? 0 : -1}>
             <span>{l.label}</span>
             <span className="idx">{l.idx}</span>
           </Link>
