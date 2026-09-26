@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { AnimatedMarqueeHero } from "@/components/ui/hero-3";
 import BrandMark from "@/components/BrandMark";
-import { portfolioProjectBySlug } from "@/data/portfolioProjects";
+import {
+  portfolioProjectBySlug,
+  portfolioProjects,
+} from "@/data/portfolioProjects";
 
 // Per-line slide-in for the hero title (staggered by the h1 in hero-3)
 const TITLE_LINE = {
@@ -38,12 +41,20 @@ const SERVICES = [
   { n: "06", name: "Web Sitesi Hizmetleri", desc: "Tasarım, geliştirme, bakım ve hız optimizasyonu." },
 ];
 
-const FEATURED_PROJECTS = [
+const FEATURED_SLUGS = [
   "medicalpark",
   "trabzon-universitesi",
   "yamanlar-oto-ekspertiz",
   "the-vera-cafe-restaurant",
-].map((slug) => portfolioProjectBySlug[slug]);
+];
+
+const FEATURED_PROJECTS = FEATURED_SLUGS.map(
+  (slug) => portfolioProjectBySlug[slug]
+);
+
+const OTHER_PROJECTS = portfolioProjects.filter(
+  (project) => !FEATURED_SLUGS.includes(project.slug)
+);
 
 export default function Home() {
   return (
@@ -168,6 +179,48 @@ export default function Home() {
                 </Link>
               );
             })}
+          </div>
+
+          <div className="brand-proof reveal">
+            <div className="brand-proof__stat">
+              <span className="brand-proof__count">
+                {String(portfolioProjects.length).padStart(2, "0")}
+              </span>
+              <span className="brand-proof__label">marka ile ürettik.</span>
+            </div>
+            <p className="brand-proof__copy">
+              Vitrindeki dört iş yalnızca seçki. Sağlıktan eğitime, otomotivden
+              turizme uzanan farklı sektörlerde markalarla birlikte çalıştık.
+            </p>
+            <Link className="brand-proof__link" to="/portfolyo">
+              TÜM MARKALARI GÖR <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+
+          <div className="brand-rail reveal" data-d="1" aria-label="Diğer çalıştığımız markalar">
+            <div className="brand-rail__track">
+              {[0, 1].map((group) => (
+                <div
+                  className="brand-rail__group"
+                  aria-hidden={group === 1 ? "true" : undefined}
+                  key={group}
+                >
+                  {OTHER_PROJECTS.map((project) => (
+                    <Link
+                      className="brand-rail__item"
+                      key={`${group}-${project.slug}`}
+                      tabIndex={group === 1 ? -1 : undefined}
+                      to={`/portfolyo/${project.slug}`}
+                    >
+                      <span className="brand-rail__name">{project.name}</span>
+                      <span className="brand-rail__sector">
+                        {project.category.split("·")[0].trim()}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
