@@ -298,7 +298,6 @@ export const portfolioProjects: PortfolioProject[] = [
         poster: "/work/the-vera/ferahlatici-icecek-uclusu.webp",
         title: "Ferahlatıcı içecek üçlüsü",
       },
-      video(14, "Mekân ve ürün içeriği"),
       {
         src: "/work/the-vera/orman-meyveli-icecek-sunumu.mp4",
         poster: "/work/the-vera/orman-meyveli-icecek-sunumu.webp",
@@ -333,6 +332,36 @@ export const portfolioProjects: PortfolioProject[] = [
         src: "/work/the-vera/lezzet-ve-mekan-tanitimi.mp4",
         poster: "/work/the-vera/lezzet-ve-mekan-tanitimi.webp",
         title: "The Vera lezzet ve mekân tanıtımı",
+      },
+      {
+        src: "/work/the-vera/paket-servis-hazirligi-ve-teslimati.mp4",
+        poster: "/work/the-vera/paket-servis-hazirligi-ve-teslimati.webp",
+        title: "Paket servis hazırlığı ve teslimatı",
+      },
+      {
+        src: "/work/the-vera/paket-icecek-ve-soguk-kahve-sunumu.mp4",
+        poster: "/work/the-vera/paket-icecek-ve-soguk-kahve-sunumu.webp",
+        title: "Paket içecek ve soğuk kahve sunumu",
+      },
+      {
+        src: "/work/the-vera/tavuk-durum-hazirligi-ve-sunumu.mp4",
+        poster: "/work/the-vera/tavuk-durum-hazirligi-ve-sunumu.webp",
+        title: "Tavuk dürüm hazırlığı ve sunumu",
+      },
+      {
+        src: "/work/the-vera/meyveli-cikolatali-tatli-kasesi.mp4",
+        poster: "/work/the-vera/meyveli-cikolatali-tatli-kasesi.webp",
+        title: "Meyveli çikolatalı tatlı kasesi",
+      },
+      {
+        src: "/work/the-vera/latte-hazirligi-ve-sunumu.mp4",
+        poster: "/work/the-vera/latte-hazirligi-ve-sunumu.webp",
+        title: "Latte hazırlığı ve sunumu",
+      },
+      {
+        src: "/work/the-vera/cilekli-tatli-hazirligi-ve-sunumu.mp4",
+        poster: "/work/the-vera/cilekli-tatli-hazirligi-ve-sunumu.webp",
+        title: "Çilekli tatlı hazırlığı ve sunumu",
       },
     ],
   },
