@@ -31,11 +31,21 @@ const BUDGETS = [
 const WHATSAPP_MESSAGE =
   "Merhaba White Media, web siteniz üzerinden ulaşıyorum. Markam için hizmetleriniz hakkında bilgi ve teklif almak istiyorum. Uygun olduğunuzda proje detaylarını paylaşabilir miyim?";
 
-const WHATSAPP_URL = `https://wa.me/905367864959?text=${encodeURIComponent(
-  WHATSAPP_MESSAGE
-)}`;
+const getWhatsAppUrl = () => {
+  const isMobile =
+    typeof navigator !== "undefined" &&
+    /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+  const endpoint = isMobile
+    ? "https://api.whatsapp.com/send"
+    : "https://web.whatsapp.com/send";
+
+  return `${endpoint}?phone=905367864959&text=${encodeURIComponent(
+    WHATSAPP_MESSAGE
+  )}`;
+};
 
 export default function Iletisim() {
+  const whatsappUrl = getWhatsAppUrl();
   const [form, setForm] = useState(EMPTY);
   const [note, setNote] = useState("");
   const [noteInk, setNoteInk] = useState(false); // true = --ink, false = --muted
@@ -156,7 +166,7 @@ export default function Iletisim() {
                 <p className="info-card__k">
                   <a
                     className="ul"
-                    href={WHATSAPP_URL}
+                    href={whatsappUrl}
                     target="_blank"
                     rel="noreferrer"
                     aria-label="+90 536 786 49 59 numarasına WhatsApp'tan yaz"
