@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import {
+  copyProjectInquiryMessage,
+  INSTAGRAM_DM_URL,
+} from "@/lib/contact";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function Footer() {
@@ -35,7 +39,14 @@ export default function Footer() {
           </div>
           <div className="foot__col">
             <h4>Sosyal</h4>
-            <a className="ul" href="https://www.instagram.com/whitemedia_tr/" target="_blank" rel="noreferrer">
+            <a
+              className="ul"
+              href={INSTAGRAM_DM_URL}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => void copyProjectInquiryMessage()}
+              aria-label="Hazır proje mesajını kopyala ve Instagram'da White Media'ya yaz"
+            >
               Instagram
             </a>
             <a className="ul" href={getWhatsAppUrl()} target="_blank" rel="noreferrer">
