@@ -208,6 +208,119 @@ a {
   letter-spacing: .01em;
 }
 
+/* Instagram ready-message handoff */
+.instagram-contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(10, 10, 10, .76);
+  backdrop-filter: blur(8px);
+}
+
+.instagram-contact-dialog {
+  position: relative;
+  width: min(640px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  padding: clamp(28px, 5vw, 52px);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, .32);
+}
+
+.instagram-contact-dialog h2 {
+  margin: 14px 52px 0 0;
+  font-size: clamp(34px, 6vw, 64px);
+  line-height: .98;
+  letter-spacing: -.045em;
+}
+
+.instagram-contact-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background .25s var(--ease), color .25s var(--ease);
+}
+
+.instagram-contact-close:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.instagram-contact-description {
+  max-width: 520px;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.instagram-contact-message {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  background: rgba(10, 10, 10, .035);
+  white-space: pre-wrap;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.instagram-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.instagram-contact-actions .btn {
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .instagram-contact-modal {
+    align-items: end;
+    padding: 0;
+  }
+
+  .instagram-contact-dialog {
+    width: 100%;
+    max-height: 92vh;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    padding: 30px 20px 24px;
+  }
+
+  .instagram-contact-dialog h2 {
+    margin-right: 44px;
+  }
+
+  .instagram-contact-message {
+    max-height: 180px;
+    overflow-y: auto;
+  }
+
+  .instagram-contact-actions {
+    flex-direction: column;
+  }
+
+  .instagram-contact-actions .btn {
+    width: 100%;
+  }
+}
+
 .whatsapp-float__copy small {
   margin-top: 4px;
   color: currentColor;
