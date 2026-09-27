@@ -3,7 +3,10 @@ import { Link, useParams } from "react-router-dom";
 import BrandMark from "@/components/BrandMark";
 import PageMeta from "@/components/PageMeta";
 import ProjectVideo from "@/components/ProjectVideo";
-import { portfolioProjectBySlug } from "@/data/portfolioProjects";
+import {
+  portfolioProjectBySlug,
+  portfolioProjects,
+} from "@/data/portfolioProjects";
 
 export default function ProjeDetay() {
   const { slug = "" } = useParams();
@@ -29,6 +32,17 @@ export default function ProjeDetay() {
       </main>
     );
   }
+
+  const projectsWithWork = portfolioProjects.filter(
+    (portfolioProject) => portfolioProject.media.length > 0
+  );
+  const currentPosition = projectsWithWork.findIndex(
+    (portfolioProject) => portfolioProject.slug === project.slug
+  );
+  const nextProject =
+    currentPosition >= 0
+      ? projectsWithWork[(currentPosition + 1) % projectsWithWork.length]
+      : projectsWithWork[0];
 
   return (
     <main>
@@ -104,6 +118,26 @@ export default function ProjeDetay() {
           )}
         </div>
       </section>
+
+      {nextProject && nextProject.slug !== project.slug ? (
+        <section className="case-next">
+          <div className="wrap">
+            <Link
+              className="case-next__link reveal"
+              to={`/portfolyo/${nextProject.slug}`}
+            >
+              <span className="case-next__kicker">Sıradaki proje</span>
+              <span className="case-next__title-row">
+                <span className="display case-next__title">
+                  {nextProject.name}
+                </span>
+                <ArrowUpRight className="case-next__arrow" aria-hidden="true" />
+              </span>
+              <span className="case-next__category">{nextProject.category}</span>
+            </Link>
+          </div>
+        </section>
+      ) : null}
 
       <section className="section cta-band">
         <div className="wrap">

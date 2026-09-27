@@ -5,6 +5,9 @@ import PageMeta from "@/components/PageMeta";
 import { portfolioProjects } from "@/data/portfolioProjects";
 
 const WIDE_POSITIONS = new Set([0, 5, 8, 11, 14]);
+const DISPLAY_PROJECTS = [...portfolioProjects].sort(
+  (a, b) => Number(b.media.length > 0) - Number(a.media.length > 0)
+);
 
 export default function Portfolyo() {
   return (
@@ -32,7 +35,7 @@ export default function Portfolyo() {
       <section className="section" style={{ paddingTop: 60 }}>
         <div className="wrap">
           <div className="work">
-            {portfolioProjects.map((project, position) => (
+            {DISPLAY_PROJECTS.map((project, position) => (
               <Link
                 className={`exhibit${
                   WIDE_POSITIONS.has(position) ? " exhibit--wide" : ""

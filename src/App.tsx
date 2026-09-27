@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { usePageEffects } from "@/hooks/usePageEffects";
 import Home from "@/pages/Home";
+import Hakkimizda from "@/pages/Hakkimizda";
 import Hizmetler from "@/pages/Hizmetler";
 import Portfolyo from "@/pages/Portfolyo";
 import ProjeDetay from "@/pages/ProjeDetay";
@@ -27,6 +28,7 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/hakkimizda" element={<Hakkimizda />} />
         <Route path="/hizmetler" element={<Hizmetler />} />
         <Route path="/portfolyo" element={<Portfolyo />} />
         <Route path="/portfolyo/:slug" element={<ProjeDetay />} />

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import InstagramContactLink from "@/components/InstagramContactLink";
-import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { getWhatsAppUrl, WHATSAPP_DISPLAY_NUMBER } from "@/lib/whatsapp";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="foot__top">
           <div>
-            <div className="foot__brand">WhiteMedia</div>
+            <div className="foot__brand">White Media</div>
             <p
               style={{
                 color: "rgba(255,255,255,.6)",
@@ -23,6 +23,9 @@ export default function Footer() {
             <h4>Site</h4>
             <Link className="ul" to="/">
               Ana Sayfa
+            </Link>
+            <Link className="ul" to="/hakkimizda">
+              Hakkımızda
             </Link>
             <Link className="ul" to="/hizmetler">
               Hizmetler
@@ -42,13 +45,33 @@ export default function Footer() {
             >
               Instagram
             </InstagramContactLink>
-            <a className="ul" href={getWhatsAppUrl()} target="_blank" rel="noreferrer">
+            <a
+              className="ul"
+              href={getWhatsAppUrl()}
+              target="_blank"
+              rel="noreferrer"
+            >
               WhatsApp
             </a>
           </div>
+          <div className="foot__col">
+            <h4>İletişim</h4>
+            <a className="ul" href="mailto:trwhitemedia@gmail.com">
+              trwhitemedia@gmail.com
+            </a>
+            <a
+              className="ul"
+              href={getWhatsAppUrl()}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {WHATSAPP_DISPLAY_NUMBER}
+            </a>
+            <span className="foot__text">Trabzon, Türkiye</span>
+          </div>
         </div>
         <div className="foot__bottom">
-          <span>© {new Date().getFullYear()} WhiteMedia Dijital Ajans</span>
+          <span>© {new Date().getFullYear()} White Media Dijital Ajans</span>
           <span>Türkiye</span>
         </div>
       </div>

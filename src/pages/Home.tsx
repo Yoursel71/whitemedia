@@ -200,6 +200,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ABOUT */}
+      <section className="section agency-intro" aria-labelledby="agency-intro-title">
+        <div className="wrap agency-intro__grid">
+          <div className="reveal">
+            <p className="kicker">White Media</p>
+            <h2 className="display" id="agency-intro-title">
+              Masanın karşısında değil,
+              <br />
+              aynı tarafında.
+            </h2>
+          </div>
+          <div className="agency-intro__copy reveal" data-d="1">
+            <p>
+              Trabzon merkezli yaratıcı bir ekip olarak strateji, prodüksiyon,
+              reklam ve web işlerini tek bir marka hedefinde buluşturuyoruz.
+            </p>
+            <p>
+              İhtiyacı dinliyor, doğru kapsamı birlikte kuruyor ve üretimi
+              yayından sonra öğrendiklerimizle geliştirmeye devam ediyoruz.
+            </p>
+            <Link className="agency-intro__link" to="/hakkimizda">
+              BİZİ DAHA YAKINDAN TANI
+              <ArrowUpRight size={17} aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES */}
       <section className="section">
         <div className="wrap">

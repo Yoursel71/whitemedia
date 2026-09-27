@@ -4,9 +4,10 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 
 const LINKS = [
   { to: "/", label: "Ana Sayfa", idx: "01" },
-  { to: "/hizmetler", label: "Hizmetler", idx: "02" },
-  { to: "/portfolyo", label: "Portfolyo", idx: "03" },
-  { to: "/iletisim", label: "İletişim", idx: "04" },
+  { to: "/hakkimizda", label: "Hakkımızda", idx: "02" },
+  { to: "/hizmetler", label: "Hizmetler", idx: "03" },
+  { to: "/portfolyo", label: "Portfolyo", idx: "04" },
+  { to: "/iletisim", label: "İletişim", idx: "05" },
 ];
 
 export default function Nav() {
@@ -33,7 +34,7 @@ export default function Nav() {
         <div className="wrap nav__inner">
           <Link className="brand" to="/">
             <span className="brand__mark" />
-            WhiteMedia
+            White Media
           </Link>
           <div className="nav__links">
             {LINKS.map((l) => (
