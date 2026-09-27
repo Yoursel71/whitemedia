@@ -1,27 +1,53 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ProjectMedia } from "@/data/portfolioProjects";
+
+type NavigatorWithConnection = Navigator & {
+  connection?: { saveData?: boolean };
+};
 
 export default function ProjectVideo({ media }: { media: ProjectMedia }) {
   const ref = useRef<HTMLVideoElement>(null);
+  const autoplayAllowedRef = useRef(true);
+  const [isVisible, setIsVisible] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
     const element = ref.current;
-    if (!element || !("IntersectionObserver" in window)) return;
+    if (!element) return;
+
+    const savesData = (navigator as NavigatorWithConnection).connection?.saveData === true;
+    const reducesMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    autoplayAllowedRef.current = !savesData && !reducesMotion;
+
+    if (!("IntersectionObserver" in window)) {
+      setShouldLoad(true);
+      setIsVisible(true);
+      return;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+
         if (entry.isIntersecting) {
-          void element.play().catch(() => undefined);
+          setShouldLoad(true);
         } else {
           element.pause();
         }
       },
-      { threshold: 0.45 }
+      { rootMargin: "160px 0px", threshold: 0.25 }
     );
 
     observer.observe(element);
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element || !shouldLoad || !isVisible || !autoplayAllowedRef.current) return;
+
+    void element.play().catch(() => undefined);
+  }, [isVisible, shouldLoad]);
 
   return (
     <article className="case-media reveal">
@@ -32,12 +58,11 @@ export default function ProjectVideo({ media }: { media: ProjectMedia }) {
         loop
         playsInline
         controls
-        preload="metadata"
+        preload="none"
         poster={media.poster}
         aria-label={media.title}
-      >
-        <source src={media.src} type="video/mp4" />
-      </video>
+        src={shouldLoad ? media.src : undefined}
+      />
       <p className="case-media__caption">{media.title}</p>
     </article>
   );

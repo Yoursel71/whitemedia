@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -18,6 +18,10 @@ const CARD_ROTATIONS = [-3, 2, -1, 3] as const;
 const CARD_OFFSETS = [10, -6, 4, 14] as const;
 
 const MotionLink = motion(Link);
+
+type NavigatorWithConnection = Navigator & {
+  connection?: { saveData?: boolean };
+};
 
 const ActionButton = ({
   children,
@@ -51,6 +55,10 @@ function MarqueeVideo({ src }: { src: string }) {
     const video = videoRef.current;
     if (!video) return;
 
+    const savesData = (navigator as NavigatorWithConnection).connection?.saveData === true;
+    const reducesMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (savesData || reducesMotion) return;
+
     if (!("IntersectionObserver" in window)) {
       visibleRef.current = true;
       loadedRef.current = true;
@@ -72,7 +80,7 @@ function MarqueeVideo({ src }: { src: string }) {
           videoRef.current?.pause();
         }
       },
-      { rootMargin: "280px" }
+      { rootMargin: "160px" }
     );
 
     observer.observe(video);
@@ -109,6 +117,8 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
   videos,
   className,
 }) => {
+  const reducesMotion = useReducedMotion();
+
   const FADE_IN_ANIMATION_VARIANTS = {
     hidden: { opacity: 0, y: 24 },
     show: {
@@ -190,14 +200,18 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
       <div className="absolute bottom-0 left-0 w-full h-1/3 md:h-2/5 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]">
         <motion.div
           className="flex gap-4"
-          animate={{
-            x: ["-100%", "0%"],
-            transition: {
-              ease: "linear",
-              duration: 40,
-              repeat: Infinity,
-            },
-          }}
+          animate={
+            reducesMotion
+              ? { x: "-8%" }
+              : {
+                  x: ["-100%", "0%"],
+                  transition: {
+                    ease: "linear",
+                    duration: 40,
+                    repeat: Infinity,
+                  },
+                }
+          }
         >
           {duplicatedVideos.map((src, index) => (
             <div
