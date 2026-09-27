@@ -6,11 +6,10 @@ import {
   MapPin,
   MessageCircle,
 } from "lucide-react";
+import InstagramContactLink from "@/components/InstagramContactLink";
 import PageMeta from "@/components/PageMeta";
 import { SERVICE_CATALOG } from "@/data/services";
 import {
-  copyProjectInquiryMessage,
-  INSTAGRAM_DM_URL,
   INSTAGRAM_USERNAME,
   PROJECT_INQUIRY_MESSAGE,
 } from "@/lib/contact";
@@ -50,16 +49,6 @@ export default function Iletisim() {
   const [note, setNote] = useState("");
   const [noteInk, setNoteInk] = useState(false); // true = --ink, false = --muted
   const [sending, setSending] = useState(false);
-  const [instagramNote, setInstagramNote] = useState("");
-
-  async function onInstagramClick() {
-    const copied = await copyProjectInquiryMessage();
-    setInstagramNote(
-      copied
-        ? "Hazır mesaj kopyalandı — Instagram'da yapıştırabilirsin."
-        : "Instagram sohbeti açılıyor."
-    );
-  }
 
   const set =
     (key: keyof typeof EMPTY) =>
@@ -192,25 +181,13 @@ export default function Iletisim() {
                 </div>
                 <h3>Instagram</h3>
                 <p className="info-card__k">
-                  <a
+                  <InstagramContactLink
                     className="ul"
-                    href={INSTAGRAM_DM_URL}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={() => void onInstagramClick()}
                     aria-label={`Hazır proje mesajını kopyala ve Instagram'da @${INSTAGRAM_USERNAME} hesabına yaz`}
                     style={{ color: "inherit", fontWeight: 500 }}
                   >
                     @{INSTAGRAM_USERNAME} ↗
-                  </a>
-                  {instagramNote && (
-                    <span
-                      aria-live="polite"
-                      style={{ display: "block", marginTop: 8, fontSize: 12 }}
-                    >
-                      {instagramNote}
-                    </span>
-                  )}
+                  </InstagramContactLink>
                 </p>
               </div>
             </div>
