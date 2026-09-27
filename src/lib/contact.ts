@@ -13,8 +13,6 @@ export const PROJECT_INQUIRY_MESSAGE = [
 
 export const INSTAGRAM_USERNAME = "whitemedia_tr";
 export const INSTAGRAM_DM_URL = `https://ig.me/m/${INSTAGRAM_USERNAME}`;
-export const INSTAGRAM_APP_DM_URL = `instagram://direct/new?username=${INSTAGRAM_USERNAME}`;
-export const INSTAGRAM_ANDROID_DM_URL = `intent://direct/new?username=${INSTAGRAM_USERNAME}#Intent;scheme=instagram;package=com.instagram.android;end`;
 
 export async function copyProjectInquiryMessage() {
   if (typeof navigator === "undefined" || !navigator.clipboard) {
