@@ -23,8 +23,8 @@ export default function Portfolyo() {
             konuşsun.
           </h1>
           <p className="reveal" data-d="2">
-            Beğeniden çok sonuç peşindeyiz. Birlikte çalıştığımız markalar ve
-            geride bıraktığımız izler.
+            Sağlıktan eğitime, gastronomiden otomotive; her markanın kendi
+            diline göre ürettiğimiz seçili çalışmalar.
           </p>
         </div>
       </header>

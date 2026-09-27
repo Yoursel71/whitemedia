@@ -122,9 +122,9 @@ export default function Iletisim() {
             data-d="2"
             style={{ maxWidth: 560, marginTop: 26, fontSize: 17, color: "var(--ink-72)" }}
           >
-            Dijital varlığını güçlendirmek ya da markanı bir sonraki seviyeye
-            taşımak için buradayız. İhtiyaçlarını dinlemek için
-            sabırsızlanıyoruz.
+            Neye ihtiyacın olduğunu kısaca anlat. İstersen formu doldur,
+            istersen WhatsApp'tan doğrudan yaz; ayrıntıları birlikte
+            netleştirelim.
           </p>
         </div>
       </header>
@@ -195,6 +195,14 @@ export default function Iletisim() {
             {/* FORM */}
             <div className="reveal" data-d="1">
               <form className="form-card" onSubmit={onSubmit} noValidate>
+                <div className="form-card__intro">
+                  <p className="kicker">Proje formu</p>
+                  <h2>İlk adımı kısa tutalım.</h2>
+                  <p>
+                    Temel bilgileri paylaş; talebini inceleyip bir iş günü
+                    içinde sana dönüş yapalım.
+                  </p>
+                </div>
                 <div className="field-row">
                   <div className="field">
                     <label htmlFor="name">Adınız Soyadınız</label>
@@ -224,7 +232,7 @@ export default function Iletisim() {
                   </div>
                 </div>
                 <div className="field">
-                  <label htmlFor="brand">Şirket / Marka</label>
+                  <label htmlFor="brand">Şirket / Marka (opsiyonel)</label>
                   <input
                     id="brand"
                     name="brand"
@@ -258,7 +266,7 @@ export default function Iletisim() {
                     </select>
                   </div>
                   <div className="field">
-                    <label htmlFor="budget">Bütçe aralığı</label>
+                    <label htmlFor="budget">Bütçe aralığı (opsiyonel)</label>
                     <select
                       id="budget"
                       name="budget"
@@ -307,7 +315,7 @@ export default function Iletisim() {
                 </div>
                 <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 10 }}>
                   <button className="btn" type="submit" data-magnetic disabled={sending}>
-                    <span>Mesajı gönder</span>
+                    <span>Talebimi gönder</span>
                     <ArrowUpRight className="button-icon" aria-hidden="true" />
                   </button>
                 </div>

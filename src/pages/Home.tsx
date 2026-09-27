@@ -9,6 +9,7 @@ import {
   portfolioProjects,
 } from "@/data/portfolioProjects";
 import { SERVICE_CATALOG } from "@/data/services";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 // Per-line slide-in for the hero title (staggered by the h1 in hero-3)
 const TITLE_LINE = {
@@ -56,18 +57,18 @@ const TICKER = [
 const APPROACH = [
   {
     number: "01",
-    title: "Markaya özel yön",
-    text: "Her markayı aynı kalıba sokmadan sektörünü, hedefini ve kitlesini merkeze alırız.",
+    title: "Markaya özel strateji",
+    text: "Sektörünü, hedefini ve kitleni dinler; her markaya aynı kalıbı uygulamak yerine sana ait bir yön kurarız.",
   },
   {
     number: "02",
-    title: "Tek ekip, tek akış",
-    text: "Strateji, çekim, kurgu ve reklam birbirinden kopmadan aynı yönde ilerler.",
+    title: "Tek ekip, net akış",
+    text: "Strateji, çekim, kurgu ve reklam aynı hedefe çalışır; fikir üretim sırasında anlamını kaybetmez.",
   },
   {
     number: "03",
-    title: "Yayından sonra da devam",
-    text: "İçeriği yalnızca paylaşmayız; veriye bakar, sonraki üretimi geliştiririz.",
+    title: "Yayınla bitmeyen süreç",
+    text: "İçeriği yalnızca paylaşmayız; geri bildirimleri ve veriyi izleyerek sonraki üretimi geliştiririz.",
   },
 ];
 
@@ -86,7 +87,22 @@ const OTHER_PROJECTS = portfolioProjects.filter(
   (project) => !FEATURED_SLUGS.includes(project.slug)
 );
 
+const TRUSTED_SLUGS = [
+  "medicalpark",
+  "trabzon-universitesi",
+  "gursoy-insaat",
+  "kardesler-oto-lastik",
+  "sancak-turizm",
+  "the-vera-cafe-restaurant",
+] as const;
+
+const TRUSTED_PROJECTS = TRUSTED_SLUGS.map(
+  (slug) => portfolioProjectBySlug[slug]
+);
+
 export default function Home() {
+  const whatsappUrl = getWhatsAppUrl();
+
   return (
     <main>
       <PageMeta
@@ -98,19 +114,52 @@ export default function Home() {
         title={
           <>
             <motion.span variants={TITLE_LINE} className="inline-block">
-              Sosyal medyada
+              İzlenen içerikten
             </motion.span>
             <br />
             <motion.span variants={TITLE_LINE} className="inline-block">
-              markanı büyütüyoruz.
+              tercih edilen markaya.
             </motion.span>
           </>
         }
-        description="Strateji, içerik ve reklamı tek ekipte topluyoruz. Markanı kalabalıkta fark edilen, hatırlanan ve satan bir sahneye çeviriyoruz."
-        ctaText="Teklif Al"
-        ctaHref="/iletisim#form"
+        description="Sosyal medya yönetimi, prodüksiyon ve dijital reklamı tek ekipte yürütüyor; markana tutarlı, güçlü ve hatırlanan bir dijital görünüm kuruyoruz."
+        ctaText="WhatsApp'tan yaz"
+        ctaHref={whatsappUrl}
+        secondaryCtaText="İşleri incele"
+        secondaryCtaHref="/portfolyo"
         videos={SHOWCASE_VIDEOS}
       />
+
+      {/* TRUST */}
+      <section className="client-proof" aria-labelledby="client-proof-title">
+        <div className="wrap">
+          <div className="client-proof__head reveal">
+            <div>
+              <p className="kicker">Seçili iş birlikleri</p>
+              <h2 id="client-proof-title">Birlikte çalıştığımız markalardan bazıları.</h2>
+            </div>
+            <Link className="ul mono" to="/portfolyo">
+              TÜM PORTFÖY →
+            </Link>
+          </div>
+
+          <div className="client-proof__grid reveal" data-d="1">
+            {TRUSTED_PROJECTS.map((project) => (
+              <Link
+                className={`client-proof__item brand-panel brand-panel--${project.panel}`}
+                to={`/portfolyo/${project.slug}`}
+                aria-label={`${project.name} projesini incele`}
+                key={project.slug}
+              >
+                <BrandMark
+                  project={project}
+                  className={`client-proof__logo brand-logo--${project.logoShape}`}
+                />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* TICKER */}
       <section style={{ padding: "46px 0" }}>
@@ -181,16 +230,16 @@ export default function Home() {
         <div className="wrap">
           <div className="approach-head">
             <div className="reveal">
-              <p className="kicker">Çalışma yaklaşımımız</p>
+              <p className="kicker">Neden White Media?</p>
               <h2 className="display sec-title">
-                İyi iş,
+                Tek ekip,
                 <br />
-                iyi süreçle çıkar.
+                net bir yön.
               </h2>
             </div>
             <p className="approach-head__copy reveal" data-d="1">
-              İşin nasıl ilerlediğini baştan sona açık tutuyoruz: markayı
-              dinleyen, üretimi birleştiren ve sonucu takip eden bir süreç.
+              Markanı tanımaktan çekime, yayından raporlamaya kadar bütün
+              süreci aynı hedef etrafında yürütüyoruz.
             </p>
           </div>
 
@@ -229,7 +278,7 @@ export default function Home() {
 
               return (
                 <Link
-                  className={`exhibit${isWide ? " exhibit--wide" : ""} reveal`}
+                  className={`exhibit exhibit--story${isWide ? " exhibit--wide" : ""} reveal`}
                   data-d={position === 2 ? "1" : undefined}
                   key={project.slug}
                   to={`/portfolyo/${project.slug}`}
@@ -244,6 +293,17 @@ export default function Home() {
                   <div className="exhibit__bar">
                     <span className="exhibit__name">{project.name}</span>
                     <span className="exhibit__tag">{project.category}</span>
+                  </div>
+                  <div className="exhibit-story">
+                    <p className="exhibit-story__summary">{project.summary}</p>
+                    <div className="exhibit-story__services" aria-label="Çalışma kapsamı">
+                      {project.services.slice(0, 2).map((service) => (
+                        <span key={service}>{service}</span>
+                      ))}
+                    </div>
+                    <span className="exhibit-story__link">
+                      PROJEYİ İNCELE <span aria-hidden="true">→</span>
+                    </span>
                   </div>
                 </Link>
               );

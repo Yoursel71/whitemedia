@@ -10,6 +10,8 @@ interface AnimatedMarqueeHeroProps {
   description: string;
   ctaText: string;
   ctaHref?: string;
+  secondaryCtaText?: string;
+  secondaryCtaHref?: string;
   videos: string[];
   className?: string;
 }
@@ -26,19 +28,43 @@ type NavigatorWithConnection = Navigator & {
 const ActionButton = ({
   children,
   href = "/iletisim#form",
+  secondary = false,
 }: {
   children: React.ReactNode;
   href?: string;
-}) => (
-  <MotionLink
-    to={href}
-    className="btn hero-marquee__cta"
-    data-magnetic
-  >
-    <span>{children}</span>
-    <ArrowUpRight className="button-icon" aria-hidden="true" />
-  </MotionLink>
-);
+  secondary?: boolean;
+}) => {
+  const className = cn(
+    "btn hero-marquee__cta",
+    secondary && "btn-ghost hero-marquee__cta--secondary"
+  );
+  const content = (
+    <>
+      <span>{children}</span>
+      <ArrowUpRight className="button-icon" aria-hidden="true" />
+    </>
+  );
+
+  if (/^https?:\/\//.test(href)) {
+    return (
+      <motion.a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className={className}
+        data-magnetic
+      >
+        {content}
+      </motion.a>
+    );
+  }
+
+  return (
+    <MotionLink to={href} className={className} data-magnetic>
+      {content}
+    </MotionLink>
+  );
+};
 
 function getPoster(src: string) {
   const match = src.match(/\/videos\/clip-(\d+)\.mp4$/);
@@ -114,6 +140,8 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
   description,
   ctaText,
   ctaHref,
+  secondaryCtaText,
+  secondaryCtaHref,
   videos,
   className,
 }) => {
@@ -192,8 +220,14 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           animate="show"
           variants={FADE_IN_ANIMATION_VARIANTS}
           transition={{ delay: 0.6 }}
+          className="hero-marquee__actions"
         >
           <ActionButton href={ctaHref}>{ctaText}</ActionButton>
+          {secondaryCtaText && (
+            <ActionButton href={secondaryCtaHref} secondary>
+              {secondaryCtaText}
+            </ActionButton>
+          )}
         </motion.div>
       </div>
 
