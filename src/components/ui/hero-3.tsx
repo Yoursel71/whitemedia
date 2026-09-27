@@ -14,6 +14,9 @@ interface AnimatedMarqueeHeroProps {
   className?: string;
 }
 
+const CARD_ROTATIONS = [-3, 2, -1, 3] as const;
+const CARD_OFFSETS = [10, -6, 4, 14] as const;
+
 const MotionLink = motion(Link);
 
 const ActionButton = ({
@@ -201,7 +204,8 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
               key={index}
               className="relative aspect-[3/4] h-48 md:h-64 flex-shrink-0"
               style={{
-                rotate: `${index % 2 === 0 ? -2 : 5}deg`,
+                rotate: `${CARD_ROTATIONS[index % CARD_ROTATIONS.length]}deg`,
+                translate: `0 ${CARD_OFFSETS[index % CARD_OFFSETS.length]}px`,
               }}
             >
               <MarqueeVideo src={src} />
