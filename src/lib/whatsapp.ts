@@ -1,8 +1,9 @@
+import { PROJECT_INQUIRY_MESSAGE } from "@/lib/contact";
+
 export const WHATSAPP_NUMBER = "905367864959";
 export const WHATSAPP_DISPLAY_NUMBER = "+90 536 786 49 59";
 
-export const WHATSAPP_MESSAGE =
-  "Merhaba White Media, web siteniz üzerinden ulaşıyorum. Markam için hizmetleriniz hakkında bilgi ve teklif almak istiyorum. Uygun olduğunuzda proje detaylarını paylaşabilir miyim?";
+export const WHATSAPP_MESSAGE = PROJECT_INQUIRY_MESSAGE;
 
 export function getWhatsAppUrl() {
   const isMobile =
