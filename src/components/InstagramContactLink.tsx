@@ -11,12 +11,7 @@ export default function InstagramContactLink({
   ...props
 }: InstagramContactLinkProps) {
   return (
-    <a
-      {...props}
-      href={INSTAGRAM_PROFILE_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a {...props} href={INSTAGRAM_PROFILE_URL}>
       {children}
     </a>
   );
