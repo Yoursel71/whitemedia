@@ -1,7 +1,19 @@
 import { FormEvent, useState } from "react";
-import { ArrowUpRight, Mail, MapPin, MessageCircle } from "lucide-react";
+import {
+  ArrowUpRight,
+  Instagram,
+  Mail,
+  MapPin,
+  MessageCircle,
+} from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import { SERVICE_CATALOG } from "@/data/services";
+import {
+  copyProjectInquiryMessage,
+  INSTAGRAM_DM_URL,
+  INSTAGRAM_USERNAME,
+  PROJECT_INQUIRY_MESSAGE,
+} from "@/lib/contact";
 import {
   getWhatsAppUrl,
   WHATSAPP_DISPLAY_NUMBER,
@@ -28,21 +40,9 @@ const BUDGETS = [
 ];
 
 const EMAIL_SUBJECT = "White Media - Proje ve Teklif Talebi";
-const EMAIL_BODY = [
-  "Merhaba White Media,",
-  "",
-  "Markam / projem için hizmetleriniz hakkında bilgi ve teklif almak istiyorum.",
-  "",
-  "Ad Soyad:",
-  "Marka / Şirket:",
-  "İlgilendiğim hizmet:",
-  "Proje detayları:",
-  "",
-  "İyi çalışmalar.",
-].join("\n");
 const EMAIL_URL = `mailto:trwhitemedia@gmail.com?subject=${encodeURIComponent(
   EMAIL_SUBJECT
-)}&body=${encodeURIComponent(EMAIL_BODY)}`;
+)}&body=${encodeURIComponent(PROJECT_INQUIRY_MESSAGE)}`;
 
 export default function Iletisim() {
   const whatsappUrl = getWhatsAppUrl();
@@ -50,6 +50,16 @@ export default function Iletisim() {
   const [note, setNote] = useState("");
   const [noteInk, setNoteInk] = useState(false); // true = --ink, false = --muted
   const [sending, setSending] = useState(false);
+  const [instagramNote, setInstagramNote] = useState("");
+
+  async function onInstagramClick() {
+    const copied = await copyProjectInquiryMessage();
+    setInstagramNote(
+      copied
+        ? "Hazır mesaj kopyalandı — Instagram'da yapıştırabilirsin."
+        : "Instagram sohbeti açılıyor."
+    );
+  }
 
   const set =
     (key: keyof typeof EMPTY) =>
@@ -174,6 +184,33 @@ export default function Iletisim() {
                   >
                     {WHATSAPP_DISPLAY_NUMBER} ↗
                   </a>
+                </p>
+              </div>
+              <div className="info-card">
+                <div className="info-card__icon">
+                  <Instagram size={22} aria-hidden="true" />
+                </div>
+                <h3>Instagram</h3>
+                <p className="info-card__k">
+                  <a
+                    className="ul"
+                    href={INSTAGRAM_DM_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => void onInstagramClick()}
+                    aria-label={`Hazır proje mesajını kopyala ve Instagram'da @${INSTAGRAM_USERNAME} hesabına yaz`}
+                    style={{ color: "inherit", fontWeight: 500 }}
+                  >
+                    @{INSTAGRAM_USERNAME} ↗
+                  </a>
+                  {instagramNote && (
+                    <span
+                      aria-live="polite"
+                      style={{ display: "block", marginTop: 8, fontSize: 12 }}
+                    >
+                      {instagramNote}
+                    </span>
+                  )}
                 </p>
               </div>
             </div>
