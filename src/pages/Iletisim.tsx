@@ -183,7 +183,7 @@ export default function Iletisim() {
                 <p className="info-card__k">
                   <InstagramContactLink
                     className="ul"
-                    aria-label={`Hazır proje mesajını kopyala ve Instagram'da @${INSTAGRAM_USERNAME} hesabına yaz`}
+                    aria-label={`Instagram'da @${INSTAGRAM_USERNAME} hesabıyla sohbete başla`}
                     style={{ color: "inherit", fontWeight: 500 }}
                   >
                     @{INSTAGRAM_USERNAME} ↗
