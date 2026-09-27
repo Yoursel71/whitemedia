@@ -56,7 +56,7 @@ const APPROACH = [
 const FEATURED_SLUGS = [
   "medicalpark",
   "trabzon-universitesi",
-  "yamanlar-oto-ekspertiz",
+  "gursoy-insaat",
   "the-vera-cafe-restaurant",
 ];
 
