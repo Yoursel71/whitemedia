@@ -4,10 +4,10 @@ import PageMeta from "@/components/PageMeta";
 import { SERVICE_CATALOG } from "@/data/services";
 
 const PROCESS = [
-  { n: "01", title: "Dinleme", text: "Markanı, kitleni ve hedefini anlıyoruz. Veriyle başlıyoruz, varsayımla değil." },
-  { n: "02", title: "Strateji", text: "Mesaj, kanal ve takvim. Üzerinde anlaştığımız tek bir yön belirliyoruz." },
-  { n: "03", title: "Üretim", text: "İçeriği üretiyor, yayınlıyor ve toplulukla konuşuyoruz." },
-  { n: "04", title: "Ölçüm", text: "Net rapor, açık öğreniler. Her döngüde daha iyiye optimize ediyoruz." },
+  { n: "01", title: "İhtiyaç", text: "Markanın öncelikli hedefini, hedef kitlesini ve çözülmesi gereken asıl konuyu netleştiriyoruz." },
+  { n: "02", title: "Mesaj", text: "Kurumsal kimliğe uygun dili, içeriğin kancasını ve insanlarda bırakması gereken etkiyi belirliyoruz." },
+  { n: "03", title: "İçerik", text: "Fotoğrafı, videoyu ve tasarımı belirlenen hedefe hizmet edecek şekilde markaya özel üretiyoruz." },
+  { n: "04", title: "Dağıtım", text: "İçeriği organik yayın ve reklamla doğru kitleye ulaştırıyor, geri dönüşlere göre geliştiriyoruz." },
 ];
 
 const WORKING_MODELS = [
@@ -76,8 +76,9 @@ export default function Hizmetler() {
             tüm kanallar.
           </h1>
           <p className="reveal" data-d="2">
-            Stratejiyle prodüksiyonu aynı çatı altında topluyoruz. Böylece fikir
-            ile yayın arasında ne zaman kayboluyor, ne de anlam.
+            Önce hangi hizmeti vereceğimizi değil, markanın neye ihtiyacı
+            olduğunu konuşuyoruz. Sonra mesajı, üretimi ve dağıtımı aynı hedefe
+            bağlıyoruz.
           </p>
         </div>
       </header>
@@ -91,6 +92,50 @@ export default function Hizmetler() {
                 <span className="srv__name">{s.name}</span>
                 <span className="srv__desc">{s.description}</span>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--ink service-explain">
+        <div className="wrap">
+          <div className="service-explain__head">
+            <div className="reveal">
+              <p className="kicker">Hizmetlerin rolü</p>
+              <h2 className="display sec-title">
+                Her aracın
+                <br />
+                ayrı bir görevi var.
+              </h2>
+            </div>
+            <p className="service-explain__intro reveal" data-d="1">
+              Amaç bütün hizmetleri aynı pakete eklemek değil; markanın
+              ihtiyacına en doğru cevabı veren araçları birlikte çalıştırmak.
+            </p>
+          </div>
+
+          <div className="service-explain__grid">
+            {SERVICE_CATALOG.map((service, index) => (
+              <article
+                className="service-explain__card reveal"
+                data-d={String(index % 2)}
+                key={service.number}
+              >
+                <div className="service-explain__title-row">
+                  <span>{service.number}</span>
+                  <h3>{service.name}</h3>
+                </div>
+                <p className="service-explain__role">{service.role}</p>
+                <p className="service-explain__impact">{service.impact}</p>
+                <div
+                  className="service-explain__benefits"
+                  aria-label={`${service.name} katkıları`}
+                >
+                  {service.benefits.map((benefit) => (
+                    <span key={benefit}>{benefit}</span>
+                  ))}
+                </div>
+              </article>
             ))}
           </div>
         </div>

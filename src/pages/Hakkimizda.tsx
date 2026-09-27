@@ -5,18 +5,18 @@ import PageMeta from "@/components/PageMeta";
 const PRINCIPLES = [
   {
     number: "01",
-    title: "Önce dinleriz",
-    text: "Markayı, hedefi ve asıl ihtiyacı anlamadan üretime başlamayız. Doğru fikir, doğru soruyla başlar.",
+    title: "İhtiyacı netleştiririz",
+    text: "Markanın o anki önceliğini anlamadan üretime başlamayız. Doğru iş, doğru soruyla ve net bir hedefle başlar.",
   },
   {
     number: "02",
-    title: "Açık ilerleriz",
-    text: "Kapsamı, üretim akışını ve sonraki adımı net tutarız. Sürecin her aşamasında aynı hedefe bakarız.",
+    title: "Markaya ait üretiriz",
+    text: "Kurumsal kimliği, dili ve hedef kitlesini içeriğin merkezine alır; hazır bir fikri farklı markalara kopyalamayız.",
   },
   {
     number: "03",
-    title: "Bütün üretiriz",
-    text: "Strateji, prodüksiyon, reklam ve web ayrı parçalar gibi değil; tek bir marka deneyimi gibi çalışır.",
+    title: "Doğru kişiye ulaştırırız",
+    text: "Mesajı, kancayı, organik yayını ve reklamı aynı hedefe bağlar; içeriği geri dönüşlerle geliştirmeye devam ederiz.",
   },
 ];
 
@@ -43,14 +43,13 @@ export default function Hakkimizda() {
         <div className="wrap">
           <p className="eyebrow reveal in">Hakkımızda</p>
           <h1 className="display reveal in" data-d="1">
-            Fikrin arkasındaki
+            Her markaya
             <br />
-            üretim ortağı.
+            kendine ait bir yön.
           </h1>
           <p className="reveal" data-d="2">
-            White Media; markaların ne söyleyeceğini, nasıl görüneceğini ve
-            doğru insanlara nasıl ulaşacağını tek bir yaratıcı düzende
-            buluşturur.
+            Hazır kalıpları markalara uydurmuyoruz. Önce kimliği, hedef kitleyi
+            ve gerçek ihtiyacı anlıyor; içeriği oradan üretiyoruz.
           </p>
         </div>
       </header>
@@ -58,25 +57,27 @@ export default function Hakkimizda() {
       <section className="section section--fill">
         <div className="wrap about-story">
           <div className="reveal">
-            <p className="kicker">Biz kimiz?</p>
+            <p className="kicker">İşin özü</p>
             <h2 className="display">
-              Markaya uzaktan bakan bir ajans değiliz.
+              Doğru içerik, doğru kişiye ulaşmanın başlangıcıdır.
             </h2>
           </div>
           <div className="about-story__copy reveal" data-d="1">
             <p>
-              Trabzon merkezli yaratıcı bir ekip olarak sosyal medya,
-              fotoğraf-video prodüksiyon, drone, dijital reklam ve web
-              projeleri üretiyoruz.
+              Her markanın kurumsal kimliği, dili, hedef kitlesi ve önceliği
+              farklıdır. Bu yüzden bir yerde işe yarayan fikri başka bir
+              markaya kopyalamıyoruz.
             </p>
             <p>
-              İşe hazır bir kalıpla değil, markanın kendi karakterini ve
-              hedefini anlayarak başlıyoruz. Stratejiden çekime, kurgudan
-              yayına kadar parçaların birbiriyle konuşmasını sağlıyoruz.
+              Önce markanın o anki ihtiyacını netleştiriyoruz. Sonra dikkati
+              yakalayan kancayı, verilecek mesajı ve içeriğin nasıl
+              anlatılacağını bu ihtiyaca göre tasarlıyoruz.
             </p>
             <p>
-              Bizi bir hizmet listesi gibi değil, fikri netleştiren ve üretimi
-              sonuna kadar taşıyan bir ekip arkadaşı gibi düşünebilirsin.
+              İçerik doğru kurulmadan reklamın tek başına yeterli olmadığını
+              biliyoruz. Reklam erişimi büyütebilir; ama içeriğin söylemediğini
+              söyleyemez. Bu yüzden üretim ve dağıtımı aynı bütün içinde ele
+              alıyoruz.
             </p>
           </div>
         </div>
@@ -86,7 +87,7 @@ export default function Hakkimizda() {
         <div className="wrap">
           <div className="about-principles__head reveal">
             <p className="kicker">Çalışma biçimimiz</p>
-            <h2 className="display sec-title">İyi işin üç değişmezi.</h2>
+            <h2 className="display sec-title">Her işte yeniden başlayan üç adım.</h2>
           </div>
           <div className="about-principles__grid">
             {PRINCIPLES.map((principle, index) => (
@@ -107,11 +108,11 @@ export default function Hakkimizda() {
       <section className="section about-sectors">
         <div className="wrap about-sectors__grid">
           <div className="reveal">
-            <p className="kicker">Farklı sektörler, tek özen</p>
+            <p className="kicker">Farklı sektörler, farklı diller</p>
             <h2 className="display sec-title">
-              Her markanın
+              Her işin ayrı
               <br />
-              dili başka.
+              bir değeri var.
             </h2>
           </div>
           <div className="about-sectors__list reveal" data-d="1">

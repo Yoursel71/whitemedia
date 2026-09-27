@@ -57,18 +57,18 @@ const TICKER = [
 const APPROACH = [
   {
     number: "01",
-    title: "Markaya özel strateji",
-    text: "Sektörünü, hedefini ve kitleni dinler; her markaya aynı kalıbı uygulamak yerine sana ait bir yön kurarız.",
+    title: "İhtiyaçtan başlarız",
+    text: "Önce markanın o an neyi başarması gerektiğini netleştirir, üretilecek her işi bu hedefin üzerine kurarız.",
   },
   {
     number: "02",
-    title: "Tek ekip, net akış",
-    text: "Strateji, çekim, kurgu ve reklam aynı hedefe çalışır; fikir üretim sırasında anlamını kaybetmez.",
+    title: "Markaya ait üretiriz",
+    text: "Kurumsal kimliği, dili ve hedef kitlesi farklı olan markalara aynı şablonu uygulamayız; her içerik kendi markasına benzer.",
   },
   {
     number: "03",
-    title: "Yayınla bitmeyen süreç",
-    text: "İçeriği yalnızca paylaşmayız; geri bildirimleri ve veriyi izleyerek sonraki üretimi geliştiririz.",
+    title: "Doğru kişiye ulaştırırız",
+    text: "Mesajı, kancayı, organik yayını ve reklamı tek bir zincir gibi düşünür; geri dönüşlere göre üretimi geliştiririz.",
   },
 ];
 
@@ -189,12 +189,13 @@ export default function Home() {
           </div>
           <div className="manifesto-aside reveal" data-d="1">
             <p>
-              Beğeni saymıyoruz. Büyüme, dönüşüm ve sadık kitle peşindeyiz —
-              veriyle başlar, içerikle büyütürüz.
+              Her işin ayrı bir değeri, her markanın kendine ait bir dili var.
+              Bu yüzden hazır şablonları çoğaltmıyor; markaya ait olanı
+              buluyoruz.
             </p>
             <p>
-              Strateji, prodüksiyon ve reklam aynı ekipte. Fikir ile yayın
-              arasında kaybolan zaman da, anlam da yok.
+              Önce ihtiyacı belirliyor; ardından o ihtiyaca hizmet eden mesajı,
+              içeriği ve dağıtımı birlikte tasarlıyoruz.
             </p>
           </div>
         </div>
@@ -213,12 +214,12 @@ export default function Home() {
           </div>
           <div className="agency-intro__copy reveal" data-d="1">
             <p>
-              Trabzon merkezli yaratıcı bir ekip olarak strateji, prodüksiyon,
-              reklam ve web işlerini tek bir marka hedefinde buluşturuyoruz.
+              Her markanın kimliği, hedef kitlesi ve önceliği farklı. Bu yüzden
+              bir markada işe yarayan fikri alıp diğerine kopyalamıyoruz.
             </p>
             <p>
-              İhtiyacı dinliyor, doğru kapsamı birlikte kuruyor ve üretimi
-              yayından sonra öğrendiklerimizle geliştirmeye devam ediyoruz.
+              Önce doğru mesajı ve içeriği kuruyor; sonra organik yayın ve
+              reklamla onu doğru insanlarla buluşturuyoruz.
             </p>
             <Link className="agency-intro__link" to="/hakkimizda">
               BİZİ DAHA YAKINDAN TANI
@@ -266,8 +267,9 @@ export default function Home() {
               </h2>
             </div>
             <p className="approach-head__copy reveal" data-d="1">
-              Markanı tanımaktan çekime, yayından raporlamaya kadar bütün
-              süreci aynı hedef etrafında yürütüyoruz.
+              Reklam doğru içeriğin erişimini büyütür; yanlış mesajı düzeltmez.
+              Bu yüzden hedefi, içeriği ve dağıtımı aynı düşüncenin parçaları
+              olarak ele alıyoruz.
             </p>
           </div>
 

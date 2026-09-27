@@ -2158,6 +2158,93 @@ a {
   background: var(--mist);
 }
 
+.service-explain__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+  gap: clamp(40px, 8vw, 110px);
+  align-items: end;
+}
+
+.service-explain__intro {
+  max-width: 520px;
+  margin: 0 0 6px;
+  color: rgba(255, 255, 255, .66);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.service-explain__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: clamp(52px, 7vw, 88px);
+  border-top: 1px solid rgba(255, 255, 255, .24);
+  border-left: 1px solid rgba(255, 255, 255, .24);
+}
+
+.service-explain__card {
+  display: flex;
+  min-height: 390px;
+  flex-direction: column;
+  padding: clamp(28px, 4vw, 48px);
+  border-right: 1px solid rgba(255, 255, 255, .24);
+  border-bottom: 1px solid rgba(255, 255, 255, .24);
+}
+
+.service-explain__title-row {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.service-explain__title-row > span {
+  padding-top: 5px;
+  color: rgba(255, 255, 255, .46);
+  font-size: 11px;
+  letter-spacing: .14em;
+}
+
+.service-explain__card h3 {
+  max-width: 15ch;
+  margin: 0;
+  font-size: clamp(24px, 2.5vw, 36px);
+  letter-spacing: -.035em;
+  line-height: 1.08;
+}
+
+.service-explain__role {
+  margin: 58px 0 12px;
+  font-size: clamp(18px, 2vw, 25px);
+  font-weight: 650;
+  letter-spacing: -.025em;
+  line-height: 1.25;
+}
+
+.service-explain__impact {
+  max-width: 48ch;
+  margin: 0;
+  color: rgba(255, 255, 255, .62);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.service-explain__benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 32px;
+}
+
+.service-explain__benefits span {
+  padding: 7px 9px;
+  border: 1px solid rgba(255, 255, 255, .24);
+  color: rgba(255, 255, 255, .58);
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
 .service-models__head {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
@@ -2361,6 +2448,7 @@ a {
   .agency-intro__grid,
   .about-story,
   .about-sectors__grid,
+  .service-explain__head,
   .service-models__head,
   .faq-layout {
     grid-template-columns: 1fr;
@@ -2368,6 +2456,7 @@ a {
   }
 
   .about-principles__grid,
+  .service-explain__grid,
   .service-models__grid {
     grid-template-columns: 1fr;
   }
@@ -2389,12 +2478,17 @@ a {
   .service-model {
     min-height: 330px;
   }
+
+  .service-explain__card {
+    min-height: 340px;
+  }
 }
 
 @media (max-width: 600px) {
   .agency-intro__grid,
   .about-story,
   .about-sectors__grid,
+  .service-explain__head,
   .service-models__head,
   .faq-layout {
     gap: 30px;
@@ -2410,6 +2504,14 @@ a {
 
   .service-model {
     min-height: 310px;
+  }
+
+  .service-explain__card {
+    min-height: 320px;
+  }
+
+  .service-explain__role {
+    margin-top: 40px;
   }
 
   .service-model h3 {
