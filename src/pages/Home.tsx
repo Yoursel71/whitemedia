@@ -24,15 +24,15 @@ const TITLE_LINE = {
 const SHOWCASE_VIDEO_ORDER = [
   1, // sağlık
   14, // kafe
-  10, // restoran prodüksiyonu
   8, // otomotiv / lokasyon
+  10, // restoran prodüksiyonu
   12, // tatlı prodüksiyonu
   2, // geleneksel üretim
   7, // içecek prodüksiyonu
   15, // sağlık
   13, // pizza prodüksiyonu
-  5, // restoran deneyimi
   6, // turizm / drone
+  5, // restoran deneyimi
   11, // gastronomi / manzara
   9, // otomotiv / ürün
   4, // mutfak prodüksiyonu
