@@ -27,6 +27,23 @@ const BUDGETS = [
   "₺100.000+",
 ];
 
+const EMAIL_SUBJECT = "White Media - Proje ve Teklif Talebi";
+const EMAIL_BODY = [
+  "Merhaba White Media,",
+  "",
+  "Markam / projem için hizmetleriniz hakkında bilgi ve teklif almak istiyorum.",
+  "",
+  "Ad Soyad:",
+  "Marka / Şirket:",
+  "İlgilendiğim hizmet:",
+  "Proje detayları:",
+  "",
+  "İyi çalışmalar.",
+].join("\n");
+const EMAIL_URL = `mailto:trwhitemedia@gmail.com?subject=${encodeURIComponent(
+  EMAIL_SUBJECT
+)}&body=${encodeURIComponent(EMAIL_BODY)}`;
+
 export default function Iletisim() {
   const whatsappUrl = getWhatsAppUrl();
   const [form, setForm] = useState(EMPTY);
@@ -133,7 +150,8 @@ export default function Iletisim() {
                 <p className="info-card__k">
                   <a
                     className="ul"
-                    href="mailto:trwhitemedia@gmail.com"
+                    href={EMAIL_URL}
+                    aria-label="White Media'ya hazır proje e-postası gönder"
                     style={{ color: "var(--ink)", fontWeight: 500 }}
                   >
                     trwhitemedia@gmail.com

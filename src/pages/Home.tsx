@@ -20,10 +20,28 @@ const TITLE_LINE = {
   },
 };
 
-// Showcase reels (web-optimized clips in public/videos) — all 16 sources
-const SHOWCASE_VIDEOS = Array.from(
-  { length: 16 },
-  (_, i) => `/videos/clip-${i + 1}.mp4`
+// Alternate sectors and visual styles so similar work does not cluster together.
+const SHOWCASE_VIDEO_ORDER = [
+  1, // sağlık
+  14, // kafe
+  10, // restoran prodüksiyonu
+  8, // otomotiv / lokasyon
+  12, // tatlı prodüksiyonu
+  2, // geleneksel üretim
+  7, // içecek prodüksiyonu
+  15, // sağlık
+  13, // pizza prodüksiyonu
+  5, // restoran deneyimi
+  6, // turizm / drone
+  11, // gastronomi / manzara
+  9, // otomotiv / ürün
+  4, // mutfak prodüksiyonu
+  3, // geleneksel üretim
+  16, // restoran sunumu
+] as const;
+
+const SHOWCASE_VIDEOS = SHOWCASE_VIDEO_ORDER.map(
+  (clip) => `/videos/clip-${clip}.mp4`
 );
 
 const TICKER = [
