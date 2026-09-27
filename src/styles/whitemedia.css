@@ -154,6 +154,69 @@ a {
   margin-top: 32px;
 }
 
+.hero-marquee {
+  display: grid;
+  grid-template-rows: minmax(410px, 1fr) minmax(260px, 36svh);
+  width: 100%;
+  min-height: max(760px, 100svh);
+  padding-top: var(--nav-h);
+  overflow: hidden;
+}
+
+.hero-marquee__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: clamp(42px, 7vh, 78px) 20px clamp(28px, 4vh, 46px);
+  background: var(--paper);
+}
+
+.hero-marquee__reel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent, black 16%, black 84%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 16%, black 84%, transparent);
+}
+
+.hero-marquee__track {
+  display: flex;
+  width: max-content;
+  flex-shrink: 0;
+  gap: 16px;
+}
+
+.hero-marquee__card {
+  position: relative;
+  height: clamp(198px, 29svh, 274px);
+  aspect-ratio: 3 / 4;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 600px) {
+  .hero-marquee {
+    grid-template-rows: minmax(420px, auto) 240px;
+    min-height: 724px;
+  }
+
+  .hero-marquee__content {
+    justify-content: flex-start;
+    padding: 42px 20px 30px;
+  }
+
+  .hero-marquee__card {
+    height: 204px;
+  }
+}
+
 .btn-ghost {
   background: transparent;
   color: var(--ink);

@@ -161,11 +161,11 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
   return (
     <section
       className={cn(
-        "relative w-full h-screen overflow-hidden bg-background flex flex-col items-center justify-center text-center px-4",
+        "hero-marquee bg-background text-center",
         className
       )}
     >
-      <div className="z-10 flex flex-col items-center">
+      <div className="hero-marquee__content">
         {tagline && (
           <motion.div
             initial="hidden"
@@ -231,9 +231,9 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-1/3 md:h-2/5 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]">
+      <div className="hero-marquee__reel" aria-hidden="true">
         <motion.div
-          className="flex gap-4"
+          className="hero-marquee__track"
           animate={
             reducesMotion
               ? { x: "-8%" }
@@ -250,7 +250,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           {duplicatedVideos.map((src, index) => (
             <div
               key={index}
-              className="relative aspect-[3/4] h-48 md:h-64 flex-shrink-0"
+              className="hero-marquee__card"
               style={{
                 rotate: `${CARD_ROTATIONS[index % CARD_ROTATIONS.length]}deg`,
                 translate: `0 ${CARD_OFFSETS[index % CARD_OFFSETS.length]}px`,

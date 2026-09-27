@@ -92,8 +92,8 @@ const TRUSTED_SLUGS = [
   "trabzon-universitesi",
   "gursoy-insaat",
   "kardesler-oto-lastik",
-  "sancak-turizm",
-  "the-vera-cafe-restaurant",
+  "pesent-restaurant",
+  "dk-gayrimenkul",
 ] as const;
 
 const TRUSTED_PROJECTS = TRUSTED_SLUGS.map(
