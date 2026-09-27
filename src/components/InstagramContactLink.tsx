@@ -1,5 +1,5 @@
 import { ComponentPropsWithoutRef } from "react";
-import { INSTAGRAM_DM_URL } from "@/lib/contact";
+import { INSTAGRAM_PROFILE_URL } from "@/lib/contact";
 
 type InstagramContactLinkProps = Omit<
   ComponentPropsWithoutRef<"a">,
@@ -11,7 +11,12 @@ export default function InstagramContactLink({
   ...props
 }: InstagramContactLinkProps) {
   return (
-    <a {...props} href={INSTAGRAM_DM_URL}>
+    <a
+      {...props}
+      href={INSTAGRAM_PROFILE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {children}
     </a>
   );

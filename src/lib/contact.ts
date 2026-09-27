@@ -12,7 +12,7 @@ export const PROJECT_INQUIRY_MESSAGE = [
 ].join("\n");
 
 export const INSTAGRAM_USERNAME = "whitemedia_tr";
-export const INSTAGRAM_DM_URL = `https://ig.me/m/${INSTAGRAM_USERNAME}`;
+export const INSTAGRAM_PROFILE_URL = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`;
 
 export async function copyProjectInquiryMessage() {
   if (typeof navigator === "undefined" || !navigator.clipboard) {

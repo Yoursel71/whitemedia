@@ -38,7 +38,7 @@ export default function Footer() {
             <h4>Sosyal</h4>
             <InstagramContactLink
               className="ul"
-              aria-label="Instagram'da White Media ile sohbete başla"
+              aria-label="Instagram'da White Media profilini aç"
             >
               Instagram
             </InstagramContactLink>
