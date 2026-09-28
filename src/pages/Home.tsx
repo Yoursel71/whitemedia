@@ -21,29 +21,26 @@ const TITLE_LINE = {
   },
 };
 
-// Alternate sectors and visual styles so similar work does not cluster together.
-const SHOWCASE_VIDEO_ORDER = [
-  1, // sağlık
-  14, // kafe
-  8, // otomotiv / lokasyon
-  10, // restoran prodüksiyonu
-  12, // tatlı prodüksiyonu
-  2, // geleneksel üretim
-  7, // içecek prodüksiyonu
-  15, // sağlık
-  13, // pizza prodüksiyonu
-  6, // turizm / drone
-  5, // restoran deneyimi
-  11, // gastronomi / manzara
-  9, // otomotiv / ürün
-  4, // mutfak prodüksiyonu
-  3, // geleneksel üretim
-  16, // restoran sunumu
+// Alternate sectors so similar work does not cluster together. The two newest
+// additions use their optimized portfolio files instead of duplicating media.
+const SHOWCASE_VIDEOS = [
+  "/work/faber-gayrimenkul/marka-tanitim-filmi.mp4", // gayrimenkul
+  "/videos/clip-1.mp4", // sağlık
+  "/videos/clip-14.mp4", // kafe
+  "/videos/clip-8.mp4", // otomotiv / lokasyon
+  "/work/ay-gida/karadeniz-export-cayi-urun-filmi.mp4", // üretim / ürün
+  "/videos/clip-10.mp4", // restoran prodüksiyonu
+  "/videos/clip-2.mp4", // geleneksel üretim
+  "/videos/clip-6.mp4", // turizm / drone
+  "/videos/clip-12.mp4", // tatlı prodüksiyonu
+  "/videos/clip-9.mp4", // otomotiv / ürün
+  "/videos/clip-15.mp4", // sağlık
+  "/videos/clip-13.mp4", // pizza prodüksiyonu
+  "/videos/clip-3.mp4", // geleneksel üretim
+  "/videos/clip-11.mp4", // gastronomi / manzara
+  "/videos/clip-7.mp4", // içecek prodüksiyonu
+  "/videos/clip-16.mp4", // restoran sunumu
 ] as const;
-
-const SHOWCASE_VIDEOS = SHOWCASE_VIDEO_ORDER.map(
-  (clip) => `/videos/clip-${clip}.mp4`
-);
 
 const TICKER = [
   { t: "Sosyal Medya", o: false },
@@ -146,7 +143,7 @@ export default function Home() {
           <div className="client-proof__grid reveal" data-d="1">
             {TRUSTED_PROJECTS.map((project) => (
               <Link
-                className={`client-proof__item brand-panel brand-panel--${project.panel}`}
+                className="client-proof__item client-proof__item--uniform brand-panel"
                 to={`/portfolyo/${project.slug}`}
                 aria-label={`${project.name} projesini incele`}
                 key={project.slug}

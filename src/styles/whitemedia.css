@@ -192,6 +192,7 @@ a {
   width: max-content;
   flex-shrink: 0;
   gap: 16px;
+  will-change: transform;
 }
 
 .hero-marquee__card {
@@ -272,6 +273,17 @@ a {
   min-height: 132px;
   padding: 25px 20px;
   transition: filter .35s var(--ease), transform .35s var(--ease);
+}
+
+.client-proof__item--uniform {
+  color: #fff;
+  background: #0a0a0a;
+}
+
+.client-proof__item--uniform .brand-logo--dark,
+.client-proof__item--uniform .brand-logo--light,
+.client-proof__item--uniform .brand-logo--on-dark {
+  filter: grayscale(1) brightness(0) invert(1) contrast(1.15);
 }
 
 .client-proof__item:hover {

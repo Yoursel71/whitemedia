@@ -12,12 +12,13 @@ interface AnimatedMarqueeHeroProps {
   ctaHref?: string;
   secondaryCtaText?: string;
   secondaryCtaHref?: string;
-  videos: string[];
+  videos: readonly string[];
   className?: string;
 }
 
 const CARD_ROTATIONS = [-3, 2, -1, 3] as const;
 const CARD_OFFSETS = [10, -6, 4, 14] as const;
+const VIDEO_START_RATIOS = [0.22, 0.34, 0.28, 0.4, 0.18, 0.31] as const;
 
 const MotionLink = motion(Link);
 
@@ -68,13 +69,15 @@ const ActionButton = ({
 
 function getPoster(src: string) {
   const match = src.match(/\/videos\/clip-(\d+)\.mp4$/);
-  return match ? `/work/posters/clip-${match[1]}.webp` : undefined;
+  if (match) return `/work/posters/clip-${match[1]}.webp`;
+  return src.endsWith(".mp4") ? src.replace(/\.mp4$/, ".webp") : undefined;
 }
 
-function MarqueeVideo({ src }: { src: string }) {
+function MarqueeVideo({ src, position }: { src: string; position: number }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const loadedRef = useRef(false);
   const visibleRef = useRef(false);
+  const startPositionSetRef = useRef(false);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -124,6 +127,16 @@ function MarqueeVideo({ src }: { src: string }) {
       ref={videoRef}
       src={loaded ? src : undefined}
       poster={getPoster(src)}
+      onLoadedMetadata={(event) => {
+        if (startPositionSetRef.current) return;
+
+        const video = event.currentTarget;
+        if (!Number.isFinite(video.duration) || video.duration <= 1) return;
+
+        const ratio = VIDEO_START_RATIOS[position % VIDEO_START_RATIOS.length];
+        video.currentTime = Math.min(video.duration * ratio, video.duration - 0.5);
+        startPositionSetRef.current = true;
+      }}
       muted
       loop
       playsInline
@@ -238,10 +251,10 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
             reducesMotion
               ? { x: "-8%" }
               : {
-                  x: ["-100%", "0%"],
+                  x: ["-50%", "0%"],
                   transition: {
                     ease: "linear",
-                    duration: 40,
+                    duration: 64,
                     repeat: Infinity,
                   },
                 }
@@ -256,7 +269,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
                 translate: `0 ${CARD_OFFSETS[index % CARD_OFFSETS.length]}px`,
               }}
             >
-              <MarqueeVideo src={src} />
+              <MarqueeVideo src={src} position={index % videos.length} />
             </div>
           ))}
         </motion.div>
