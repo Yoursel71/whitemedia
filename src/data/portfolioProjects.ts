@@ -216,11 +216,6 @@ export const portfolioProjects: PortfolioProject[] = [
         title: "Pide hazırlık süreci",
       },
       {
-        src: "/work/pesent/pesent-14.mp4",
-        poster: "/work/pesent/pesent-14.webp",
-        title: "Deniz manzaralı serpme kahvaltı",
-      },
-      {
         src: "/work/pesent/pesent-19.mp4",
         poster: "/work/pesent/pesent-19.webp",
         title: "Mutfaktan masaya servis deneyimi",
@@ -647,6 +642,116 @@ export const portfolioProjects: PortfolioProject[] = [
         src: "/work/kozalaklar-ormanda/atolye-ekibi-roportaji.mp4",
         poster: "/work/kozalaklar-ormanda/atolye-ekibi-roportaji.webp",
         title: "Atölye ekibiyle eğlenceli röportaj",
+      },
+    ],
+  },
+  {
+    index: "18",
+    slug: "faber-gayrimenkul",
+    name: "Faber Gayrimenkul",
+    category: "Gayrimenkul · Danışmanlık",
+    summary:
+      "Gayrimenkul yatırımlarını, proje ve portföyleri; danışman anlatımları, drone görüntüleri ve mekân çekimleriyle güven veren dijital içeriklere dönüştürdük.",
+    services: [
+      "Gayrimenkul içerik stratejisi",
+      "Drone & portföy çekimi",
+      "Reels prodüksiyonu",
+    ],
+    logo: "/logos/faber-gayrimenkul.png",
+    logoAlt: "Faber Gayrimenkul logosu",
+    logoShape: "wide",
+    logoTreatment: "light",
+    panel: "dark",
+    media: [
+      {
+        src: "/work/faber-gayrimenkul/marka-tanitim-filmi.mp4",
+        poster: "/work/faber-gayrimenkul/marka-tanitim-filmi.webp",
+        title: "Faber Gayrimenkul marka tanıtımı",
+      },
+      {
+        src: "/work/faber-gayrimenkul/ev-mi-arsa-mi.mp4",
+        poster: "/work/faber-gayrimenkul/ev-mi-arsa-mi.webp",
+        title: "Ev mi, arsa mı? Yatırım tercihi",
+      },
+      {
+        src: "/work/faber-gayrimenkul/north-life-kiralik-sifir-daire.mp4",
+        poster: "/work/faber-gayrimenkul/north-life-kiralik-sifir-daire.webp",
+        title: "Yalıncak North Life kiralık sıfır daire",
+      },
+      {
+        src: "/work/faber-gayrimenkul/north-life-daire-ve-site-tanitimi.mp4",
+        poster: "/work/faber-gayrimenkul/north-life-daire-ve-site-tanitimi.webp",
+        title: "North Life daire ve site tanıtımı",
+      },
+      {
+        src: "/work/faber-gayrimenkul/deniz-manzarali-konut-projesi.mp4",
+        poster: "/work/faber-gayrimenkul/deniz-manzarali-konut-projesi.webp",
+        title: "Deniz manzaralı konut projesi",
+      },
+      {
+        src: "/work/faber-gayrimenkul/sogutlu-uc-tasinmaz.mp4",
+        poster: "/work/faber-gayrimenkul/sogutlu-uc-tasinmaz.webp",
+        title: "Söğütlü'de üç farklı taşınmaz",
+      },
+      {
+        src: "/work/faber-gayrimenkul/turizm-yatirimi-arsa-tanitimi.mp4",
+        poster: "/work/faber-gayrimenkul/turizm-yatirimi-arsa-tanitimi.webp",
+        title: "Turizm yatırımı için arsa tanıtımı",
+      },
+      {
+        src: "/work/faber-gayrimenkul/kira-sozlesmesi-bilgilendirme.mp4",
+        poster: "/work/faber-gayrimenkul/kira-sozlesmesi-bilgilendirme.webp",
+        title: "Kira sözleşmesinde dikkat edilmesi gerekenler",
+      },
+    ],
+  },
+  {
+    index: "19",
+    slug: "ay-gida",
+    name: "AY Gıda",
+    category: "Gıda · Çay Üretimi",
+    summary:
+      "Rize'deki çay üretim tesisini, kalite kontrol süreçlerini ve Doğuş Çay ürünlerini; fabrika, ürün ve anlatım odaklı dikey videolarla görünür kıldık.",
+    services: [
+      "Fabrika & üretim çekimi",
+      "Ürün video prodüksiyonu",
+      "Reels kurgu & post prodüksiyon",
+    ],
+    logo: "/logos/ay-gida.png",
+    logoAlt: "AY Gıda Ticaret logosu",
+    logoShape: "square",
+    logoTreatment: "dark",
+    panel: "light",
+    media: [
+      {
+        src: "/work/ay-gida/cay-fabrikasi-uretim-yolculugu.mp4",
+        poster: "/work/ay-gida/cay-fabrikasi-uretim-yolculugu.webp",
+        title: "Çayın fabrikadaki üretim yolculuğu",
+      },
+      {
+        src: "/work/ay-gida/kalite-kontrol-ve-uretim-sureci.mp4",
+        poster: "/work/ay-gida/kalite-kontrol-ve-uretim-sureci.webp",
+        title: "Doğuş Çay kalite kontrol ve üretim süreci",
+      },
+      {
+        src: "/work/ay-gida/karadeniz-export-cayi-kalite-anlatimi.mp4",
+        poster: "/work/ay-gida/karadeniz-export-cayi-kalite-anlatimi.webp",
+        title: "Karadeniz Export Çayı kalite anlatımı",
+      },
+      {
+        src: "/work/ay-gida/karadeniz-export-cayi-urun-filmi.mp4",
+        poster: "/work/ay-gida/karadeniz-export-cayi-urun-filmi.webp",
+        title: "Karadeniz Export Çayı ürün filmi",
+      },
+      {
+        src: "/work/ay-gida/dogus-cay-depo-ve-urun-tanitimi.mp4",
+        poster: "/work/ay-gida/dogus-cay-depo-ve-urun-tanitimi.webp",
+        title: "Doğuş Çay depo ve ürün tanıtımı",
+      },
+      {
+        src: "/work/ay-gida/dogus-cay-demleme-deneyimi.mp4",
+        poster: "/work/ay-gida/dogus-cay-demleme-deneyimi.webp",
+        title: "Doğuş Çay demleme ve ürün deneyimi",
       },
     ],
   },

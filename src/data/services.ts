@@ -1,6 +1,8 @@
 export type ServiceItem = {
   number: string;
+  slug: string;
   name: string;
+  shortName: string;
   description: string;
   role: string;
   impact: string;
@@ -10,7 +12,9 @@ export type ServiceItem = {
 export const SERVICE_CATALOG: ServiceItem[] = [
   {
     number: "01",
+    slug: "sosyal-medya-yonetimi",
     name: "Sosyal Medya Yönetimi",
+    shortName: "Sosyal Medya",
     description: "Markana özel strateji, içerik takvimi, yayın, topluluk yönetimi ve anlaşılır raporlama.",
     role: "Markanın her gün görünen yüzü.",
     impact:
@@ -19,7 +23,9 @@ export const SERVICE_CATALOG: ServiceItem[] = [
   },
   {
     number: "02",
+    slug: "fotograf-video-produksiyon",
     name: "Fotoğraf & Video Prodüksiyon",
+    shortName: "Prodüksiyon",
     description: "Ürününü, mekânını ve hikâyeni güçlü fotoğraflar, Reels ve tanıtım filmleriyle anlatırız.",
     role: "Değerini ilk bakışta anlatır.",
     impact:
@@ -28,7 +34,9 @@ export const SERVICE_CATALOG: ServiceItem[] = [
   },
   {
     number: "03",
+    slug: "drone-cekimi",
     name: "Drone Çekimi",
+    shortName: "Drone",
     description: "Mekân, proje, etkinlik ve rotaları havadan etkileyici bir bakışla gösteririz.",
     role: "Bütünü tek bakışta gösterir.",
     impact:
@@ -37,7 +45,9 @@ export const SERVICE_CATALOG: ServiceItem[] = [
   },
   {
     number: "04",
+    slug: "google-ads-yonetimi",
     name: "Google Ads Yönetimi",
+    shortName: "Google Ads",
     description: "Arama, görüntülü reklam ve YouTube kampanyalarını hedeflerine göre kurar ve geliştiririz.",
     role: "Arandığın anda görünür olmanı sağlar.",
     impact:
@@ -46,7 +56,9 @@ export const SERVICE_CATALOG: ServiceItem[] = [
   },
   {
     number: "05",
+    slug: "meta-reklam-yonetimi",
     name: "Meta Business Reklam Yönetimi",
+    shortName: "Meta Ads",
     description: "Instagram ve Facebook reklamlarında kreatif, hedefleme ve optimizasyonu birlikte yönetiriz.",
     role: "İlgiyi doğru kitlede büyütür.",
     impact:
@@ -55,11 +67,29 @@ export const SERVICE_CATALOG: ServiceItem[] = [
   },
   {
     number: "06",
+    slug: "web-sitesi-hizmetleri",
     name: "Web Sitesi Hizmetleri",
+    shortName: "Web Sitesi",
     description: "Marka kimliğinle uyumlu, hızlı, mobil ve kullanımı kolay web deneyimleri geliştiririz.",
     role: "Dijital dünyadaki merkezini kurar.",
     impact:
       "Hızlı, mobil uyumlu ve güven veren bir site; sosyal medya ile reklamlardan gelen ilgiyi bilgiye, iletişime ve talebe dönüştürmeye yardımcı olur.",
     benefits: ["Güven", "Mobil deneyim", "İletişim & talep"],
   },
+  {
+    number: "07",
+    slug: "grafik-tasarim",
+    name: "Grafik Tasarım",
+    shortName: "Grafik Tasarım",
+    description:
+      "Markanın görsel dilini sosyal medya, kampanya ve kurumsal materyallerde tutarlı hâle getiririz.",
+    role: "Markayı tek bakışta tanınır kılar.",
+    impact:
+      "Tutarlı tipografi, renk ve tasarım sistemi; farklı kanallardaki iletişimi aynı markaya ait hissettirir ve algıyı güçlendirir.",
+    benefits: ["Görsel kimlik", "Kampanya tasarımı", "Dijital & basılı"],
+  },
 ];
+
+export const serviceBySlug = Object.fromEntries(
+  SERVICE_CATALOG.map((service) => [service.slug, service])
+) as Record<string, ServiceItem>;

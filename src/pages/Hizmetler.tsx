@@ -87,11 +87,12 @@ export default function Hizmetler() {
         <div className="wrap">
           <div className="srv" style={{ borderTop: 0 }}>
             {SERVICE_CATALOG.map((s) => (
-              <div className="srv__row reveal" key={s.number}>
+              <Link className="srv__row reveal" key={s.number} to={`/hizmetler/${s.slug}`} aria-label={`${s.name} hizmetini incele`}>
                 <span className="srv__num">{s.number}</span>
                 <span className="srv__name">{s.name}</span>
                 <span className="srv__desc">{s.description}</span>
-              </div>
+                <ArrowUpRight className="srv__arrow" size={22} aria-hidden="true" />
+              </Link>
             ))}
           </div>
         </div>
@@ -116,10 +117,12 @@ export default function Hizmetler() {
 
           <div className="service-explain__grid">
             {SERVICE_CATALOG.map((service, index) => (
-              <article
+              <Link
                 className="service-explain__card reveal"
                 data-d={String(index % 2)}
                 key={service.number}
+                to={`/hizmetler/${service.slug}`}
+                aria-label={`${service.name} hizmetini incele`}
               >
                 <div className="service-explain__title-row">
                   <span>{service.number}</span>
@@ -135,7 +138,8 @@ export default function Hizmetler() {
                     <span key={benefit}>{benefit}</span>
                   ))}
                 </div>
-              </article>
+                <span className="service-card-link">HİZMETİ İNCELE <ArrowUpRight size={16} /></span>
+              </Link>
             ))}
           </div>
         </div>

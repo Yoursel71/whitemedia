@@ -244,11 +244,12 @@ export default function Home() {
 
           <div className="srv" style={{ marginTop: 52 }}>
             {SERVICE_CATALOG.map((s) => (
-              <div className="srv__row reveal" key={s.number}>
+              <Link className="srv__row reveal" key={s.number} to={`/hizmetler/${s.slug}`} aria-label={`${s.name} hizmetini incele`}>
                 <span className="srv__num">{s.number}</span>
                 <span className="srv__name">{s.name}</span>
                 <span className="srv__desc">{s.description}</span>
-              </div>
+                <ArrowUpRight className="srv__arrow" size={22} aria-hidden="true" />
+              </Link>
             ))}
           </div>
         </div>

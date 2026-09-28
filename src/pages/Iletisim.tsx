@@ -1,4 +1,5 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import {
   ArrowUpRight,
   Instagram,
@@ -45,10 +46,19 @@ const EMAIL_URL = `mailto:trwhitemedia@gmail.com?subject=${encodeURIComponent(
 
 export default function Iletisim() {
   const whatsappUrl = getWhatsAppUrl();
+  const [searchParams] = useSearchParams();
   const [form, setForm] = useState(EMPTY);
   const [note, setNote] = useState("");
   const [noteInk, setNoteInk] = useState(false); // true = --ink, false = --muted
   const [sending, setSending] = useState(false);
+
+  useEffect(() => {
+    const requestedService = searchParams.get("service");
+    if (!requestedService || !SERVICES.includes(requestedService)) return;
+    setForm((current) =>
+      current.service ? current : { ...current, service: requestedService }
+    );
+  }, [searchParams]);
 
   const set =
     (key: keyof typeof EMPTY) =>

@@ -6,6 +6,7 @@ import { usePageEffects } from "@/hooks/usePageEffects";
 import Home from "@/pages/Home";
 import Hakkimizda from "@/pages/Hakkimizda";
 import Hizmetler from "@/pages/Hizmetler";
+import HizmetDetay from "@/pages/HizmetDetay";
 import Portfolyo from "@/pages/Portfolyo";
 import ProjeDetay from "@/pages/ProjeDetay";
 import Iletisim from "@/pages/Iletisim";
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/hakkimizda" element={<Hakkimizda />} />
         <Route path="/hizmetler" element={<Hizmetler />} />
+        <Route path="/hizmetler/:slug" element={<HizmetDetay />} />
         <Route path="/portfolyo" element={<Portfolyo />} />
         <Route path="/portfolyo/:slug" element={<ProjeDetay />} />
         <Route path="/iletisim" element={<Iletisim />} />
