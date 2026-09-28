@@ -300,11 +300,6 @@ a {
   transition: transform .4s var(--ease);
 }
 
-.client-proof__logo.brand-logo--square {
-  max-width: 76px;
-  height: 72px;
-}
-
 .client-proof__item:hover .client-proof__logo {
   transform: scale(1.04);
 }
@@ -336,10 +331,6 @@ a {
     max-width: 124px;
   }
 
-  .client-proof__logo.brand-logo--square {
-    max-width: 62px;
-    height: 60px;
-  }
 }
 
 /* Site-wide quick contact */
@@ -1145,20 +1136,16 @@ a {
   padding: clamp(32px, 5vw, 64px);
 }
 
-.brand-panel--dark {
+.brand-panel--dark,
+.brand-panel--light {
   color: #fff;
   background: #0a0a0a;
 }
 
-.brand-panel--light {
-  color: #0a0a0a;
-  background: #f4f4f2;
-}
-
 .exhibit__media .brand-logo {
   display: block;
-  width: 62%;
-  height: 62%;
+  width: 70%;
+  height: 58%;
   max-width: none;
   max-height: none;
   object-fit: contain;
@@ -1168,18 +1155,8 @@ a {
   will-change: transform;
 }
 
-.exhibit__media .brand-logo--wide {
-  width: 72%;
-  height: 52%;
-}
-
-.exhibit__media .brand-logo--square {
-  width: 58%;
-  height: 64%;
-}
-
 .brand-logo--dark {
-  filter: grayscale(1) brightness(0) contrast(1.15);
+  filter: grayscale(1) brightness(0) invert(1) contrast(1.15);
 }
 
 .brand-logo--light {
@@ -1877,14 +1854,10 @@ a {
   overflow: hidden;
 }
 
-.case-logo--dark {
+.case-logo--dark,
+.case-logo--light {
   color: var(--paper);
   background: var(--ink);
-}
-
-.case-logo--light {
-  color: var(--ink);
-  background: var(--mist);
 }
 
 .case-logo__mark {
@@ -1892,11 +1865,6 @@ a {
   width: min(680px, 70%);
   height: 190px;
   object-fit: contain;
-}
-
-.case-logo__mark--square {
-  width: min(340px, 48%);
-  height: 280px;
 }
 
 .case-info {
@@ -2053,11 +2021,6 @@ a {
   .case-logo__mark {
     width: 82%;
     height: 120px;
-  }
-
-  .case-logo__mark--square {
-    width: 58%;
-    height: 170px;
   }
 
   .case-services li {
