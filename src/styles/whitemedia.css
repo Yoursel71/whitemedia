@@ -1144,10 +1144,10 @@ a {
 
 .exhibit__media .brand-logo {
   display: block;
-  width: 70%;
-  height: 58%;
-  max-width: none;
-  max-height: none;
+  width: min(70%, 360px);
+  height: min(58%, 180px);
+  max-width: 360px;
+  max-height: 180px;
   object-fit: contain;
   object-position: center;
   overflow: visible;
