@@ -2,13 +2,8 @@ import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import PageMeta from "@/components/PageMeta";
 import { SERVICE_DETAILS } from "@/data/serviceDetails";
+import { portfolioProjectBySlug } from "@/data/portfolioProjects";
 import { SERVICE_CATALOG, serviceBySlug } from "@/data/services";
-
-const PROCESS = [
-  { number: "01", title: "Dinler ve analiz ederiz", text: "Markayı, hedefi, hedef kitleyi ve çözülmesi gereken asıl ihtiyacı birlikte netleştiririz." },
-  { number: "02", title: "Markaya özel üretiriz", text: "Mesajı, görsel dili ve gerekli kanalları tek bir fikir etrafında planlayıp üretiriz." },
-  { number: "03", title: "Yayınlar ve geliştiririz", text: "İşi kontrollü biçimde yayına alır, sonuçlardan öğrendiklerimizle bir sonraki adımı güçlendiririz." },
-];
 
 export default function HizmetDetay() {
   const { slug = "" } = useParams();
@@ -31,6 +26,7 @@ export default function HizmetDetay() {
   const current = SERVICE_CATALOG.findIndex((item) => item.slug === slug);
   const nextService = SERVICE_CATALOG[(current + 1) % SERVICE_CATALOG.length];
   const contactHref = `/iletisim?service=${encodeURIComponent(service.name)}#form`;
+  const relatedProjects = (detail.relatedProjects || []).map((projectSlug) => portfolioProjectBySlug[projectSlug]);
 
   return (
     <main>
@@ -40,7 +36,8 @@ export default function HizmetDetay() {
         <div className="wrap">
           <Link className="case-back ul" to="/hizmetler">← Tüm hizmetler</Link>
           <p className="eyebrow reveal in">Hizmet {service.number} · {service.shortName}</p>
-          <h1 className="display reveal in" data-d="1">{detail.headline}</h1>
+          <h1 className="display reveal in" data-d="1">{service.name}</h1>
+          <p className="service-detail-hero__tagline reveal in">{detail.headline}</p>
           <p className="reveal" data-d="2">{detail.promise}</p>
           <div className="reveal service-detail-hero__cta" data-d="2">
             <Link className="btn" to={contactHref} data-magnetic>
@@ -87,23 +84,57 @@ export default function HizmetDetay() {
         </div>
       </section>
 
-      <section className="section service-models">
+      <section className="section service-models service-models--detail">
         <div className="wrap">
           <div className="service-models__head reveal">
-            <div><p className="kicker">Çalışma akışı</p><h2 className="display sec-title">Fikirden sonuca.</h2></div>
-            <p>Kimin neyi, neden yaptığını bildiği açık ve kontrollü bir süreçle ilerleriz.</p>
+            <div><p className="kicker">Uygulama alanları</p><h2 className="display sec-title">Nerede işe yarar?</h2></div>
+            <p>Aynı hizmeti her markaya aynı şekilde uygulamayız. Sektörün ve hedefin ihtiyacına göre doğru içeriği ve kanalı seçeriz.</p>
           </div>
           <div className="service-models__grid">
-            {PROCESS.map((step, index) => (
-              <article className="service-model reveal" data-d={String(index)} key={step.number}>
-                <span className="service-model__number">{step.number}</span>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
+            {detail.useCases.map((item, index) => (
+              <article className="service-model reveal" data-d={String(index)} key={item.title}>
+                <span className="service-model__number">{String(index + 1).padStart(2, "0")}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
+
+      <section className="section service-reach">
+        <div className="wrap about-story">
+          <div className="reveal">
+            <p className="kicker">Çalışma alanımız</p>
+            <h2 className="display">Trabzon'dan Türkiye'ye.</h2>
+          </div>
+          <div className="about-story__copy reveal" data-d="1">
+            <p>{detail.collaboration}</p>
+            <Link className="ul" to={contactHref}>Projenin kapsamını konuşalım →</Link>
+          </div>
+        </div>
+      </section>
+
+      {relatedProjects.length > 0 && (
+        <section className="section service-related">
+          <div className="wrap">
+            <div className="sec-head reveal">
+              <div><p className="kicker">Seçili çalışmalar</p><h2 className="display sec-title">İşlerden örnekler.</h2></div>
+              <Link className="ul mono" to="/portfolyo">TÜM PORTFÖY →</Link>
+            </div>
+            <div className="service-related__grid">
+              {relatedProjects.map((project) => (
+                <Link className="service-related__item reveal" to={`/portfolyo/${project.slug}`} key={project.slug}>
+                  <span className="eyebrow">{project.category}</span>
+                  <h3>{project.name}</h3>
+                  <p>{project.summary}</p>
+                  <span className="service-related__link">PROJEYİ İNCELE <ArrowUpRight size={17} aria-hidden="true" /></span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="section faq-section">
         <div className="wrap faq-layout">
