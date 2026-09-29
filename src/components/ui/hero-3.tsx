@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -12,19 +12,13 @@ interface AnimatedMarqueeHeroProps {
   ctaHref?: string;
   secondaryCtaText?: string;
   secondaryCtaHref?: string;
-  videos: readonly string[];
+  posters: readonly string[];
   className?: string;
 }
 
 const CARD_ROTATIONS = [-3, 2, -1, 3] as const;
 const CARD_OFFSETS = [10, -6, 4, 14] as const;
-const VIDEO_START_RATIOS = [0.22, 0.34, 0.28, 0.4, 0.18, 0.31] as const;
-
 const MotionLink = motion(Link);
-
-type NavigatorWithConnection = Navigator & {
-  connection?: { saveData?: boolean };
-};
 
 const ActionButton = ({
   children,
@@ -67,86 +61,6 @@ const ActionButton = ({
   );
 };
 
-function getPoster(src: string) {
-  const match = src.match(/\/videos\/clip-(\d+)\.mp4$/);
-  if (match) return `/work/posters/clip-${match[1]}.webp`;
-  return src.endsWith(".mp4") ? src.replace(/\.mp4$/, ".webp") : undefined;
-}
-
-function MarqueeVideo({ src, position }: { src: string; position: number }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const loadedRef = useRef(false);
-  const visibleRef = useRef(false);
-  const startPositionSetRef = useRef(false);
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const savesData = (navigator as NavigatorWithConnection).connection?.saveData === true;
-    const reducesMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (savesData || reducesMotion) return;
-
-    if (!("IntersectionObserver" in window)) {
-      visibleRef.current = true;
-      loadedRef.current = true;
-      setLoaded(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        visibleRef.current = entry.isIntersecting;
-        if (entry.isIntersecting) {
-          if (!loadedRef.current) {
-            loadedRef.current = true;
-            setLoaded(true);
-          } else {
-            videoRef.current?.play().catch(() => undefined);
-          }
-        } else {
-          videoRef.current?.pause();
-        }
-      },
-      { rootMargin: "160px" }
-    );
-
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (loaded && visibleRef.current) {
-      videoRef.current?.play().catch(() => undefined);
-    }
-  }, [loaded]);
-
-  return (
-    <video
-      ref={videoRef}
-      src={loaded ? src : undefined}
-      poster={getPoster(src)}
-      onLoadedMetadata={(event) => {
-        if (startPositionSetRef.current) return;
-
-        const video = event.currentTarget;
-        if (!Number.isFinite(video.duration) || video.duration <= 1) return;
-
-        const ratio = VIDEO_START_RATIOS[position % VIDEO_START_RATIOS.length];
-        video.currentTime = Math.min(video.duration * ratio, video.duration - 0.5);
-        startPositionSetRef.current = true;
-      }}
-      muted
-      loop
-      playsInline
-      preload="none"
-      aria-hidden="true"
-      className="w-full h-full object-cover rounded-2xl shadow-md"
-    />
-  );
-}
-
 export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
   tagline,
   title,
@@ -155,11 +69,9 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
   ctaHref,
   secondaryCtaText,
   secondaryCtaHref,
-  videos,
+  posters,
   className,
 }) => {
-  const reducesMotion = useReducedMotion();
-
   const FADE_IN_ANIMATION_VARIANTS = {
     hidden: { opacity: 0, y: 24 },
     show: {
@@ -169,7 +81,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
     },
   };
 
-  const duplicatedVideos = [...videos, ...videos];
+  const duplicatedPosters = [...posters, ...posters];
 
   return (
     <section
@@ -245,22 +157,8 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
       </div>
 
       <div className="hero-marquee__reel" aria-hidden="true">
-        <motion.div
-          className="hero-marquee__track"
-          animate={
-            reducesMotion
-              ? { x: "-8%" }
-              : {
-                  x: ["-50%", "0%"],
-                  transition: {
-                    ease: "linear",
-                    duration: 64,
-                    repeat: Infinity,
-                  },
-                }
-          }
-        >
-          {duplicatedVideos.map((src, index) => (
+        <div className="hero-marquee__track">
+          {duplicatedPosters.map((src, index) => (
             <div
               key={index}
               className="hero-marquee__card"
@@ -269,10 +167,15 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
                 translate: `0 ${CARD_OFFSETS[index % CARD_OFFSETS.length]}px`,
               }}
             >
-              <MarqueeVideo src={src} position={index % videos.length} />
+              <img
+                src={src}
+                alt=""
+                loading={index < 5 ? "eager" : "lazy"}
+                decoding="async"
+              />
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
