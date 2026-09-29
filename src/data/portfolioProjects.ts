@@ -10,6 +10,7 @@ export type PortfolioProject = {
   name: string;
   category: string;
   summary: string;
+  story?: { focus: string; approach: string };
   services: string[];
   logo?: string;
   logoAlt: string;
@@ -33,6 +34,10 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "Sağlık · Kurumsal İçerik",
     summary:
       "Medical Park Yıldızlı'nın kurumsal tanıtımını ve uzman görüşlerini, güven veren sağlık iletişimi içeriklerine dönüştürdük.",
+    story: {
+      focus: "Hastanenin kurumsal yüzünü ve uzmanların anlattıklarını, izleyicinin kolayca takip edebileceği içeriklerle görünür kılmak.",
+      approach: "Tanıtım filmi ve uzman görüşlerini aynı güven veren görsel dilde buluşturduk. Çekimden kurguya, mesajı açık tutan kısa sahneler ürettik.",
+    },
     services: ["Reels prodüksiyonu", "Sosyal medya içeriği", "Kurgu & post prodüksiyon"],
     logo: "/logos/medicalpark.webp",
     logoAlt: "Medical Park Yıldızlı Hastanesi logosu",
@@ -90,6 +95,10 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "Eğitim · İçerik",
     summary:
       "Üniversitenin iletişim ihtiyaçlarına uygun, kurumsal çizgiyi koruyan dijital içerik ve prodüksiyon çalışmaları ürettik.",
+    story: {
+      focus: "Üniversitenin iletişim çalışmalarına, kurumun çizgisiyle uyumlu bir görsel anlatım kazandırmak.",
+      approach: "İletişim Fakültesi tanıtımını tek bir filmde topladık; kurumun kimliğini öne çıkaran çekim ve kurgu dili kurduk.",
+    },
     services: ["Kurumsal içerik", "Video prodüksiyon", "Sosyal medya iletişimi"],
     logo: "/logos/trabzon-universitesi.png",
     logoAlt: "Trabzon Üniversitesi logosu",
@@ -147,6 +156,10 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "İnşaat · Sosyal Medya & Reklam",
     summary:
       "Markanın projelerini, yaşam alanlarını ve yaşam tarzı temasını güçlü görsel anlatımlarla sosyal medya içeriklerine dönüştürdük.",
+    story: {
+      focus: "Projeleri yalnızca birer yapı olarak değil, içlerinde kurulacak yaşamla birlikte anlatmak.",
+      approach: "Mekânları, gündelik hayattan anları ve farklı içerik fikirlerini bir seri halinde işledik. Her videoda markanın görsel dilini tutarlı tuttuk.",
+    },
     services: ["Sosyal medya içeriği", "Reels prodüksiyonu", "Dijital marka iletişimi"],
     logo: "/logos/gursoy-insaat.png",
     logoAlt: "Gürsoy İnşaat logosu",
@@ -188,6 +201,10 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "Restoran · Prodüksiyon",
     summary:
       "Mekânın sofrasını, mutfağını ve ürün çeşitliliğini iştah açıcı yakın planlarla satış odaklı içeriklere dönüştürdük.",
+    story: {
+      focus: "Restoranın manzarasını, sofrasını ve mutfaktaki emeği tek bir marka deneyiminin parçaları olarak göstermek.",
+      approach: "Yemeklerin hazırlığından sunumuna uzanan yakın planlar ve mekân görüntüleriyle kısa, iştah açıcı videolar ürettik.",
+    },
     services: ["Yemek çekimi", "Reels prodüksiyonu", "Sosyal medya içeriği"],
     logo: "/logos/pesent-restaurant.png",
     logoAlt: "Pesent Restaurant logosu",
@@ -281,6 +298,10 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "Kafe · Restoran",
     summary:
       "The Vera'nın ürünlerini ve mekân atmosferini modern, ritmik ve marka diline uygun dikey içeriklerle anlattık.",
+    story: {
+      focus: "The Vera'nın menüsündeki çeşitliliği ve mekân hissini sosyal medyada ayırt edilebilir bir görsel dille anlatmak.",
+      approach: "Hazırlık, yakın plan ürün ve servis anlarını ritmik kısa içeriklere dönüştürdük; farklı ürünlerde aynı marka hissini sürdürdük.",
+    },
     services: ["Reels prodüksiyonu", "Ürün çekimi", "Kurgu & renk"],
     logo: "/logos/the-vera.png",
     logoAlt: "The Vera Cafe & Restaurant logosu",
@@ -652,6 +673,10 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "Gayrimenkul · Danışmanlık",
     summary:
       "Gayrimenkul yatırımlarını, proje ve portföyleri; danışman anlatımları, drone görüntüleri ve mekân çekimleriyle güven veren dijital içeriklere dönüştürdük.",
+    story: {
+      focus: "Portföyleri ve yatırım konularını hem mekânı gösteren hem de danışmanın bilgisini taşıyan içeriklerle anlatmak.",
+      approach: "Drone ve mekân çekimlerini danışman anlatımlarıyla birleştirerek farklı portföylere uygun bir video serisi oluşturduk.",
+    },
     services: [
       "Gayrimenkul içerik stratejisi",
       "Drone & portföy çekimi",
