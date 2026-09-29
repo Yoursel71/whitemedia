@@ -154,7 +154,7 @@ a {
   margin-top: 32px;
 }
 
-/* A short title card starts the first visit without fetching any new media. */
+/* A paced title card starts the first visit without fetching any new media. */
 .site-intro {
   position: fixed;
   inset: 0;
@@ -167,7 +167,7 @@ a {
   background: var(--ink);
   color: var(--paper);
   pointer-events: none;
-  animation: introCurtain 1.65s var(--ease) both;
+  animation: introCurtain 2.45s var(--ease) both;
 }
 
 .site-intro__meta,
@@ -186,7 +186,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(16px, 3vh, 28px);
+  gap: clamp(14px, 2.5vh, 24px);
   margin: auto 0;
 }
 
@@ -198,12 +198,12 @@ a {
 }
 
 .site-intro__glyph .brand-glyph__piece {
-  animation: introBuild .7s var(--ease) both;
+  animation: introBuild .88s var(--ease) both;
 }
 
-.site-intro__glyph .brand-glyph__piece:nth-child(2) { animation-delay: .07s; }
-.site-intro__glyph .brand-glyph__piece:nth-child(3) { animation-delay: .12s; }
-.site-intro__glyph .brand-glyph__piece:nth-child(4) { animation-delay: .19s; }
+.site-intro__glyph .brand-glyph__piece:nth-child(2) { animation-delay: .1s; }
+.site-intro__glyph .brand-glyph__piece:nth-child(3) { animation-delay: .18s; }
+.site-intro__glyph .brand-glyph__piece:nth-child(4) { animation-delay: .26s; }
 
 .site-intro__name {
   display: block;
@@ -213,13 +213,21 @@ a {
   letter-spacing: -.075em;
   line-height: .95;
   white-space: nowrap;
-  animation: introName .65s .23s var(--ease) both;
+  animation: introName .82s .42s var(--ease) both;
+}
+
+.site-intro__divider {
+  width: clamp(54px, 7vw, 94px);
+  height: 1px;
+  background: rgba(255, 255, 255, .76);
+  transform-origin: center;
+  animation: introRule .65s .86s var(--ease) both;
 }
 
 .site-intro__sub {
   font-size: clamp(9px, 1vw, 12px);
   letter-spacing: .24em;
-  animation: introName .55s .42s var(--ease) both;
+  animation: introName .7s .97s var(--ease) both;
 }
 
 .site-intro__progress {
@@ -236,7 +244,7 @@ a {
   background: var(--paper);
   transform: scaleX(0);
   transform-origin: left;
-  animation: introProgress 1.2s ease-out both;
+  animation: introProgress 1.75s .15s ease-out both;
 }
 
 @keyframes introBuild {
@@ -253,8 +261,13 @@ a {
   to { transform: scaleX(1); }
 }
 
+@keyframes introRule {
+  from { opacity: 0; transform: scaleX(0); }
+  to { opacity: 1; transform: scaleX(1); }
+}
+
 @keyframes introCurtain {
-  0%, 57% { transform: translateY(0); visibility: visible; }
+  0%, 61% { transform: translateY(0); visibility: visible; }
   100% { transform: translateY(-101%); visibility: hidden; }
 }
 
@@ -332,15 +345,15 @@ a {
 }
 
 .hero-marquee--intro .hero-marquee__eyebrow {
-  animation: heroArrive .65s .96s var(--ease) both;
+  animation: heroArrive .8s 1.52s var(--ease) both;
 }
 
 .hero-marquee--intro .hero-marquee__scroll {
-  animation: heroArrive .6s 1.52s var(--ease) both;
+  animation: heroArrive .7s 2.25s var(--ease) both;
 }
 
 .hero-marquee--intro .hero-marquee__reel {
-  animation: heroArrive .9s 1.12s var(--ease) both;
+  animation: heroArrive 1s 1.82s var(--ease) both;
 }
 
 @keyframes heroArrive {

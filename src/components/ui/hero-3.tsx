@@ -76,7 +76,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
   className,
 }) => {
   const reducedMotion = useReducedMotion();
-  const entranceDelay = reducedMotion ? 0 : playIntro ? 1.05 : 0;
+  const entranceDelay = reducedMotion ? 0 : playIntro ? 1.6 : 0;
   const FADE_IN_ANIMATION_VARIANTS = {
     hidden: { opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : 24 },
     show: {
@@ -105,6 +105,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           <div className="site-intro__center">
             <BrandGlyph className="site-intro__glyph" />
             <span className="site-intro__name">WHITE MEDIA</span>
+            <span className="site-intro__divider" />
             <span className="site-intro__sub">STRATEJİ / PRODÜKSİYON / DİJİTAL</span>
           </div>
           <div className="site-intro__footer">
