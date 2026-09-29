@@ -3,6 +3,7 @@ node_modules
 
 # build output
 dist
+.prerender
 
 # raw source videos (originals are too large for git;
 # web-optimized clips live in public/videos and ARE committed)

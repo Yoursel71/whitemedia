@@ -1637,6 +1637,14 @@ a {
   align-items: start;
 }
 
+.contact-form-column {
+  order: -1;
+}
+
+.contact-section {
+  padding-top: 36px;
+}
+
 #form {
   scroll-margin-top: calc(var(--nav-h) + 24px);
 }
@@ -1644,6 +1652,10 @@ a {
 @media (min-width: 980px) {
   .contact-grid {
     grid-template-columns: 5fr 7fr;
+  }
+
+  .contact-form-column {
+    order: 0;
   }
 }
 
@@ -1808,6 +1820,30 @@ a {
   color: var(--ink-72);
 }
 
+.contact-page-hero h1 {
+  max-width: 1000px;
+  font-size: clamp(48px, 8vw, 108px);
+  line-height: .98;
+}
+
+.contact-page-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+@media (max-width: 600px) {
+  .contact-page-hero {
+    padding-top: calc(var(--nav-h) + 34px);
+  }
+
+  .contact-page-hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* ============================================================
    Portfolio case study
    ============================================================ */
@@ -1925,6 +1961,55 @@ a {
 .case-media {
   border: 1px solid var(--line);
   background: var(--mist);
+}
+
+.case-media__frame {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  background: var(--ink);
+}
+
+.case-media__preview {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.case-media__preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-media__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--paper);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .62);
+  transform: translate(-50%, -50%);
+  transition: background .2s var(--ease), transform .2s var(--ease);
+}
+
+.case-media__preview:hover .case-media__play,
+.case-media__preview:focus-visible .case-media__play {
+  background: var(--ink);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.case-media__preview:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
 }
 
 .case-media__video {

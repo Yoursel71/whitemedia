@@ -1,14 +1,18 @@
-import { useEffect } from "react";
+import { createContext, useContext, useEffect } from "react";
 
 const SITE_URL = "https://whitemedia.com.tr";
 
-type PageMetaProps = {
+export type PageMetaProps = {
   title: string;
   description: string;
   path?: string;
   type?: "website" | "article";
   noIndex?: boolean;
 };
+
+// Build-time rendering collects the metadata from the same component that
+// updates it during client-side navigation.
+export const PageMetaCollector = createContext<PageMetaProps | null>(null);
 
 function setMeta(attribute: "name" | "property", key: string, value: string) {
   let meta = document.head.querySelector<HTMLMetaElement>(
@@ -31,6 +35,11 @@ export default function PageMeta({
   type = "website",
   noIndex = false,
 }: PageMetaProps) {
+  const collector = useContext(PageMetaCollector);
+  if (collector) {
+    Object.assign(collector, { title, description, path, type, noIndex });
+  }
+
   useEffect(() => {
     const canonicalUrl = new URL(path, SITE_URL).toString();
 
@@ -41,7 +50,8 @@ export default function PageMeta({
     setMeta("property", "og:description", description);
     setMeta("property", "og:type", type);
     setMeta("property", "og:url", canonicalUrl);
-    setMeta("name", "twitter:card", "summary");
+    setMeta("property", "og:image", `${SITE_URL}/social/white-media-og.png`);
+    setMeta("name", "twitter:card", "summary_large_image");
     setMeta("name", "twitter:title", title);
     setMeta("name", "twitter:description", description);
 
