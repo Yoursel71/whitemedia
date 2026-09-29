@@ -1,5 +1,6 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { AnimatedMarqueeHero } from "@/components/ui/hero-3";
 import BrandMark from "@/components/BrandMark";
@@ -11,15 +12,9 @@ import {
 import { SERVICE_CATALOG } from "@/data/services";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
-// Per-line slide-in for the hero title (staggered by the h1 in hero-3)
-const TITLE_LINE = {
-  hidden: { opacity: 0, y: 24 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 90, damping: 18, mass: 0.9 },
-  },
-};
+// The opening slate plays once per visit, including when Home is reached
+// from another route. Server rendering and the first client render agree.
+let introWasShown = false;
 
 // Poster frames keep the moving showcase while avoiding parallel video decoders.
 const SHOWCASE_POSTERS = [
@@ -98,6 +93,19 @@ const TRUSTED_PROJECTS = TRUSTED_SLUGS.map(
 
 export default function Home() {
   const whatsappUrl = getWhatsAppUrl();
+  const reducedMotion = useReducedMotion();
+  const playIntro = useRef(!introWasShown).current;
+  useEffect(() => {
+    introWasShown = true;
+  }, []);
+  const titleLine = {
+    hidden: { opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : 24 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 90, damping: 18, mass: 0.9 },
+    },
+  };
 
   return (
     <main>
@@ -107,13 +115,14 @@ export default function Home() {
         path="/"
       />
       <AnimatedMarqueeHero
+        playIntro={playIntro}
         title={
           <>
-            <motion.span variants={TITLE_LINE} className="inline-block">
+            <motion.span variants={titleLine} className="inline-block">
               İzlenen içerikten
             </motion.span>
             <br />
-            <motion.span variants={TITLE_LINE} className="inline-block">
+            <motion.span variants={titleLine} className="inline-block">
               tercih edilen markaya.
             </motion.span>
           </>
@@ -127,7 +136,7 @@ export default function Home() {
       />
 
       {/* TRUST */}
-      <section className="client-proof" aria-labelledby="client-proof-title">
+      <section className="client-proof" id="secili-isler" aria-labelledby="client-proof-title">
         <div className="wrap">
           <div className="client-proof__head reveal">
             <div>

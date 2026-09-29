@@ -1,7 +1,8 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import BrandGlyph from "@/components/BrandGlyph";
 import { cn } from "@/lib/utils";
 
 interface AnimatedMarqueeHeroProps {
@@ -13,6 +14,7 @@ interface AnimatedMarqueeHeroProps {
   secondaryCtaText?: string;
   secondaryCtaHref?: string;
   posters: readonly string[];
+  playIntro?: boolean;
   className?: string;
 }
 
@@ -70,10 +72,13 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
   secondaryCtaText,
   secondaryCtaHref,
   posters,
+  playIntro = false,
   className,
 }) => {
+  const reducedMotion = useReducedMotion();
+  const entranceDelay = reducedMotion ? 0 : playIntro ? 1.05 : 0;
   const FADE_IN_ANIMATION_VARIANTS = {
-    hidden: { opacity: 0, y: 24 },
+    hidden: { opacity: reducedMotion ? 1 : 0, y: reducedMotion ? 0 : 24 },
     show: {
       opacity: 1,
       y: 0,
@@ -87,10 +92,34 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
     <section
       className={cn(
         "hero-marquee bg-background text-center",
+        playIntro && "hero-marquee--intro",
         className
       )}
     >
+      {playIntro && (
+        <div className="site-intro" aria-hidden="true">
+          <div className="site-intro__meta">
+            <span>WM / 001</span>
+            <span>TRABZON · TÜRKİYE</span>
+          </div>
+          <div className="site-intro__center">
+            <BrandGlyph className="site-intro__glyph" />
+            <span className="site-intro__name">WHITE MEDIA</span>
+            <span className="site-intro__sub">STRATEJİ / PRODÜKSİYON / DİJİTAL</span>
+          </div>
+          <div className="site-intro__footer">
+            <span>Fikirden ekrana.</span>
+            <span className="site-intro__progress"><span /></span>
+            <span>01 / 01</span>
+          </div>
+        </div>
+      )}
       <div className="hero-marquee__content">
+        <div className="hero-marquee__eyebrow" aria-hidden="true">
+          <span />
+          WHITE MEDIA / DİJİTAL AJANS
+          <span />
+        </div>
         {tagline && (
           <motion.div
             initial="hidden"
@@ -109,7 +138,8 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
             hidden: {},
             show: {
               transition: {
-                staggerChildren: 0.1,
+                delayChildren: entranceDelay,
+                staggerChildren: 0.16,
               },
             },
           }}
@@ -134,7 +164,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           initial="hidden"
           animate="show"
           variants={FADE_IN_ANIMATION_VARIANTS}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: entranceDelay + (reducedMotion ? 0 : 0.34) }}
           className="mt-6 max-w-xl text-lg text-muted-foreground"
         >
           {description}
@@ -144,7 +174,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           initial="hidden"
           animate="show"
           variants={FADE_IN_ANIMATION_VARIANTS}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: entranceDelay + (reducedMotion ? 0 : 0.47) }}
           className="hero-marquee__actions"
         >
           <ActionButton href={ctaHref}>{ctaText}</ActionButton>
@@ -154,6 +184,11 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
             </ActionButton>
           )}
         </motion.div>
+        <a className="hero-marquee__scroll" href="#secili-isler">
+          <span className="hero-marquee__scroll-line" aria-hidden="true"><span /></span>
+          <span>Aşağı kaydır</span>
+          <span aria-hidden="true">↓</span>
+        </a>
       </div>
 
       <div className="hero-marquee__reel" aria-hidden="true">

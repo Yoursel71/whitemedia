@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import BrandGlyph from "@/components/BrandGlyph";
 
 const LINKS = [
   { to: "/", label: "Ana Sayfa", idx: "01" },
@@ -12,7 +13,14 @@ const LINKS = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [brandPulse, setBrandPulse] = useState(0);
   const location = useLocation();
+
+  const playBrand = () => {
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setBrandPulse((pulse) => pulse + 1);
+    }
+  };
 
   // close sheet on route change + lock body scroll while open
   useEffect(() => setOpen(false), [location.pathname]);
@@ -32,9 +40,25 @@ export default function Nav() {
     <>
       <nav className="nav">
         <div className="wrap nav__inner">
-          <Link className="brand" to="/">
-            <span className="brand__mark" />
-            White Media
+          <Link
+            className="brand"
+            to="/"
+            onPointerEnter={(event) => {
+              if (event.pointerType === "mouse") playBrand();
+            }}
+            onPointerDown={playBrand}
+            onFocus={playBrand}
+          >
+            <BrandGlyph
+              key={brandPulse}
+              className={brandPulse ? "brand__mark--playing" : ""}
+            />
+            <span
+              key={`word-${brandPulse}`}
+              className={brandPulse ? "brand__wordmark--playing" : ""}
+            >
+              White Media
+            </span>
           </Link>
           <div className="nav__links">
             {LINKS.map((l) => (
