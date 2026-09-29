@@ -43,11 +43,7 @@ export default function Nav() {
           <Link
             className="brand"
             to="/"
-            onPointerEnter={(event) => {
-              if (event.pointerType === "mouse") playBrand();
-            }}
-            onPointerDown={playBrand}
-            onFocus={playBrand}
+            onClick={playBrand}
           >
             <BrandGlyph
               key={brandPulse}
