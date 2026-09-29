@@ -114,14 +114,10 @@ export default function Iletisim() {
         description="Markanızın sosyal medya, prodüksiyon, reklam veya web projesini White Media ekibine anlatın. Trabzon'dan Türkiye'nin her yerine hizmet."
         path="/iletisim"
       />
-      <header className="page-hero">
+      <header className="page-hero contact-page-hero">
         <div className="wrap">
           <p className="eyebrow reveal in">İletişim</p>
-          <h1
-            className="display reveal in"
-            data-d="1"
-            style={{ fontSize: "clamp(48px,11vw,150px)", marginTop: 12 }}
-          >
+          <h1 className="display reveal in" data-d="1">
             Yeni bir
             <br />
             <span style={{ fontWeight: 300, fontStyle: "italic" }}>projeye</span>{" "}
@@ -136,10 +132,20 @@ export default function Iletisim() {
             istersen WhatsApp'tan doğrudan yaz; ayrıntıları birlikte
             netleştirelim.
           </p>
+          <div className="contact-page-hero__actions reveal" data-d="2">
+            <a className="btn" href="#form">
+              <span>Teklif formuna geç</span>
+              <ArrowUpRight className="button-icon" aria-hidden="true" />
+            </a>
+            <a className="btn btn-ghost" href={whatsappUrl} target="_blank" rel="noreferrer">
+              <span>WhatsApp'tan yaz</span>
+              <ArrowUpRight className="button-icon" aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </header>
 
-      <section className="section" id="form" style={{ paddingTop: 64 }}>
+      <section className="section contact-section" id="form">
         <div className="wrap">
           <div className="contact-grid">
             {/* INFO */}
@@ -203,7 +209,7 @@ export default function Iletisim() {
             </div>
 
             {/* FORM */}
-            <div className="reveal" data-d="1">
+            <div className="reveal contact-form-column" data-d="1">
               <form className="form-card" onSubmit={onSubmit} noValidate>
                 <div className="form-card__intro">
                   <p className="kicker">Proje formu</p>

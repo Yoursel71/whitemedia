@@ -1,68 +1,49 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { Play } from "lucide-react";
 import type { ProjectMedia } from "@/data/portfolioProjects";
 
-type NavigatorWithConnection = Navigator & {
-  connection?: { saveData?: boolean };
-};
-
 export default function ProjectVideo({ media }: { media: ProjectMedia }) {
-  const ref = useRef<HTMLVideoElement>(null);
-  const autoplayAllowedRef = useRef(true);
-  const [isVisible, setIsVisible] = useState(false);
-  const [shouldLoad, setShouldLoad] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [active, setActive] = useState(false);
 
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
+  function playVideo() {
+    const video = videoRef.current;
+    if (!video) return;
 
-    const savesData = (navigator as NavigatorWithConnection).connection?.saveData === true;
-    const reducesMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    autoplayAllowedRef.current = !savesData && !reducesMotion;
-
-    if (!("IntersectionObserver" in window)) {
-      setShouldLoad(true);
-      setIsVisible(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-
-        if (entry.isIntersecting) {
-          setShouldLoad(true);
-        } else {
-          element.pause();
-        }
-      },
-      { rootMargin: "160px 0px", threshold: 0.25 }
-    );
-
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const element = ref.current;
-    if (!element || !shouldLoad || !isVisible || !autoplayAllowedRef.current) return;
-
-    void element.play().catch(() => undefined);
-  }, [isVisible, shouldLoad]);
+    // Attach the large file only after an explicit click. Calling play here
+    // preserves the browser's permission to play with sound.
+    video.src = media.src;
+    setActive(true);
+    void video.play().catch(() => undefined);
+  }
 
   return (
     <article className="case-media reveal">
-      <video
-        ref={ref}
-        className="case-media__video"
-        muted
-        loop
-        playsInline
-        controls
-        preload="none"
-        poster={media.poster}
-        aria-label={media.title}
-        src={shouldLoad ? media.src : undefined}
-      />
+      <div className="case-media__frame">
+        <video
+          ref={videoRef}
+          className="case-media__video"
+          controls={active}
+          playsInline
+          preload="none"
+          poster={media.poster}
+          aria-label={media.title}
+          style={{ display: active ? "block" : "none" }}
+        />
+        {!active && (
+          <button
+            type="button"
+            className="case-media__preview"
+            onClick={playVideo}
+            aria-label={`${media.title} videosunu oynat`}
+          >
+            <img src={media.poster} alt="" loading="lazy" />
+            <span className="case-media__play" aria-hidden="true">
+              <Play size={30} fill="currentColor" />
+            </span>
+          </button>
+        )}
+      </div>
       <p className="case-media__caption">{media.title}</p>
     </article>
   );
