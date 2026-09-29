@@ -64,7 +64,7 @@ export default function Hizmetler() {
     <main>
       <PageMeta
         title="Hizmetler | White Media Dijital Ajans"
-        description="Sosyal medya yönetimi, fotoğraf ve video prodüksiyon, drone çekimi, Google Ads, Meta reklamları ve web sitesi hizmetleri."
+        description="Trabzon merkezli White Media ile Türkiye genelinde sosyal medya yönetimi, fotoğraf ve video prodüksiyon, drone çekimi, dijital reklam ve web sitesi hizmetleri."
         path="/hizmetler"
       />
       <header className="page-hero">
@@ -76,9 +76,9 @@ export default function Hizmetler() {
             tüm kanallar.
           </h1>
           <p className="reveal" data-d="2">
-            Önce hangi hizmeti vereceğimizi değil, markanın neye ihtiyacı
-            olduğunu konuşuyoruz. Sonra mesajı, üretimi ve dağıtımı aynı hedefe
-            bağlıyoruz.
+            Trabzon merkezliyiz; Türkiye'nin farklı şehirlerindeki markalarla
+            da çalışıyoruz. Sosyal medya, prodüksiyon, reklam ve web projelerinde
+            önce ihtiyacı belirliyor, kapsamı markanın hedefine göre kuruyoruz.
           </p>
         </div>
       </header>
