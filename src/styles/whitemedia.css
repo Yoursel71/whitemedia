@@ -700,13 +700,15 @@ a {
 .brand-glyph__piece:nth-child(3) { --brand-x: -6px; --brand-y: 6px; }
 .brand-glyph__piece:nth-child(4) { --brand-x: 6px; --brand-y: 6px; }
 
+.brand:hover .brand-glyph__piece,
+.brand:focus-visible .brand-glyph__piece,
 .brand__mark--playing .brand-glyph__piece {
   animation: brandScatter .82s var(--ease) both;
 }
 
-.brand__mark--playing .brand-glyph__piece:nth-child(2) { animation-delay: .04s; }
-.brand__mark--playing .brand-glyph__piece:nth-child(3) { animation-delay: .08s; }
-.brand__mark--playing .brand-glyph__piece:nth-child(4) { animation-delay: .12s; }
+.brand .brand-glyph__piece:nth-child(2) { animation-delay: .04s; }
+.brand .brand-glyph__piece:nth-child(3) { animation-delay: .08s; }
+.brand .brand-glyph__piece:nth-child(4) { animation-delay: .12s; }
 
 .brand__wordmark--playing {
   animation: brandWordmark .72s var(--ease) both;
