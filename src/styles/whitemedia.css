@@ -192,7 +192,13 @@ a {
   width: max-content;
   flex-shrink: 0;
   gap: 16px;
+  animation: heroReel 64s linear infinite;
   will-change: transform;
+}
+
+@keyframes heroReel {
+  from { transform: translate3d(calc(-50% - 8px), 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
 }
 
 .hero-marquee__card {
@@ -200,6 +206,14 @@ a {
   height: clamp(198px, 29svh, 274px);
   aspect-ratio: 3 / 4;
   flex: 0 0 auto;
+}
+
+.hero-marquee__card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover;
 }
 
 @media (max-width: 600px) {
@@ -576,18 +590,14 @@ a {
 .reveal {
   opacity: 0;
   transform: translateY(34px);
-  filter: blur(8px);
   transition:
     opacity .65s var(--ease),
-    transform .75s var(--ease),
-    filter .65s var(--ease);
-  will-change: opacity, transform, filter;
+    transform .75s var(--ease);
 }
 
 .reveal.in {
   opacity: 1;
   transform: none;
-  filter: blur(0);
 }
 
 /* directional / scale variants — opt-in via extra class */
@@ -603,18 +613,10 @@ a {
   transform: scale(.92);
 }
 
-.reveal--blur {
-  /* blur-only fade, no travel */
-  transform: none;
-  filter: blur(16px);
-}
-
 .reveal--left.in,
 .reveal--right.in,
-.reveal--scale.in,
-.reveal--blur.in {
+.reveal--scale.in {
   transform: none;
-  filter: blur(0);
 }
 
 .reveal[data-d="1"] { transition-delay: .08s; }
@@ -1108,7 +1110,6 @@ a {
     transform .5s var(--ease),
     box-shadow .5s var(--ease),
     border-color .5s var(--ease);
-  will-change: transform;
 }
 
 .exhibit:hover {
@@ -2829,6 +2830,10 @@ a {
    Reduced motion
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
+  .hero-marquee__track {
+    animation: none !important;
+    transform: translateX(-8%);
+  }
 
   *,
   *::before,

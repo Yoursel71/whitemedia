@@ -21,25 +21,24 @@ const TITLE_LINE = {
   },
 };
 
-// Alternate sectors so similar work does not cluster together. The two newest
-// additions use their optimized portfolio files instead of duplicating media.
-const SHOWCASE_VIDEOS = [
-  "/work/faber-gayrimenkul/marka-tanitim-filmi.mp4", // gayrimenkul
-  "/videos/clip-1.mp4", // sağlık
-  "/videos/clip-14.mp4", // kafe
-  "/videos/clip-8.mp4", // otomotiv / lokasyon
-  "/work/ay-gida/karadeniz-export-cayi-urun-filmi.mp4", // üretim / ürün
-  "/videos/clip-10.mp4", // restoran prodüksiyonu
-  "/videos/clip-2.mp4", // geleneksel üretim
-  "/videos/clip-6.mp4", // turizm / drone
-  "/videos/clip-12.mp4", // tatlı prodüksiyonu
-  "/videos/clip-9.mp4", // otomotiv / ürün
-  "/videos/clip-15.mp4", // sağlık
-  "/videos/clip-13.mp4", // pizza prodüksiyonu
-  "/videos/clip-3.mp4", // geleneksel üretim
-  "/videos/clip-11.mp4", // gastronomi / manzara
-  "/videos/clip-7.mp4", // içecek prodüksiyonu
-  "/videos/clip-16.mp4", // restoran sunumu
+// Poster frames keep the moving showcase while avoiding parallel video decoders.
+const SHOWCASE_POSTERS = [
+  "/work/faber-gayrimenkul/marka-tanitim-filmi.webp", // gayrimenkul
+  "/work/posters/clip-1.webp", // sağlık
+  "/work/posters/clip-14.webp", // kafe
+  "/work/posters/clip-8.webp", // otomotiv / lokasyon
+  "/work/ay-gida/karadeniz-export-cayi-urun-filmi.webp", // üretim / ürün
+  "/work/posters/clip-10.webp", // restoran prodüksiyonu
+  "/work/posters/clip-2.webp", // geleneksel üretim
+  "/work/posters/clip-6.webp", // turizm / drone
+  "/work/posters/clip-12.webp", // tatlı prodüksiyonu
+  "/work/posters/clip-9.webp", // otomotiv / ürün
+  "/work/posters/clip-15.webp", // sağlık
+  "/work/posters/clip-13.webp", // pizza prodüksiyonu
+  "/work/posters/clip-3.webp", // geleneksel üretim
+  "/work/posters/clip-11.webp", // gastronomi / manzara
+  "/work/posters/clip-7.webp", // içecek prodüksiyonu
+  "/work/posters/clip-16.webp", // restoran sunumu
 ] as const;
 
 const TICKER = [
@@ -124,7 +123,7 @@ export default function Home() {
         ctaHref={whatsappUrl}
         secondaryCtaText="İşleri incele"
         secondaryCtaHref="/portfolyo"
-        videos={SHOWCASE_VIDEOS}
+        posters={SHOWCASE_POSTERS}
       />
 
       {/* TRUST */}
