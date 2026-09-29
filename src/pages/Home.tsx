@@ -4,6 +4,8 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { AnimatedMarqueeHero } from "@/components/ui/hero-3";
 import BrandMark from "@/components/BrandMark";
+import ProjectCover from "@/components/ProjectCover";
+import FilmChapter from "@/components/FilmChapter";
 import PageMeta from "@/components/PageMeta";
 import {
   portfolioProjectBySlug,
@@ -134,6 +136,8 @@ export default function Home() {
         secondaryCtaHref="/portfolyo"
         posters={SHOWCASE_POSTERS}
       />
+
+      <FilmChapter />
 
       {/* TRUST */}
       <section className="client-proof" id="secili-isler" aria-labelledby="client-proof-title">
@@ -320,12 +324,7 @@ export default function Home() {
                   to={`/portfolyo/${project.slug}`}
                 >
                   <span className="exhibit__no">EX. {project.index}</span>
-                  <div className={`exhibit__media brand-panel brand-panel--${project.panel}`}>
-                    <BrandMark
-                      project={project}
-                      className={`brand-logo brand-logo--${project.logoShape}`}
-                    />
-                  </div>
+                  <ProjectCover project={project} />
                   <div className="exhibit__bar">
                     <span className="exhibit__name">{project.name}</span>
                     <span className="exhibit__tag">{project.category}</span>
