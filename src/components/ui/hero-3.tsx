@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -13,14 +13,90 @@ interface AnimatedMarqueeHeroProps {
   ctaHref?: string;
   secondaryCtaText?: string;
   secondaryCtaHref?: string;
-  posters: readonly string[];
+  videos: readonly string[];
   playIntro?: boolean;
   className?: string;
 }
 
 const CARD_ROTATIONS = [-3, 2, -1, 3] as const;
 const CARD_OFFSETS = [10, -6, 4, 14] as const;
+const VIDEO_START_RATIOS = [0.22, 0.34, 0.28, 0.4, 0.18, 0.31] as const;
 const MotionLink = motion(Link);
+
+type NavigatorWithConnection = Navigator & {
+  connection?: { saveData?: boolean };
+};
+
+function getPoster(src: string) {
+  const match = src.match(/\/videos\/clip-(\d+)\.mp4$/);
+  if (match) return `/work/posters/clip-${match[1]}.webp`;
+  return src.replace(/\.mp4$/, ".webp");
+}
+
+function MarqueeVideo({ src, position }: { src: string; position: number }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const wasActiveRef = useRef(false);
+  const startPositionSetRef = useRef(false);
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const reel = video?.closest(".hero-marquee__reel");
+    if (!video || !reel) return;
+
+    const savesData = (navigator as NavigatorWithConnection).connection?.saveData === true;
+    const reducesMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (savesData || reducesMotion) return;
+
+    if (!("IntersectionObserver" in window)) {
+      setActive(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setActive(entry.intersectionRatio >= 0.5),
+      { root: reel, threshold: [0, 0.5] }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (active) {
+      startPositionSetRef.current = false;
+      void video.play().catch(() => undefined);
+    } else {
+      video.pause();
+      if (wasActiveRef.current) video.load();
+    }
+    wasActiveRef.current = active;
+  }, [active]);
+
+  return (
+    <video
+      ref={videoRef}
+      src={active ? src : undefined}
+      poster={getPoster(src)}
+      onLoadedMetadata={(event) => {
+        if (startPositionSetRef.current) return;
+        const video = event.currentTarget;
+        if (!Number.isFinite(video.duration) || video.duration <= 1) return;
+
+        const ratio = VIDEO_START_RATIOS[position % VIDEO_START_RATIOS.length];
+        video.currentTime = Math.min(video.duration * ratio, video.duration - 0.5);
+        startPositionSetRef.current = true;
+      }}
+      muted
+      loop
+      playsInline
+      preload="none"
+      aria-hidden="true"
+    />
+  );
+}
 
 const ActionButton = ({
   children,
@@ -71,7 +147,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
   ctaHref,
   secondaryCtaText,
   secondaryCtaHref,
-  posters,
+  videos,
   playIntro = false,
   className,
 }) => {
@@ -86,7 +162,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
     },
   };
 
-  const duplicatedPosters = [...posters, ...posters];
+  const duplicatedVideos = [...videos, ...videos];
 
   return (
     <section
@@ -194,7 +270,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
 
       <div className="hero-marquee__reel" aria-hidden="true">
         <div className="hero-marquee__track">
-          {duplicatedPosters.map((src, index) => (
+          {duplicatedVideos.map((src, index) => (
             <div
               key={index}
               className="hero-marquee__card"
@@ -203,12 +279,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
                 translate: `0 ${CARD_OFFSETS[index % CARD_OFFSETS.length]}px`,
               }}
             >
-              <img
-                src={src}
-                alt=""
-                loading={index < 5 ? "eager" : "lazy"}
-                decoding="async"
-              />
+              <MarqueeVideo src={src} position={index % videos.length} />
             </div>
           ))}
         </div>
