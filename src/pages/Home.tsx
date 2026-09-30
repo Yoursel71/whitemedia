@@ -17,7 +17,7 @@ import { getWhatsAppUrl } from "@/lib/whatsapp";
 let introWasShown = false;
 
 const SHOWCASE_VIDEOS = [
-  "/work/faber-gayrimenkul/marka-tanitim-filmi.mp4", // gayrimenkul
+  "/hero/faber-preview.mp4", // Faber'in tam filmi proje sayfasında
   "/videos/clip-1.mp4", // sağlık
   "/videos/clip-14.mp4", // kafe
   "/videos/clip-8.mp4", // otomotiv / lokasyon
@@ -193,13 +193,12 @@ export default function Home() {
           </div>
           <div className="manifesto-aside reveal" data-d="1">
             <p>
-              Her işin ayrı bir değeri, her markanın kendine ait bir dili var.
-              Bu yüzden hazır şablonları çoğaltmıyor; markaya ait olanı
-              buluyoruz.
+              Hazır şablonlarla ilerlemiyoruz. Her işin mesajını markanın
+              ihtiyacına göre kuruyoruz.
             </p>
             <p>
-              Önce ihtiyacı belirliyor; ardından o ihtiyaca hizmet eden mesajı,
-              içeriği ve dağıtımı birlikte tasarlıyoruz.
+              Fikir, çekim, yayın ve reklamı aynı hikâyenin parçaları olarak
+              planlıyoruz.
             </p>
           </div>
         </div>
@@ -218,12 +217,10 @@ export default function Home() {
           </div>
           <div className="agency-intro__copy reveal" data-d="1">
             <p>
-              Her markanın kimliği, hedef kitlesi ve önceliği farklı. Bu yüzden
-              bir markada işe yarayan fikri alıp diğerine kopyalamıyoruz.
+              Önce markanı, kitleni ve o anki hedefini anlamaya çalışıyoruz.
             </p>
             <p>
-              Önce doğru mesajı ve içeriği kuruyor; sonra organik yayın ve
-              reklamla onu doğru insanlarla buluşturuyoruz.
+              Ardından mesajı fotoğraf, video ve reklam içeriğine dönüştürüyoruz.
             </p>
             <Link className="agency-intro__link" to="/hakkimizda">
               BİZİ DAHA YAKINDAN TANI
@@ -272,9 +269,8 @@ export default function Home() {
               </h2>
             </div>
             <p className="approach-head__copy reveal" data-d="1">
-              Reklam doğru içeriğin erişimini büyütür; yanlış mesajı düzeltmez.
-              Bu yüzden hedefi, içeriği ve dağıtımı aynı düşüncenin parçaları
-              olarak ele alıyoruz.
+              Reklam, iyi içeriği doğru kişiye taşır. Bu yüzden üretim ve
+              dağıtımı birlikte planlıyoruz.
             </p>
           </div>
 
@@ -351,8 +347,8 @@ export default function Home() {
               <h3 className="brand-proof__title">Daha fazlası.</h3>
             </div>
             <p className="brand-proof__copy">
-              Vitrindeki dört iş yalnızca seçki. Sağlıktan eğitime, otomotivden
-              turizme uzanan farklı sektörlerde markalarla birlikte çalıştık.
+              Buradaki dört iş yalnızca seçki. Farklı sektörlerden daha fazla
+              projeyi portfolyoda görebilirsin.
             </p>
             <Link className="brand-proof__link" to="/portfolyo">
               TÜM MARKALARI GÖR <span aria-hidden="true">→</span>

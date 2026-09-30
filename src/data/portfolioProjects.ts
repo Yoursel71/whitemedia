@@ -757,6 +757,79 @@ export const portfolioProjects: PortfolioProject[] = [
   },
 ];
 
+// These notes describe only work visible in each project's selected media.
+// They do not imply campaign results or client briefs we cannot verify.
+export const portfolioProjectNotes: Record<string, { headline: string; detail: string }> = {
+  medicalpark: {
+    headline: "Kurum ve uzman anlatımı.",
+    detail: "Hastane tanıtım filmini iki ayrı uzman görüşüyle tamamladık. Cerrahi onkoloji ve göz kapağı sarkması konularını, kurumsal tanıtımdan ayrı videolarda işledik.",
+  },
+  "yamanlar-oto-ekspertiz": {
+    headline: "Açılış ve konum bir arada.",
+    detail: "Salihli şubesinin açılışını bir filmde, İzmir şubelerinin konumunu drone görüntüleriyle ayrı bir videoda anlattık.",
+  },
+  "trabzon-universitesi": {
+    headline: "Fakülteye odaklanan film.",
+    detail: "İletişim Fakültesi için kurumsal bir tanıtım filmi hazırladık. Seçkide, üniversitenin genel mesajı yerine bu fakülteye ayrılmış çalışmayı izleyebilirsin.",
+  },
+  "maziden-atiye-puruthana": {
+    headline: "Ustalığın aşamalarını gösterdik.",
+    detail: "Tandır yapımını, güçlendirme ve sevkiyat sürecini, Loloz tekniğini ve ustalık hikâyesini dört ayrı videoda bir araya getirdik.",
+  },
+  "gursoy-insaat": {
+    headline: "Yaşam fikrini seriye çevirdik.",
+    detail: "Hafta sonu aktiviteleri, ev dekorasyonu ve yeşil alan temalarını ayrı kısa içeriklerde işledik. Böylece seçki yalnızca bina görüntülerinden oluşmuyor.",
+  },
+  "pesent-restaurant": {
+    headline: "Mutfaktan sahile uzanan seri.",
+    detail: "Adana kebap, pide ve ocakbaşı hazırlığını yakın planda; servis deneyimini ve restoranın sahil konumunu ayrı videolarda gösterdik.",
+  },
+  "depaul-cafe-restaurant": {
+    headline: "Ürünü ve konumu anlattık.",
+    detail: "Mini burger, Paul Special pizza ve tatlı hazırlığını ürün odaklı çekimlerle; mekânın konumunu ise ayrı bir tanıtım videosuyla sunduk.",
+  },
+  "the-vera-cafe-restaurant": {
+    headline: "Menünün farklı anları.",
+    detail: "İçecek, makarna, pizza, kahvaltı ve tatlı hazırlığını dikey içeriklere ayırdık. Paket servis ve mekân tanıtımı da bu seçkinin parçası.",
+  },
+  "dk-gayrimenkul": {
+    headline: "Her portföyün kendi odağı.",
+    detail: "Villa, iş yeri, arsa ve daireleri tek bir şablona sıkıştırmadan ayrı videolarda sunduk; konum, mekân ve kullanım özelliklerini portföye göre öne çıkardık.",
+  },
+  "modatepe-resort": {
+    headline: "Konaklamanın çevresini de gösterdik.",
+    detail: "Bungalov ve manzara videolarını gün batımı drone çekimi, kahvaltı ve yemek içerikleriyle tamamladık. Seçki tesisin farklı deneyimlerini gösteriyor.",
+  },
+  "kardesler-oto-lastik": {
+    headline: "İşlemi ve ürünü ayırdık.",
+    detail: "Jant düzeltme ve hasarlı jant yenileme süreçlerini, Mercedes AMG ve Citroën Berlingo jant tanıtımlarından ayrı videolarda işledik.",
+  },
+  "sancak-turizm": {
+    headline: "Rota, konaklama, hizmet.",
+    detail: "Uzungöl destinasyonunu, bungalov konaklamayı ve acentenin hizmetlerini üç ayrı kısa içerikle anlattık.",
+  },
+  "flowers-dugun-salonu": {
+    headline: "Geceyi ve mekânı anlattık.",
+    detail: "Düğün gecesinin atmosferini bir filmde, salonun ve organizasyon alanının tanıtımını ikinci videoda topladık.",
+  },
+  "tt-fest": {
+    headline: "Festival tek filmde.",
+    detail: "TT Fest için hazırladığımız etkinlik filmi, festival alanını ve sahne atmosferini hareketli bir seçkide bir araya getiriyor.",
+  },
+  "kozalaklar-oyun-atolyesi": {
+    headline: "Atölyenin hareketi ekranda.",
+    detail: "Tırmanış, duyusal oyun ve kar etkinliğini ayrı videolarda gösterdik; ekip röportajıyla atölyeyi yürüten insanlara da yer verdik.",
+  },
+  "faber-gayrimenkul": {
+    headline: "Markadan portföye uzanan içerik.",
+    detail: "Marka filmini; North Life daireleri, arsa tanıtımı, ev mi arsa mı sorusu ve kira sözleşmesi gibi farklı konulara ayrılmış videolarla tamamladık.",
+  },
+  "ay-gida": {
+    headline: "Üretimden demlemeye.",
+    detail: "Çay fabrikası ve kalite kontrol sürecini; Karadeniz Export ürün filmi ve Doğuş Çay demleme deneyimiyle aynı seçkide buluşturduk.",
+  },
+};
+
 export const portfolioProjectBySlug = Object.fromEntries(
   portfolioProjects.map((project) => [project.slug, project])
 ) as Record<string, PortfolioProject>;

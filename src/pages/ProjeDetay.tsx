@@ -5,6 +5,7 @@ import PageMeta from "@/components/PageMeta";
 import ProjectVideo from "@/components/ProjectVideo";
 import {
   portfolioProjectBySlug,
+  portfolioProjectNotes,
   portfolioProjects,
 } from "@/data/portfolioProjects";
 
@@ -43,6 +44,7 @@ export default function ProjeDetay() {
     currentPosition >= 0
       ? projectsWithWork[(currentPosition + 1) % projectsWithWork.length]
       : projectsWithWork[0];
+  const projectNote = portfolioProjectNotes[project.slug];
 
   return (
     <main>
@@ -78,17 +80,23 @@ export default function ProjeDetay() {
       <section className="case-info section">
         <div className="wrap case-info__grid">
           <div>
-            <p className="kicker reveal">Çalışma kapsamı</p>
-            <h2 className="display reveal" data-d="1">Markaya özel üretim.</h2>
+            <p className="kicker reveal">{projectNote ? "Projeye bakış" : "Çalışma kapsamı"}</p>
+            <h2 className="display reveal" data-d="1">
+              {projectNote?.headline ?? "Markaya özel üretim."}
+            </h2>
+            {projectNote && <p className="case-info__note reveal" data-d="2">{projectNote.detail}</p>}
           </div>
-          <ul className="case-services reveal" data-d="2">
-            {project.services.map((service, index) => (
-              <li key={service}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                {service}
-              </li>
-            ))}
-          </ul>
+          <div className="case-info__scope reveal" data-d="2">
+            {projectNote && <p className="kicker">Çalışma kapsamı</p>}
+            <ul className="case-services">
+              {project.services.map((service, index) => (
+                <li key={service}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  {service}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
