@@ -28,6 +28,9 @@ type NavigatorWithConnection = Navigator & {
 };
 
 function getPoster(src: string) {
+  if (src === "/hero/faber-preview.mp4") {
+    return "/work/faber-gayrimenkul/marka-tanitim-filmi.webp";
+  }
   const match = src.match(/\/videos\/clip-(\d+)\.mp4$/);
   if (match) return `/work/posters/clip-${match[1]}.webp`;
   return src.replace(/\.mp4$/, ".webp");

@@ -2163,6 +2163,18 @@ a {
   font-size: clamp(42px, 6vw, 82px);
 }
 
+.case-info__note {
+  max-width: 580px;
+  margin: 26px 0 0;
+  color: var(--ink-72);
+  font-size: clamp(18px, 2vw, 21px);
+  line-height: 1.55;
+}
+
+.case-info__scope > .kicker {
+  margin: 0 0 18px;
+}
+
 .case-services {
   margin: 0;
   padding: 0;
