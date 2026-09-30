@@ -6,6 +6,7 @@ import ProjectVideo from "@/components/ProjectVideo";
 import {
   portfolioProjectBySlug,
   portfolioProjects,
+  getCoverMedia,
 } from "@/data/portfolioProjects";
 
 export default function ProjeDetay() {
@@ -32,6 +33,8 @@ export default function ProjeDetay() {
       </main>
     );
   }
+
+  const coverMedia = getCoverMedia(project);
 
   const projectsWithWork = portfolioProjects.filter(
     (portfolioProject) => portfolioProject.media.length > 0
@@ -67,12 +70,12 @@ export default function ProjeDetay() {
           </div>
 
           {project.media.length > 0 ? (
-            <div className={`case-feature case-feature--${Math.min(project.media.length, 3)} reveal`}>
-              {project.media.length === 1 && (
-                <img className="case-feature__backdrop" src={project.media[0].poster} alt="" />
+            <div className={`case-feature case-feature--${coverMedia.length} reveal`}>
+              {coverMedia.length === 1 && (
+                <img className="case-feature__backdrop" src={coverMedia[0].poster} alt="" />
               )}
               <div className="case-feature__frames" aria-hidden="true">
-                {project.media.slice(0, 3).map((media) => (
+                {coverMedia.map((media) => (
                   <img key={media.poster} src={media.poster} alt="" decoding="async" />
                 ))}
               </div>

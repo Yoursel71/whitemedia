@@ -18,6 +18,7 @@ export type PortfolioProject = {
   logoTreatment: "dark" | "light" | "on-dark";
   panel: "dark" | "light";
   media: ProjectMedia[];
+  coverIndexes?: number[];
 };
 
 const video = (clip: number, title: string): ProjectMedia => ({
@@ -44,6 +45,7 @@ export const portfolioProjects: PortfolioProject[] = [
     logoShape: "wide",
     logoTreatment: "light",
     panel: "dark",
+    coverIndexes: [1, 2],
     media: [
       {
         src: "/work/medicalpark-yildizli/hastane-tanitim-filmi.mp4",
@@ -785,3 +787,10 @@ export const portfolioProjects: PortfolioProject[] = [
 export const portfolioProjectBySlug = Object.fromEntries(
   portfolioProjects.map((project) => [project.slug, project])
 ) as Record<string, PortfolioProject>;
+
+export function getCoverMedia(project: PortfolioProject): ProjectMedia[] {
+  const indexes = project.coverIndexes || [0, 1, 2];
+  return indexes
+    .map((index) => project.media[index])
+    .filter((media): media is ProjectMedia => Boolean(media));
+}

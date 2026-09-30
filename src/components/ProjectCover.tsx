@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { PointerEvent } from "react";
+import { getCoverMedia } from "@/data/portfolioProjects";
 import type { PortfolioProject } from "@/data/portfolioProjects";
 import BrandMark from "@/components/BrandMark";
 
@@ -7,7 +8,8 @@ export default function ProjectCover({ project }: { project: PortfolioProject })
   const videoRef = useRef<HTMLVideoElement>(null);
   const hoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [playing, setPlaying] = useState(false);
-  const firstWork = project.media[0];
+  const coverMedia = getCoverMedia(project);
+  const firstWork = coverMedia[0];
 
   useEffect(() => () => {
     if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
@@ -48,9 +50,9 @@ export default function ProjectCover({ project }: { project: PortfolioProject })
   }
 
   return (
-    <div className={`exhibit__media exhibit__media--work${project.media.length >= 3 ? " exhibit__media--gallery" : ""}`} onPointerEnter={startPreview} onPointerLeave={stopPreview}>
+    <div className={`exhibit__media exhibit__media--work${coverMedia.length >= 3 ? " exhibit__media--gallery" : coverMedia.length === 2 ? " exhibit__media--pair" : ""}`} onPointerEnter={startPreview} onPointerLeave={stopPreview}>
       <img className="exhibit__poster" src={firstWork.poster} alt="" loading="lazy" decoding="async" />
-      {project.media.slice(1, 3).map((media, index) => (
+      {coverMedia.slice(1, 3).map((media, index) => (
         <img className={`exhibit__poster exhibit__poster--tile-${index + 2}`} key={media.poster} src={media.poster} alt="" loading="lazy" decoding="async" />
       ))}
       <video
