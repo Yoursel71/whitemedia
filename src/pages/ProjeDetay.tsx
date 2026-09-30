@@ -6,7 +6,6 @@ import ProjectVideo from "@/components/ProjectVideo";
 import {
   portfolioProjectBySlug,
   portfolioProjects,
-  getCoverMedia,
 } from "@/data/portfolioProjects";
 
 export default function ProjeDetay() {
@@ -33,8 +32,6 @@ export default function ProjeDetay() {
       </main>
     );
   }
-
-  const coverMedia = getCoverMedia(project);
 
   const projectsWithWork = portfolioProjects.filter(
     (portfolioProject) => portfolioProject.media.length > 0
@@ -69,61 +66,33 @@ export default function ProjeDetay() {
             <p className="case-hero__summary reveal" data-d="2">{project.summary}</p>
           </div>
 
-          {project.media.length > 0 ? (
-            <div className={`case-feature case-feature--${coverMedia.length} reveal`}>
-              {coverMedia.length === 1 && (
-                <img className="case-feature__backdrop" src={coverMedia[0].poster} alt="" />
-              )}
-              <div className="case-feature__frames" aria-hidden="true">
-                {coverMedia.map((media) => (
-                  <img key={media.poster} src={media.poster} alt="" decoding="async" />
-                ))}
-              </div>
-              <div className="case-feature__overlay">
-                <span>WHITE MEDIA / EX. {project.index}</span>
-                <a href="#case-work">İŞLERİ İZLE <span aria-hidden="true">↓</span></a>
-              </div>
-            </div>
-          ) : (
-            <div className={`case-logo case-logo--${project.panel} reveal`}>
-              <BrandMark
-                project={project}
-                className={`case-logo__mark case-logo__mark--${project.logoShape}`}
-              />
-            </div>
-          )}
+          <div className={`case-logo case-logo--${project.panel} reveal`}>
+            <BrandMark
+              project={project}
+              className={`case-logo__mark case-logo__mark--${project.logoShape}`}
+            />
+          </div>
         </div>
       </header>
 
-      <section className="case-story section" aria-labelledby="case-story-title">
-        <div className="wrap">
-          <div className="case-story__head reveal">
-            <p className="kicker">Proje dosyası / EX. {project.index}</p>
-            <h2 className="display" id="case-story-title">İşin arkasındaki fikir.</h2>
+      <section className="case-info section">
+        <div className="wrap case-info__grid">
+          <div>
+            <p className="kicker reveal">Çalışma kapsamı</p>
+            <h2 className="display reveal" data-d="1">Markaya özel üretim.</h2>
           </div>
-          <div className="case-story__rows">
-            <article className="case-story__row reveal">
-              <span>01 / ODAK</span>
-              <p>{project.story?.focus || project.summary}</p>
-            </article>
-            <article className="case-story__row reveal">
-              <span>02 / YAKLAŞIM</span>
-              <p>{project.story?.approach || `Çalışmanın kapsamı: ${project.services.join(", ")}.`}</p>
-            </article>
-            <article className="case-story__row reveal">
-              <span>03 / ÜRETİM</span>
-              <div className="case-story__output">
-                <p>{project.media.length > 0 ? `${project.media.length} seçili içerik aşağıda izlenebilir.` : "Bu markaya ait seçili işleri yakında paylaşacağız."}</p>
-                <div className="case-story__tags">
-                  {project.services.map((service) => <span key={service}>{service}</span>)}
-                </div>
-              </div>
-            </article>
-          </div>
+          <ul className="case-services reveal" data-d="2">
+            {project.services.map((service, index) => (
+              <li key={service}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                {service}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      <section className="case-work section" id="case-work">
+      <section className="case-work section">
         <div className="wrap">
           <div className="sec-head reveal">
             <div>

@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import ProjectCover from "@/components/ProjectCover";
+import BrandMark from "@/components/BrandMark";
 import PageMeta from "@/components/PageMeta";
 import { portfolioProjects } from "@/data/portfolioProjects";
 
@@ -45,7 +45,14 @@ export default function Portfolyo() {
                 to={`/portfolyo/${project.slug}`}
               >
                 <span className="exhibit__no">EX. {project.index}</span>
-                <ProjectCover project={project} />
+                <div
+                  className={`exhibit__media brand-panel brand-panel--${project.panel}`}
+                >
+                  <BrandMark
+                    project={project}
+                    className={`brand-logo brand-logo--${project.logoShape}`}
+                  />
+                </div>
                 <div className="exhibit__bar">
                   <span className="exhibit__name">{project.name}</span>
                   <span className="exhibit__tag">{project.category}</span>

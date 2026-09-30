@@ -4,8 +4,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { AnimatedMarqueeHero } from "@/components/ui/hero-3";
 import BrandMark from "@/components/BrandMark";
-import ProjectCover from "@/components/ProjectCover";
-import FilmChapter from "@/components/FilmChapter";
 import PageMeta from "@/components/PageMeta";
 import {
   portfolioProjectBySlug,
@@ -18,24 +16,23 @@ import { getWhatsAppUrl } from "@/lib/whatsapp";
 // from another route. Server rendering and the first client render agree.
 let introWasShown = false;
 
-// Poster frames keep the moving showcase while avoiding parallel video decoders.
-const SHOWCASE_POSTERS = [
-  "/work/faber-gayrimenkul/marka-tanitim-filmi.webp", // gayrimenkul
-  "/work/posters/clip-1.webp", // sağlık
-  "/work/posters/clip-14.webp", // kafe
-  "/work/posters/clip-8.webp", // otomotiv / lokasyon
-  "/work/ay-gida/karadeniz-export-cayi-urun-filmi.webp", // üretim / ürün
-  "/work/posters/clip-10.webp", // restoran prodüksiyonu
-  "/work/posters/clip-2.webp", // geleneksel üretim
-  "/work/posters/clip-6.webp", // turizm / drone
-  "/work/posters/clip-12.webp", // tatlı prodüksiyonu
-  "/work/posters/clip-9.webp", // otomotiv / ürün
-  "/work/posters/clip-15.webp", // sağlık
-  "/work/posters/clip-13.webp", // pizza prodüksiyonu
-  "/work/posters/clip-3.webp", // geleneksel üretim
-  "/work/posters/clip-11.webp", // gastronomi / manzara
-  "/work/posters/clip-7.webp", // içecek prodüksiyonu
-  "/work/posters/clip-16.webp", // restoran sunumu
+const SHOWCASE_VIDEOS = [
+  "/work/faber-gayrimenkul/marka-tanitim-filmi.mp4", // gayrimenkul
+  "/videos/clip-1.mp4", // sağlık
+  "/videos/clip-14.mp4", // kafe
+  "/videos/clip-8.mp4", // otomotiv / lokasyon
+  "/work/ay-gida/karadeniz-export-cayi-urun-filmi.mp4", // üretim / ürün
+  "/videos/clip-10.mp4", // restoran prodüksiyonu
+  "/videos/clip-2.mp4", // geleneksel üretim
+  "/videos/clip-6.mp4", // turizm / drone
+  "/videos/clip-12.mp4", // tatlı prodüksiyonu
+  "/videos/clip-9.mp4", // otomotiv / ürün
+  "/videos/clip-15.mp4", // sağlık
+  "/videos/clip-13.mp4", // pizza prodüksiyonu
+  "/videos/clip-3.mp4", // geleneksel üretim
+  "/videos/clip-11.mp4", // gastronomi / manzara
+  "/videos/clip-7.mp4", // içecek prodüksiyonu
+  "/videos/clip-16.mp4", // restoran sunumu
 ] as const;
 
 const TICKER = [
@@ -134,10 +131,8 @@ export default function Home() {
         ctaHref={whatsappUrl}
         secondaryCtaText="İşleri incele"
         secondaryCtaHref="/portfolyo"
-        posters={SHOWCASE_POSTERS}
+        videos={SHOWCASE_VIDEOS}
       />
-
-      <FilmChapter />
 
       {/* TRUST */}
       <section className="client-proof" id="secili-isler" aria-labelledby="client-proof-title">
@@ -324,7 +319,12 @@ export default function Home() {
                   to={`/portfolyo/${project.slug}`}
                 >
                   <span className="exhibit__no">EX. {project.index}</span>
-                  <ProjectCover project={project} />
+                  <div className={`exhibit__media brand-panel brand-panel--${project.panel}`}>
+                    <BrandMark
+                      project={project}
+                      className={`brand-logo brand-logo--${project.logoShape}`}
+                    />
+                  </div>
                   <div className="exhibit__bar">
                     <span className="exhibit__name">{project.name}</span>
                     <span className="exhibit__tag">{project.category}</span>
