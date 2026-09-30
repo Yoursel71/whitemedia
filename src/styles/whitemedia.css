@@ -560,7 +560,7 @@ a {
   .film-chapter__bottom { flex-wrap: wrap; font-size: 8px; }
   .showreel__shell { padding: 16px 20px 24px; }
   .showreel__body { display: flex; flex-direction: column; gap: 18px; justify-content: center; }
-  .showreel__screen { width: auto; height: min(64svh, 610px); max-width: 100%; flex: 0 1 auto; }
+  .showreel__screen { width: min(100%, 340px); height: auto; max-height: min(64svh, 610px); flex: 0 1 auto; }
   .showreel__aside { width: 100%; min-height: 0; gap: 8px; }
   .showreel__counter { font-size: 30px; }
   .showreel__progress { margin: 8px 0 16px; }
@@ -1582,6 +1582,10 @@ a {
 }
 
 .exhibit--wide .exhibit__media--gallery .exhibit__preview { width: 33.3334%; }
+
+.exhibit--wide .exhibit__media--pair .exhibit__poster { width: 50%; }
+.exhibit--wide .exhibit__media--pair .exhibit__poster--tile-2 { display: block; left: 50%; }
+.exhibit--wide .exhibit__media--pair .exhibit__preview { width: 50%; }
 
 .exhibit:hover .exhibit__poster {
   transform: scale(1.045);
